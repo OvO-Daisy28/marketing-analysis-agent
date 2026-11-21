@@ -52,6 +52,17 @@ def main():
         path = ROOT / "artifacts" / folder / "summary.json"
         if path.exists():
             shutil.copyfile(path, target / name)
+    repeat_rows = []
+    for file in sorted((ROOT / "artifacts/eval-repeats").glob("*.json")):
+        result = json.loads(file.read_text(encoding="utf-8"))
+        if "case_id" in result:
+            row = {k: v for k, v in result.items() if k not in {"evidence", "claims", "reports", "events"}}
+            row["raw_sha256"] = hashlib.sha256(file.read_bytes()).hexdigest()
+            repeat_rows.append(row)
+    if repeat_rows:
+        (target / "all-repeats.json").write_text(
+            json.dumps(repeat_rows, ensure_ascii=False, indent=2), encoding="utf-8"
+        )
     evidence_n = sum(len(x["numerical_checks"]) for x in compact)
     for variant in ["full", "baseline"]:
         normal = [x for x in compact if x["variant"] == variant and x["category"] in {"report", "research"}]
