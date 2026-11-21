@@ -1,0 +1,15 @@
+{
+  "mode": "live",
+  "status": "completed",
+  "steps": 5,
+  "seconds": 22.47,
+  "input_tokens": 15865,
+  "output_tokens": 1475,
+  "sessions": 2998,
+  "purchases": 760,
+  "evidence_count": 1,
+  "html_bytes": 5745,
+  "csv_bytes": 493,
+  "unpublished_export_rejected": true,
+  "published_exports_ok": true
+}

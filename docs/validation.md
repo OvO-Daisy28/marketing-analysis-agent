@@ -1,5 +1,19 @@
 # 验证记录 · 2026-11-21
 
+## 体验完善后的验收
+
+代码提交 `3b63111`：新增免登录公开案例、业务化执行步骤、证据表格下钻、响应式报告高度、已发布 HTML / CSV 导出。
+
+- 后端 33 项测试通过，包含未发布导出拒绝、工作区隔离、证据关联、HTML 转义与 CSV 公式防护。
+- 浏览器 3 项测试通过，覆盖生成→修改→发布→下载、移动端登录，以及公开案例的图表、证据搜索、键盘关闭、下载与移动端适配。
+- 静态构建单独通过公开案例测试，不依赖 API、数据库或模型服务。
+- [云端工程检查](https://github.com/OvO-Daisy28/marketing-analysis-agent/actions/runs/44887684326)：backend、postgres-browser、containers 全部通过。
+- [GitHub Pages 构建与发布](https://github.com/OvO-Daisy28/marketing-analysis-agent/actions/runs/44887684386)通过；[在线案例](https://ovo-daisy28.github.io/marketing-analysis-agent/)提供固定公开数据展示。
+- 发布后直接针对公开 HTTPS 地址运行浏览器验收：图表、证据下钻、下载与移动端检查通过。
+- 真实模型交付用例：5 轮决策，全流程 22.47 秒，15,865 输入＋1,475 输出 Token；核对 11 月 2,998 条会话、760 次购买，未发布版本拒绝导出，发布后 HTML / CSV 成功导出。CSV 分子、分母汇总与独立预期一致，见 [验收记录](results/live-delivery-check.json)。这是单次联调，不是新的整体性能评测。
+
+本轮不改变模型 Prompt、工具决策或研究完成门禁，未重跑下方固定模型比较；没有将体验改动表述为模型准确率提升。线上案例是程序生成的固定示例，不能作为模型自主决策的证据。
+
 ## 已运行的检查
 
 | 检查 | 实测结果 |
