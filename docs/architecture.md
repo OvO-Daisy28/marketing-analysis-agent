@@ -67,3 +67,24 @@ PostgreSQL 通过 FOR UPDATE SKIP LOCKED 和条件更新领取任务。租约到
 - 不建设知识库：少量固定规则以版本化文件维护。
 - 不自主投放：开放数据不能验证真实执行效果，也没有业务接口。
 - SQLite 仅为单 Worker 本地体验和隔离测试；并发正确性另在 PostgreSQL 验证。
+
+## 体验与交付的设计取舍
+
+2026-11-21 的完善集中在同一条业务链：看懂案例 → 提出目标 → 观察执行 → 核对证据 → 修改并交付报告。
+
+| 参考 | 观察到的设计 | 本项目实现与边界 |
+|---|---|---|
+| [DeerFlow README](https://github.com/bytedance/deer-flow#official-website) | 官方案例提供无需登录的只读展示 | 独立静态案例入口；程序计算的示例明确标注，不假装实时模型执行 |
+| [data-agent-arcvis-skill](https://github.com/aliyun/data-agent-skill/blob/main/data-agent-arcvis-skill/SKILL_zh.md) | 表、指标、目标与报告产物关联，模板需要明确数据供给 | 延续原有指标合同；报告返回完整关联证据，引用可下钻，数据同源 |
+| [Evidence](https://github.com/evidence-dev/evidence#how-it-works) | 代码化报告与静态发布 | 发布后导出无脚本 HTML 与 CSV，带固定数据和指标版本；不引入整套 BI 运行时 |
+| [DB-GPT](https://github.com/eosphoros-ai/DB-GPT) | 数据分析与结果展示的应用流程 | 保留原有数据服务，不扩建连接器市场或多 Agent 平台 |
+
+源码为独立实现，没有复制参考项目代码。参考版本在 references.json。
+
+公开案例只含固定 UCI 哈希的数据，构建器执行三组查询后生成 JSON 与 HTML；不读取 Goal、Run、User、Session 表。GitHub Pages 构建启用 VITE_SHOWCASE_ONLY，进入静态入口，不启动登录、后端或模型请求。案例不是模型自主性的证明，真实调用证据另见评测记录。
+
+真实运行通过 SSE 展示可观察事件，将工具名称翻译为业务步骤；原始字段保留在“技术详情”。每三秒刷新运行快照，使轮次、证据与交付物随执行更新。重连状态不会触发新任务。用户可从结论、假设或查询事件进入证据表，查看样本量与计算口径。
+
+iframe 只发送 evidence ID；宿主页仅从当前已授权载荷中寻找该 ID，不接受任意 URL 或直接执行查询。报告高度消息仅接受有限数值并限制在 420–4000 px。证据弹窗支持键盘关闭、分组搜索与排序，小样本标记与后端一致。
+
+导出路由复用工作区鉴权，拒绝未发布版本；HTML 的标题、结论、参数和表格均转义，不嵌入模型生成的 intro_html，不包含脚本或网络依赖。CSV 防止字符串被表格软件解释为公式。导出使用发布快照；新增导出能力不代表结论已经通过人工业务审核。

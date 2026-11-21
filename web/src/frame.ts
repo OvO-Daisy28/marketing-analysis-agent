@@ -16,13 +16,35 @@ window.addEventListener("message", async (e) => {
     document.getElementById("intro")!.innerHTML = spec.intro_html;
     document.getElementById("source")!.textContent =
       `UCI · 数据 ${data.dataset_id.slice(0, 12)} · 指标 ${data.metric_version}`;
+    const scope = document.createElement("p");
+    const names: Record<string, string> = {
+      month: "月份",
+      traffic_type: "流量类型",
+      visitor_type: "访客类型",
+      region: "地区编码",
+      weekend: "周末",
+    };
+    scope.textContent =
+      "实际数据范围：" +
+      (Object.entries(data.query.filters)
+        .filter(([, v]) => Array.isArray(v) && v.length)
+        .map(([k, v]) => `${names[k]} ${String(v)}`)
+        .join(" / ") || "全部会话") +
+      " · 按" +
+      (data.query.group_by.map((d: string) => names[d]).join(" × ") || "整体") +
+      "汇总";
+    scope.style.cssText =
+      "font-size:12px;color:#567465;background:#f4f7f2;padding:10px;border-radius:6px";
+    document.getElementById("intro")!.append(scope);
     const summary = document.getElementById("summary")!;
     summary.textContent = `会话 ${data.totals.sessions.toLocaleString()}   /   购买 ${data.totals.purchases.toLocaleString()}   /   转化率 ${data.totals.conversion_rate === null ? "无数据" : (data.totals.conversion_rate * 100).toFixed(2) + "%"}`;
     const claimBox = document.getElementById("claims")!;
     claimBox.replaceChildren();
     if (claims.length) {
       const label = document.createElement("h3");
-      label.textContent = "模型分析 · 发布前请结合证据核对";
+      label.textContent = e.data.payload.delivery_label
+        ? "示例分析 · 数据由程序核算"
+        : "模型分析 · 发布前请结合证据核对";
       claimBox.append(label);
     }
     if (stale_claims)
@@ -31,8 +53,20 @@ window.addEventListener("message", async (e) => {
       const p = document.createElement("p");
       p.textContent = c.text;
       const small = document.createElement("small");
-      small.textContent = `证据 ${c.evidence_ids.join(", ")} · ${c.limitation}`;
-      claimBox.append(p, small);
+      small.textContent = c.limitation;
+      const links = document.createElement("div");
+      for (const id of c.evidence_ids) {
+        const button = document.createElement("button");
+        const index = (e.data.payload.evidence || []).findIndex((item:any) => item.id === id);
+        button.textContent = `核对证据${index >= 0 ? " " + (index + 1) : ""} ↗`;
+        button.style.cssText =
+          "margin:10px 8px 18px 0;padding:8px 12px;border:1px solid #b6d5c8;border-radius:6px;background:#edf6f2;color:#176e62;cursor:pointer";
+        button.addEventListener("click", () =>
+          parent.postMessage({ type: "open-evidence", id }, "*"),
+        );
+        links.append(button);
+      }
+      claimBox.append(p, small, links);
     }
     document.getElementById("limitations")!.textContent =
       data.limitations.join(" ");
@@ -68,6 +102,14 @@ window.addEventListener("message", async (e) => {
         data.query.group_by.map((k: string) => String(r[k])).join(" / ") ||
         "全部会话",
     }));
+    const smallSamples = rows.filter((r: any) => r.small_sample).length;
+    if (smallSamples) {
+      const note = document.createElement("p");
+      note.textContent = `${smallSamples} 个分组少于 30 条会话，转化率可能不稳定。请结合样本量阅读，不直接据此排序决策。`;
+      note.style.cssText =
+        "font-size:12px;color:#986d27;background:#fff7e5;padding:12px;border-radius:6px";
+      root.append(note);
+    }
     if (spec.chart === "table") {
       const table = document.createElement("table");
       const heading = document.createElement("tr");
@@ -127,3 +169,9 @@ window.addEventListener("message", async (e) => {
   }
 });
 parent.postMessage({ type: "report-ready" }, "*");
+new ResizeObserver(() =>
+  parent.postMessage(
+    { type: "report-resize", height: document.body.scrollHeight },
+    "*",
+  ),
+).observe(document.body);

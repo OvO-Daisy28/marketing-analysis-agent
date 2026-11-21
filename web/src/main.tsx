@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./style.css";
+import EvidencePanel, { queryLabel } from "./EvidencePanel";
+import RunTimeline, { stopReasons } from "./RunTimeline";
+import Showcase from "./Showcase";
 
 let csrf = "";
 async function api(path: string, body?: unknown, method?: string) {
@@ -54,7 +57,18 @@ function App() {
     [editChart, setEditChart] = useState("bar"),
     [month, setMonth] = useState("");
   const [contract, setContract] = useState<any>(null);
+  const [showcase, setShowcase] = useState(
+    !sessionStorage.getItem("signal-enter"),
+  );
+  const [activeEvidence, setActiveEvidence] = useState<any>(null);
+  const [connection, setConnection] = useState("connected");
   const currentRun = detail?.runs?.at(-1);
+  const showEvidence = (id: string) => {
+    const e =
+      (selected?.evidence || []).find((x: any) => x.id === id) ||
+      (detail?.evidence || []).find((x: any) => x.id === id);
+    if (e) setActiveEvidence(e);
+  };
 
   const refresh = async () => {
     const [g, r, c] = await Promise.all([
@@ -110,6 +124,8 @@ function App() {
     if (!currentRun || !["queued", "running"].includes(currentRun.status))
       return;
     const source = new EventSource("/api/runs/" + currentRun.id + "/stream");
+    source.onopen = () => setConnection("connected");
+    source.onerror = () => setConnection("reconnecting");
     source.addEventListener("progress", (e) => {
       const item = JSON.parse((e as MessageEvent).data);
       setEvents((old) =>
@@ -126,8 +142,20 @@ function App() {
       source.close();
       setUser(null);
     });
-    return () => source.close();
-  }, [currentRun?.id]);
+    const timer = window.setInterval(() => {
+      api("/goals/" + detail.goal.id)
+        .then((d) => {
+          setDetail(d);
+          if (!["queued", "running"].includes(d.runs.at(-1)?.status))
+            refresh().catch((e) => setError(String(e)));
+        })
+        .catch(() => setConnection("reconnecting"));
+    }, 3000);
+    return () => {
+      source.close();
+      window.clearInterval(timer);
+    };
+  }, [currentRun?.id, currentRun?.status]);
 
   async function authenticate(e: React.FormEvent) {
     e.preventDefault();
@@ -173,6 +201,16 @@ function App() {
   }
 
   if (checking) return <div className="loading">正在打开工作台…</div>;
+  if (!user && showcase)
+    return (
+      <Showcase
+        onEnter={() => {
+          sessionStorage.setItem("signal-enter", "yes");
+          setShowcase(false);
+          setNewAccount(true);
+        }}
+      />
+    );
   if (!user)
     return (
       <div className="auth-layout">
@@ -206,6 +244,13 @@ function App() {
           <footer>公开电商数据 · 可追溯分析 · 人工确认发布</footer>
         </div>
         <form className="login" onSubmit={authenticate}>
+          <button
+            type="button"
+            className="text-button"
+            onClick={() => setShowcase(true)}
+          >
+            ← 先看完整示例
+          </button>
           <p className="eyebrow">YOUR ANALYSIS SPACE</p>
           <h2>{newAccount ? "创建工作区" : "欢迎回到 Signal"}</h2>
           <p className="muted">
@@ -484,58 +529,86 @@ function App() {
                         <span>Token</span>
                       </div>
                     </div>
-                    <div className="timeline">
-                      {events.map((e) => (
-                        <details key={e.id}>
-                          <summary>
-                            <i
-                              className={e.kind === "model_error" ? "warn" : ""}
-                            />
-                            <span>
-                              {e.kind === "tool"
-                                ? e.payload.name
-                                : e.kind === "model"
-                                  ? "模型决策"
-                                  : e.kind === "terminal"
-                                    ? "执行结束"
-                                    : e.kind === "model_error"
-                                      ? "模型请求失败"
-                                      : e.kind === "started"
-                                        ? "开始执行"
-                                        : "进入队列"}
-                            </span>
-                            <small>
-                              {e.payload.duration_ms !== undefined
-                                ? e.payload.duration_ms + " ms"
-                                : new Date(
-                                    e.created_at * 1000,
-                                  ).toLocaleTimeString()}
-                            </small>
-                          </summary>
-                          <pre>{JSON.stringify(e.payload, null, 2)}</pre>
-                        </details>
+                    {["queued", "running"].includes(currentRun?.status) && (
+                      <div className="running-note" role="status">
+                        <span className="live-dot" />
+                        {connection === "reconnecting"
+                          ? "正在重连进度，后台分析会继续执行…"
+                          : "正在围绕目标分析，证据与轮次会自动更新。你可以离开此页。"}
+                      </div>
+                    )}
+                    <div className="criteria">
+                      <small>本次交付标准</small>
+                      {detail.goal.criteria.map((c: string) => (
+                        <span key={c}>{c}</span>
                       ))}
                     </div>
+                    <RunTimeline events={events} onEvidence={showEvidence} />
                     {currentRun?.stop_reason && (
-                      <p className="result-note">{currentRun.stop_reason}</p>
+                      <p className="result-note">
+                        {stopReasons[currentRun.stop_reason] ||
+                          currentRun.stop_reason}
+                      </p>
                     )}
                     {detail.hypotheses.map((h: any) => (
-                      <details className="evidence" key={h.id}>
-                        <summary>
-                          假设 · {h.text} <small>{h.status}</small>
-                        </summary>
-                        <p>引用证据：{h.evidence_ids.join(", ") || "待查询"}</p>
-                      </details>
+                      <div className="hypothesis-card" key={h.id}>
+                        <small>
+                          {{
+                            open: "待检验",
+                            supported: "证据支持",
+                            rejected: "证据不支持",
+                            inconclusive: "证据不足",
+                          }[h.status as string] || h.status}
+                        </small>
+                        <h3>{h.text}</h3>
+                        {h.evidence_ids.map((id: string) => (
+                          <button
+                            key={id}
+                            className="text-button"
+                            onClick={() => showEvidence(id)}
+                          >
+                            查看关联证据 ↗
+                          </button>
+                        ))}
+                      </div>
                     ))}
-                    {detail.evidence.map((e: any) => (
-                      <details className="evidence" key={e.id}>
-                        <summary>
-                          证据 {e.id.slice(0, 8)} · {e.result.totals.sessions}{" "}
-                          条会话
-                        </summary>
-                        <pre>{JSON.stringify(e, null, 2)}</pre>
-                      </details>
-                    ))}
+                    <div className="evidence-cards">
+                      {detail.evidence.map((e: any) => (
+                        <button
+                          className="evidence-card"
+                          key={e.id}
+                          onClick={() => setActiveEvidence(e)}
+                        >
+                          <b>{queryLabel(e.query)}</b>
+                          <span>
+                            {e.result.totals.sessions.toLocaleString()} 条会话 ·
+                            点击核对表格 ↗
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                    {detail.claims.length > 0 && (
+                      <div className="research-claims">
+                        <h3>当前结论</h3>
+                        {detail.claims.map((c: any) => (
+                          <article key={c.id}>
+                            <p>{c.text}</p>
+                            <small>{c.limitation}</small>
+                            <div>
+                              {c.evidence_ids.map((id: string) => (
+                                <button
+                                  className="text-button"
+                                  key={id}
+                                  onClick={() => showEvidence(id)}
+                                >
+                                  核对依据 ↗
+                                </button>
+                              ))}
+                            </div>
+                          </article>
+                        ))}
+                      </div>
+                    )}
                     {detail.reports.map((r: any) => (
                       <button
                         className="secondary"
@@ -718,10 +791,41 @@ function App() {
                         key={selected.id}
                         version={selected}
                         onError={setError}
+                        onEvidence={showEvidence}
                       />
                     </React.Suspense>
                     <div className="publish-bar">
                       <small>数字来自固定数据版本 · 发布后保留快照</small>
+                      <button
+                        className="text-button"
+                        onClick={() => showEvidence(selected.evidence_id)}
+                      >
+                        核对报表数据 ↗
+                      </button>
+                      {selected.status === "published" && (
+                        <div className="export-actions">
+                          <a
+                            href={
+                              "/api/report-versions/" +
+                              selected.id +
+                              "/export?format=html"
+                            }
+                            download
+                          >
+                            下载离线报告 ↓
+                          </a>
+                          <a
+                            href={
+                              "/api/report-versions/" +
+                              selected.id +
+                              "/export?format=csv"
+                            }
+                            download
+                          >
+                            导出 CSV ↓
+                          </a>
+                        </div>
+                      )}
                       <button
                         disabled={busy || selected.status === "published"}
                         onClick={() =>
@@ -750,6 +854,13 @@ function App() {
             </div>
           </div>
         )}
+        {activeEvidence && (
+          <EvidencePanel
+            key={activeEvidence.id}
+            evidence={activeEvidence}
+            onClose={() => setActiveEvidence(null)}
+          />
+        )}
         <footer className="page-footer">
           SIGNAL / MARKETING ANALYSIS AGENT{" "}
           <span>公开复现项目 · 分析结果不代表因果效果</span>
@@ -758,4 +869,10 @@ function App() {
     </div>
   );
 }
-createRoot(document.getElementById("root")!).render(<App />);
+createRoot(document.getElementById("root")!).render(
+  import.meta.env.VITE_SHOWCASE_ONLY === "true" ? (
+    <Showcase standalone />
+  ) : (
+    <App />
+  ),
+);

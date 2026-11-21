@@ -16,5 +16,11 @@
     "commit": "3f3d3cf4202816167a67bf8fe1a909df7b8d549c",
     "date": "2026-11-21T05:47:12Z",
     "reuse": "design reference only; no source copied"
+  },
+  {
+    "repository": "https://github.com/evidence-dev/evidence",
+    "commit": "5134d6aa9d3e835e0c3f207d4aaf6e76d6805c44",
+    "reviewed_on": "2026-11-21",
+    "reuse": "design reference only; no source copied"
   }
 ]

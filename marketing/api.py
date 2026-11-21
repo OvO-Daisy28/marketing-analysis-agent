@@ -16,6 +16,7 @@ from marketing import services as s
 from marketing.analytics import aggregate, contract, latest_dataset
 from marketing.config import ROOT, settings
 from marketing.db import Session, get_db
+from marketing.delivery import export_csv, export_html, report_payload
 from marketing.schemas import ContinueRun, Credentials, NewGoal, Query, Revision
 
 app = FastAPI(title="Marketing Analysis Agent", version="0.1.0")
@@ -264,18 +265,25 @@ def reports(user=Depends(identity), db=Depends(get_db)):
 
 @app.get("/api/report-versions/{version_id}")
 def version_detail(version_id: str, user=Depends(identity), db=Depends(get_db)):
-    version, report, goal = s.owned_version(db, version_id, user.workspace_id)
-    evidence = s.scoped_evidence(db, goal.id, version.evidence_id)
-    claims = [s.serialize(db.get(m.Claim, cid)) for cid in version.spec["claim_ids"]]
-    return {
-        **s.serialize(version),
-        "query": evidence.query,
-        "claims": claims,
-        "goal_id": goal.id,
-        "data": version.snapshot
-        if version.status == "published"
-        else aggregate(db, goal.dataset_id, Query.model_validate(evidence.query)),
-    }
+    return report_payload(db, version_id, user.workspace_id)
+
+
+@app.get("/api/report-versions/{version_id}/export")
+def export_version(version_id: str, format: str = "html", user=Depends(identity), db=Depends(get_db)):
+    payload = report_payload(db, version_id, user.workspace_id)
+    if payload["status"] != "published":
+        raise HTTPException(409, "请先确认发布此版本，再导出固定快照")
+    if format not in {"html", "csv"}:
+        raise HTTPException(400, "支持 HTML 报告或 CSV 数据导出")
+    content = export_html(payload) if format == "html" else export_csv(payload)
+    return Response(
+        content,
+        media_type="text/html" if format == "html" else "text/csv",
+        headers={
+            "Content-Disposition": f'attachment; filename="signal-v{payload["version"]}-{version_id[:8]}.{format}"',
+            "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'",
+        },
+    )
 
 
 @app.post("/api/reports/{report_id}/revise")

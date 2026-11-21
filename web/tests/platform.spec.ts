@@ -5,8 +5,8 @@ test("report generation, sandbox rendering, revision and publication", async ({
 }) => {
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  await page.goto("/");
-  await page.getByRole("button", { name: "第一次使用？创建工作区" }).click();
+  await page.goto("./");
+  await page.getByRole("button", { name: "创建自己的分析" }).click();
   await page
     .getByLabel("用户名", { exact: true })
     .fill("browser-" + Date.now());
@@ -32,11 +32,15 @@ test("report generation, sandbox rendering, revision and publication", async ({
   await page.getByLabel("报告标题").fill("测试修改后的报告");
   await page.getByRole("button", { name: "保存修改为新版本" }).click();
   await expect(frame.locator("#title")).toHaveText("测试修改后的报告");
+
   await page.getByRole("button", { name: "确认发布此版本" }).click();
   await expect(
     page.getByRole("button", { name: "已确认发布", exact: true }),
   ).toBeDisabled();
   await expect(frame.locator("#title")).toHaveText("测试修改后的报告");
+  const download = page.waitForEvent("download");
+  await page.getByRole("link", { name: "下载离线报告" }).click();
+  expect((await download).suggestedFilename()).toMatch(/\.html$/);
   await page.evaluate(() => window.scrollTo(0, 0));
   await page
     .locator("iframe")
@@ -62,12 +66,66 @@ test("report generation, sandbox rendering, revision and publication", async ({
 
 test("mobile login has no horizontal overflow", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/");
+  await page.goto("./");
+  await page.getByRole("button", { name: "创建自己的分析" }).click();
   await expect(
-    page.getByRole("heading", { name: "欢迎回到 Signal" }),
+    page.getByRole("heading", { name: "创建工作区", exact: true }),
   ).toBeVisible();
   expect(
     await page.evaluate(() => document.documentElement.scrollWidth),
   ).toBeLessThanOrEqual(390);
   await page.screenshot({ path: "test-results/mobile-login.png" });
+});
+
+test("public showcase, evidence drilldown, download and mobile", async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await page.goto("./");
+  await expect(page.getByRole("heading", { name: /从流量差异/ })).toBeVisible();
+  const frame = page.frameLocator('iframe[title="报表预览"]');
+  await expect(frame.locator("canvas")).toBeVisible();
+  await page.getByRole("tab", { name: "结论与依据" }).click();
+  await page.getByRole("button", { name: "核对证据" }).first().click();
+  await expect(page.getByRole("dialog")).toContainText("新访客");
+  await expect(page.getByRole("dialog")).toContainText("回访者");
+  await page.getByLabel("搜索证据分组").fill("新访客");
+  await expect(page.getByRole("dialog").locator("tbody tr")).toHaveCount(1);
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+  await page.getByRole("tab", { name: "报告预览" }).click();
+  await frame.getByRole("button", { name: "核对证据" }).first().click();
+  await expect(page.getByRole("dialog")).toContainText("查询证据");
+  await page.getByRole("button", { name: "关闭证据" }).click();
+  const download = page.waitForEvent("download");
+  await page.getByRole("link", { name: "下载离线报告" }).click();
+  expect((await download).suggestedFilename()).toBe("sample-report.html");
+  await page.screenshot({
+    path: "test-results/showcase-desktop.png",
+    fullPage: true,
+  });
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.locator("iframe").scrollIntoViewIfNeeded();
+  await expect(frame.locator("canvas")).toBeVisible();
+  await expect(frame.locator("#title")).toContainText("11 月流量");
+  await expect
+    .poll(async () =>
+      frame
+        .locator("canvas")
+        .evaluate(
+          (el) =>
+            el.getBoundingClientRect().width <=
+            el.closest("#chart")!.clientWidth + 2,
+        ),
+    )
+    .toBe(true);
+  expect(
+    await page.evaluate(() => document.documentElement.scrollWidth),
+  ).toBeLessThanOrEqual(390);
+  await page.screenshot({
+    path: "test-results/showcase-mobile.png",
+    fullPage: true,
+  });
+  expect(errors).toEqual([]);
 });

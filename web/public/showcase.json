@@ -1,0 +1,691 @@
+{
+  "id": "showcase-november",
+  "version": 1,
+  "status": "published",
+  "delivery_label": "固定公开示例（程序计算，非实时模型输出）",
+  "stale_claims": false,
+  "spec": {
+    "title": "11 月流量转化与访客结构分析",
+    "intro_html": "<p>先观察流量表现，再检查新老访客差异，最后回到交叉分组核对证据。</p>",
+    "chart": "bar",
+    "metric": "conversion_rate",
+    "claim_ids": [
+      "sample-c1",
+      "sample-c2"
+    ]
+  },
+  "query": {
+    "group_by": [
+      "traffic_type"
+    ],
+    "filters": {
+      "month": [
+        "Nov"
+      ],
+      "traffic_type": [],
+      "visitor_type": [],
+      "region": [],
+      "weekend": []
+    }
+  },
+  "data": {
+    "rows": [
+      {
+        "traffic_type": 1,
+        "sessions": 466,
+        "purchases": 93,
+        "conversion_rate": 0.19957081545064378,
+        "small_sample": false
+      },
+      {
+        "traffic_type": 2,
+        "sessions": 1242,
+        "purchases": 374,
+        "conversion_rate": 0.30112721417069244,
+        "small_sample": false
+      },
+      {
+        "traffic_type": 3,
+        "sessions": 408,
+        "purchases": 76,
+        "conversion_rate": 0.18627450980392157,
+        "small_sample": false
+      },
+      {
+        "traffic_type": 4,
+        "sessions": 32,
+        "purchases": 4,
+        "conversion_rate": 0.125,
+        "small_sample": false
+      },
+      {
+        "traffic_type": 5,
+        "sessions": 21,
+        "purchases": 7,
+        "conversion_rate": 0.3333333333333333,
+        "small_sample": true
+      },
+      {
+        "traffic_type": 6,
+        "sessions": 68,
+        "purchases": 11,
+        "conversion_rate": 0.16176470588235295,
+        "small_sample": false
+      },
+      {
+        "traffic_type": 7,
+        "sessions": 11,
+        "purchases": 5,
+        "conversion_rate": 0.45454545454545453,
+        "small_sample": true
+      },
+      {
+        "traffic_type": 8,
+        "sessions": 167,
+        "purchases": 62,
+        "conversion_rate": 0.3712574850299401,
+        "small_sample": false
+      },
+      {
+        "traffic_type": 10,
+        "sessions": 209,
+        "purchases": 62,
+        "conversion_rate": 0.2966507177033493,
+        "small_sample": false
+      },
+      {
+        "traffic_type": 11,
+        "sessions": 117,
+        "purchases": 32,
+        "conversion_rate": 0.27350427350427353,
+        "small_sample": false
+      },
+      {
+        "traffic_type": 13,
+        "sessions": 193,
+        "purchases": 21,
+        "conversion_rate": 0.10880829015544041,
+        "small_sample": false
+      },
+      {
+        "traffic_type": 15,
+        "sessions": 8,
+        "purchases": 0,
+        "conversion_rate": 0.0,
+        "small_sample": true
+      },
+      {
+        "traffic_type": 20,
+        "sessions": 56,
+        "purchases": 13,
+        "conversion_rate": 0.23214285714285715,
+        "small_sample": false
+      }
+    ],
+    "totals": {
+      "sessions": 2998,
+      "purchases": 760,
+      "conversion_rate": 0.25350233488992663
+    },
+    "dataset_id": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+    "metric_version": "1.0.0",
+    "query": {
+      "group_by": [
+        "traffic_type"
+      ],
+      "filters": {
+        "month": [
+          "Nov"
+        ],
+        "traffic_type": [],
+        "visitor_type": [],
+        "region": [],
+        "weekend": []
+      }
+    },
+    "empty": false,
+    "limitations": [
+      "Revenue 是是否购买，不是销售金额。",
+      "流量类型是匿名编码，不能映射到具体广告平台。",
+      "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+      "小样本分组的转化率可能不稳定。"
+    ]
+  },
+  "claims": [
+    {
+      "id": "sample-c1",
+      "text": "11 月新访客购买转化率为 30.55%（128/419），回访者为 24.60%（629/2557）。两组观察到的表现不同。",
+      "evidence_ids": [
+        "sample-e2"
+      ],
+      "limitation": "这是描述性差异，未控制其他因素，不能据此判断访客身份导致转化变化。"
+    },
+    {
+      "id": "sample-c2",
+      "text": "继续按流量类型与访客类型交叉分组，检查总体差异是否在各流量分组中一致；样本少于 30 的分组单独提示，不直接用于稳定排序。",
+      "evidence_ids": [
+        "sample-e3"
+      ],
+      "limitation": "此报告未执行显著性检验，也不能评估广告成本或 ROI。"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "sample-e1",
+      "query": {
+        "group_by": [
+          "traffic_type"
+        ],
+        "filters": {
+          "month": [
+            "Nov"
+          ],
+          "traffic_type": [],
+          "visitor_type": [],
+          "region": [],
+          "weekend": []
+        }
+      },
+      "result": {
+        "rows": [
+          {
+            "traffic_type": 1,
+            "sessions": 466,
+            "purchases": 93,
+            "conversion_rate": 0.19957081545064378,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 2,
+            "sessions": 1242,
+            "purchases": 374,
+            "conversion_rate": 0.30112721417069244,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 3,
+            "sessions": 408,
+            "purchases": 76,
+            "conversion_rate": 0.18627450980392157,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 4,
+            "sessions": 32,
+            "purchases": 4,
+            "conversion_rate": 0.125,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 5,
+            "sessions": 21,
+            "purchases": 7,
+            "conversion_rate": 0.3333333333333333,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 6,
+            "sessions": 68,
+            "purchases": 11,
+            "conversion_rate": 0.16176470588235295,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 7,
+            "sessions": 11,
+            "purchases": 5,
+            "conversion_rate": 0.45454545454545453,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 8,
+            "sessions": 167,
+            "purchases": 62,
+            "conversion_rate": 0.3712574850299401,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 10,
+            "sessions": 209,
+            "purchases": 62,
+            "conversion_rate": 0.2966507177033493,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 11,
+            "sessions": 117,
+            "purchases": 32,
+            "conversion_rate": 0.27350427350427353,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 13,
+            "sessions": 193,
+            "purchases": 21,
+            "conversion_rate": 0.10880829015544041,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 15,
+            "sessions": 8,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 20,
+            "sessions": 56,
+            "purchases": 13,
+            "conversion_rate": 0.23214285714285715,
+            "small_sample": false
+          }
+        ],
+        "totals": {
+          "sessions": 2998,
+          "purchases": 760,
+          "conversion_rate": 0.25350233488992663
+        },
+        "dataset_id": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+        "metric_version": "1.0.0",
+        "query": {
+          "group_by": [
+            "traffic_type"
+          ],
+          "filters": {
+            "month": [
+              "Nov"
+            ],
+            "traffic_type": [],
+            "visitor_type": [],
+            "region": [],
+            "weekend": []
+          }
+        },
+        "empty": false,
+        "limitations": [
+          "Revenue 是是否购买，不是销售金额。",
+          "流量类型是匿名编码，不能映射到具体广告平台。",
+          "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+          "小样本分组的转化率可能不稳定。"
+        ]
+      }
+    },
+    {
+      "id": "sample-e2",
+      "query": {
+        "group_by": [
+          "visitor_type"
+        ],
+        "filters": {
+          "month": [
+            "Nov"
+          ],
+          "traffic_type": [],
+          "visitor_type": [],
+          "region": [],
+          "weekend": []
+        }
+      },
+      "result": {
+        "rows": [
+          {
+            "visitor_type": "New_Visitor",
+            "sessions": 419,
+            "purchases": 128,
+            "conversion_rate": 0.3054892601431981,
+            "small_sample": false
+          },
+          {
+            "visitor_type": "Other",
+            "sessions": 22,
+            "purchases": 3,
+            "conversion_rate": 0.13636363636363635,
+            "small_sample": true
+          },
+          {
+            "visitor_type": "Returning_Visitor",
+            "sessions": 2557,
+            "purchases": 629,
+            "conversion_rate": 0.24599139616738366,
+            "small_sample": false
+          }
+        ],
+        "totals": {
+          "sessions": 2998,
+          "purchases": 760,
+          "conversion_rate": 0.25350233488992663
+        },
+        "dataset_id": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+        "metric_version": "1.0.0",
+        "query": {
+          "group_by": [
+            "visitor_type"
+          ],
+          "filters": {
+            "month": [
+              "Nov"
+            ],
+            "traffic_type": [],
+            "visitor_type": [],
+            "region": [],
+            "weekend": []
+          }
+        },
+        "empty": false,
+        "limitations": [
+          "Revenue 是是否购买，不是销售金额。",
+          "流量类型是匿名编码，不能映射到具体广告平台。",
+          "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+          "小样本分组的转化率可能不稳定。"
+        ]
+      }
+    },
+    {
+      "id": "sample-e3",
+      "query": {
+        "group_by": [
+          "traffic_type",
+          "visitor_type"
+        ],
+        "filters": {
+          "month": [
+            "Nov"
+          ],
+          "traffic_type": [],
+          "visitor_type": [],
+          "region": [],
+          "weekend": []
+        }
+      },
+      "result": {
+        "rows": [
+          {
+            "traffic_type": 1,
+            "visitor_type": "New_Visitor",
+            "sessions": 5,
+            "purchases": 1,
+            "conversion_rate": 0.2,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 1,
+            "visitor_type": "Other",
+            "sessions": 5,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 1,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 456,
+            "purchases": 92,
+            "conversion_rate": 0.20175438596491227,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 2,
+            "visitor_type": "New_Visitor",
+            "sessions": 253,
+            "purchases": 71,
+            "conversion_rate": 0.28063241106719367,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 2,
+            "visitor_type": "Other",
+            "sessions": 5,
+            "purchases": 1,
+            "conversion_rate": 0.2,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 2,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 984,
+            "purchases": 302,
+            "conversion_rate": 0.30691056910569103,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 3,
+            "visitor_type": "New_Visitor",
+            "sessions": 24,
+            "purchases": 6,
+            "conversion_rate": 0.25,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 3,
+            "visitor_type": "Other",
+            "sessions": 4,
+            "purchases": 1,
+            "conversion_rate": 0.25,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 3,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 380,
+            "purchases": 69,
+            "conversion_rate": 0.18157894736842106,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 4,
+            "visitor_type": "New_Visitor",
+            "sessions": 3,
+            "purchases": 1,
+            "conversion_rate": 0.3333333333333333,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 4,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 29,
+            "purchases": 3,
+            "conversion_rate": 0.10344827586206896,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 5,
+            "visitor_type": "New_Visitor",
+            "sessions": 15,
+            "purchases": 6,
+            "conversion_rate": 0.4,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 5,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 6,
+            "purchases": 1,
+            "conversion_rate": 0.16666666666666666,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 6,
+            "visitor_type": "New_Visitor",
+            "sessions": 11,
+            "purchases": 2,
+            "conversion_rate": 0.18181818181818182,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 6,
+            "visitor_type": "Other",
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 6,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 56,
+            "purchases": 9,
+            "conversion_rate": 0.16071428571428573,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 7,
+            "visitor_type": "New_Visitor",
+            "sessions": 2,
+            "purchases": 1,
+            "conversion_rate": 0.5,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 7,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 9,
+            "purchases": 4,
+            "conversion_rate": 0.4444444444444444,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 8,
+            "visitor_type": "New_Visitor",
+            "sessions": 76,
+            "purchases": 32,
+            "conversion_rate": 0.42105263157894735,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 8,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 91,
+            "purchases": 30,
+            "conversion_rate": 0.32967032967032966,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 10,
+            "visitor_type": "New_Visitor",
+            "sessions": 5,
+            "purchases": 2,
+            "conversion_rate": 0.4,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 10,
+            "visitor_type": "Other",
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 10,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 203,
+            "purchases": 60,
+            "conversion_rate": 0.2955665024630542,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 11,
+            "visitor_type": "New_Visitor",
+            "sessions": 17,
+            "purchases": 2,
+            "conversion_rate": 0.11764705882352941,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 11,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 100,
+            "purchases": 30,
+            "conversion_rate": 0.3,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 13,
+            "visitor_type": "New_Visitor",
+            "sessions": 2,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 13,
+            "visitor_type": "Other",
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 13,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 190,
+            "purchases": 21,
+            "conversion_rate": 0.11052631578947368,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 15,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 8,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 20,
+            "visitor_type": "New_Visitor",
+            "sessions": 6,
+            "purchases": 4,
+            "conversion_rate": 0.6666666666666666,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 20,
+            "visitor_type": "Other",
+            "sessions": 5,
+            "purchases": 1,
+            "conversion_rate": 0.2,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 20,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 45,
+            "purchases": 8,
+            "conversion_rate": 0.17777777777777778,
+            "small_sample": false
+          }
+        ],
+        "totals": {
+          "sessions": 2998,
+          "purchases": 760,
+          "conversion_rate": 0.25350233488992663
+        },
+        "dataset_id": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+        "metric_version": "1.0.0",
+        "query": {
+          "group_by": [
+            "traffic_type",
+            "visitor_type"
+          ],
+          "filters": {
+            "month": [
+              "Nov"
+            ],
+            "traffic_type": [],
+            "visitor_type": [],
+            "region": [],
+            "weekend": []
+          }
+        },
+        "empty": false,
+        "limitations": [
+          "Revenue 是是否购买，不是销售金额。",
+          "流量类型是匿名编码，不能映射到具体广告平台。",
+          "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+          "小样本分组的转化率可能不稳定。"
+        ]
+      }
+    }
+  ]
+}

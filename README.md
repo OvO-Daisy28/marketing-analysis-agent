@@ -4,6 +4,10 @@
 
 这是使用开放数据的独立工程实现，不是任何公司的官方项目或生产源码。项目不执行真实投放，不把分析完成解释为业务增长。
 
+**[打开在线交互案例 →](https://ovo-daisy28.github.io/marketing-analysis-agent/)** · 无需注册、密钥或安装。点击分析步骤查看查询证据，切换“结论与依据”，下载可离线阅读的报告。在线案例是明确标注的固定示例；真实模型分析、修改与发布通过下方启动步骤体验。
+
+![在线案例与可核查报告](docs/media/showcase.png)
+
 ## 能做什么
 
 - 真实模型自主选择工具；另提供明确标识的确定性模拟模式。
@@ -13,12 +17,11 @@
 - 独立 Worker、PostgreSQL 租约、检查点、失败重试、预算与无进展停止。
 - 登录会话、CSRF、工作区隔离、只读 SSE 及执行事件回放。
 - 独立 CSV 数值核对、固定案例、真实模型对照和浏览器测试。
+- 免登录公开案例、结论到证据表格的下钻、已发布快照的 HTML / CSV 导出。
 
 项目没有独立知识库模块；少量分析规则、指标和模板跟随代码版本维护。
 
-![报表预览、版本管理与发布界面](docs/media/report-published.png)
-
-截图来自确定性模拟模式的浏览器测试；真实模型轨迹与对照结果见 [验证记录](docs/validation.md)。
+在线截图来自固定案例；真实模型轨迹、对照结果与失败样例见 [验证记录](docs/validation.md)。
 
 ## 启动
 
@@ -32,7 +35,7 @@ cp .env.example .env
 docker compose up --build -d
 ```
 
-打开 <http://localhost:8000>，创建账号。Compose 先迁移数据库、导入数据，然后启动 API 与 Worker；默认仅绑定本机端口。数据库密码可通过 `POSTGRES_PASSWORD` 修改。
+打开 <http://localhost:8000>，先查看案例，点击“创建自己的分析”进入工作区。Compose 先迁移数据库、导入数据，然后启动 API 与 Worker；默认仅绑定本机端口。数据库密码可通过 `POSTGRES_PASSWORD` 修改。
 
 ### 本地开发
 
@@ -83,6 +86,17 @@ LLM_API_KEY=your-private-key
 **证据不足：**“计算广告成本与 ROI。”系统应说明数据缺口，不能编造金额。
 
 完成后在报表中心修改标题、图表或月份。修改月份会创建新证据与新版本，并移除旧范围下的结论。已发布版本保留结果快照。
+
+点击报告结论下的“核对证据”，查看对应筛选条件、样本量、分组表格与计算口径。发布后可以下载无脚本的 HTML 报告或 CSV；HTML 包含证据表格及锚点，可离线阅读，也可通过浏览器打印为 PDF。
+
+## 两分钟体验路线
+
+1. 在线案例：点击“再检查访客结构”，在证据表中核对新访客与回访者的分子、分母。
+2. 切换“结论与依据”：验证描述性差异与因果结论的边界，下载报告离线打开。
+3. 本地启动：创建工作区，运行一条报表任务，观察步骤与证据自动更新。
+4. 修改月份：确认旧范围的结论被移除，再发布新版本并导出。
+
+固定案例由 `uv run python -m scripts.build_showcase` 从指定 SHA-256 的 UCI 数据生成，不能读取私人工作区。GitHub Pages 仅发布前端和此公开案例；没有模型密钥、账号数据库或在线写入接口。
 
 ## 数据和计算
 
@@ -139,6 +153,8 @@ uv run python -m scripts.evaluate --variant both --limit 43 --workers 3 --token-
 ## 参考与许可
 
 [DeerFlow](https://github.com/bytedance/deer-flow) 用于研究运行时设计，[data-agent-skill](https://github.com/aliyun/data-agent-skill) 用于研究 Skill 组织，[DB-GPT](https://github.com/eosphoros-ai/DB-GPT) 用于检查数据分析到报告的流程。具体参考提交记录于 `docs/references.json`；本仓库没有复制这些项目的源码。
+
+体验完善借鉴 DeerFlow 的免登录只读案例、阿里 `data-agent-arcvis-skill` 的报告与产出关联，以及 [Evidence](https://github.com/evidence-dev/evidence) 的代码化报告和静态交付思路。实现与取舍见 [架构说明](docs/architecture.md#体验与交付的设计取舍)。
 
 独立代码使用 MIT 许可。UCI 数据采用 CC BY 4.0，引用：Sakar, C. & Kastro, Y. (2018), DOI: [10.24432/C5F88Q](https://doi.org/10.24432/C5F88Q)。第三方运行依赖保留各自许可证。
 
