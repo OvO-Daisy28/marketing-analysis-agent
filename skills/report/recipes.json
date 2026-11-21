@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "library": "@antv/g2",
+  "recipes": {
+    "bar": "interval mark; category dimension → x, approved metric → y",
+    "line": "line mark; explicit categorical order, no interpolation or time extrapolation",
+    "table": "all returned dimensions and the three computed metrics"
+  },
+  "empty": "Show an explicit empty-state; never replace null with zero conversion",
+  "rate_format": "format as percent for display only; retain raw ratio in API"
+}

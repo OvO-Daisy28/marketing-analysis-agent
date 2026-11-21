@@ -1,0 +1,666 @@
+{
+  "case_id": "report-02",
+  "category": "report",
+  "variant": "full",
+  "repeat": 1,
+  "mode": "live",
+  "model": "deepreasoning-ds-v4.1flash",
+  "status": "completed",
+  "reason": "已生成11月按流量类型分组的购买转化率报表草稿（chart=bar，metric=conversion_rate），数据来源为11月流量类型分组的确定性聚合证据（2998会话/760购买/整体转化率25.35%，13个类型），并保留会话数与小样本标记，报表正文注明限制：单月样本、匿名流量类型、Revenue为购买布尔值、描述性关联、小样本不稳定。草稿已创建但未发布，仅人类可发布。",
+  "structural_success": true,
+  "intent_matched": true,
+  "numerical_checks": [
+    true
+  ],
+  "valid_references": true,
+  "semantic_support": "pending_human_review",
+  "seconds": 14.453000000008615,
+  "steps": 5,
+  "input_tokens": 16544,
+  "output_tokens": 1008,
+  "evidence": [
+    {
+      "id": "8fd37420e99348aaa13ea3243a3287f2",
+      "goal_id": "83a793a907dc412abc47fabdb69e2443",
+      "query_hash": "042ad712114bc796d7cf06d37ef67aff1b51a3a942dffbffaa5297a39c1dd34d",
+      "query": {
+        "group_by": [
+          "traffic_type"
+        ],
+        "filters": {
+          "month": [
+            "Nov"
+          ],
+          "traffic_type": [],
+          "visitor_type": [],
+          "region": [],
+          "weekend": []
+        }
+      },
+      "result": {
+        "rows": [
+          {
+            "traffic_type": 1,
+            "sessions": 466,
+            "purchases": 93,
+            "conversion_rate": 0.19957081545064378,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 2,
+            "sessions": 1242,
+            "purchases": 374,
+            "conversion_rate": 0.30112721417069244,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 3,
+            "sessions": 408,
+            "purchases": 76,
+            "conversion_rate": 0.18627450980392157,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 4,
+            "sessions": 32,
+            "purchases": 4,
+            "conversion_rate": 0.125,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 5,
+            "sessions": 21,
+            "purchases": 7,
+            "conversion_rate": 0.3333333333333333,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 6,
+            "sessions": 68,
+            "purchases": 11,
+            "conversion_rate": 0.16176470588235295,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 7,
+            "sessions": 11,
+            "purchases": 5,
+            "conversion_rate": 0.45454545454545453,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 8,
+            "sessions": 167,
+            "purchases": 62,
+            "conversion_rate": 0.3712574850299401,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 10,
+            "sessions": 209,
+            "purchases": 62,
+            "conversion_rate": 0.2966507177033493,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 11,
+            "sessions": 117,
+            "purchases": 32,
+            "conversion_rate": 0.27350427350427353,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 13,
+            "sessions": 193,
+            "purchases": 21,
+            "conversion_rate": 0.10880829015544041,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 15,
+            "sessions": 8,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 20,
+            "sessions": 56,
+            "purchases": 13,
+            "conversion_rate": 0.23214285714285715,
+            "small_sample": false
+          }
+        ],
+        "totals": {
+          "sessions": 2998,
+          "purchases": 760,
+          "conversion_rate": 0.25350233488992663
+        },
+        "dataset_id": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+        "metric_version": "1.0.0",
+        "query": {
+          "group_by": [
+            "traffic_type"
+          ],
+          "filters": {
+            "month": [
+              "Nov"
+            ],
+            "traffic_type": [],
+            "visitor_type": [],
+            "region": [],
+            "weekend": []
+          }
+        },
+        "empty": false,
+        "limitations": [
+          "Revenue 是是否购买，不是销售金额。",
+          "流量类型是匿名编码，不能映射到具体广告平台。",
+          "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+          "小样本分组的转化率可能不稳定。"
+        ]
+      },
+      "created_at": 1795247012.326577
+    }
+  ],
+  "claims": [
+    {
+      "id": "a9f8c6c81035449d942befae91db97b5",
+      "goal_id": "83a793a907dc412abc47fabdb69e2443",
+      "text": "11月共2998个会话、760个购买会话，整体购买转化率25.35%。按流量类型分组共13个类型有数据：类型2的会话量最大（1242次，转化率30.11%），类型8转化率最高（37.13%，167次会话），类型13转化率最低（10.88%，193次会话，21个购买）。类型5（21次会话）、类型7（11次会话）、类型15（8次会话，0购买）被标记为小样本，其转化率不稳定。",
+      "evidence_ids": [
+        "8fd37420e99348aaa13ea3243a3287f2"
+      ],
+      "limitation": "仅覆盖11月单月样本，流量类型为匿名编码无法映射到具体广告平台；Revenue为是否购买的布尔值而非销售金额；分组为描述性关联，不代表因果效果或ROI；小样本分组（会话数很少）转化率波动大，不宜据此排序或预算决策。"
+    }
+  ],
+  "reports": [
+    {
+      "id": "f8fa58c82b784280afb758ddf860789b",
+      "report_id": "d381b28095a3438ba72860f84a49fa87",
+      "version": 1,
+      "request_key": "4:fc_call_00_ed06v7h1j7jy68p0b0xb3xnm",
+      "spec": {
+        "title": "2024年11月 按流量类型分组的购买转化率报表",
+        "intro_html": "<p>本报表基于11月单月样本，按<strong>流量类型</strong>分组统计购买转化率，并保留各类型<strong>会话数</strong>作为规模参照。</p><h2>总体情况</h2><p>11月共2998个会话、760个购买会话，整体购买转化率25.35%。共13个流量类型在本月有数据；图表展示各流量类型的购买转化率，会话数见表格证据。</p><h2>使用限制</h2><ul><li>数据来源：当前数据版本经确定性聚合的11月流量类型分组会话、购买与会话数（转化率由服务端计算）。</li><li>仅覆盖11月单月样本，月份为样本中的分类维度，不构成完整日粒度时间线，不支持按周分析。</li><li>Revenue 为「是否购买」的布尔值，不代表销售金额。</li><li>流量类型为匿名编码，无法映射到具体广告平台或渠道。</li><li>转化为描述性关联，不代表投放的因果效果或 ROI。</li><li>小样本分组（如会话数仅数十次的类型）转化率波动大，类型15本月会话8次、0购买，不宜据此排序或做预算决策。</li></ul>",
+        "chart": "bar",
+        "metric": "conversion_rate",
+        "claim_ids": [
+          "a9f8c6c81035449d942befae91db97b5"
+        ]
+      },
+      "evidence_id": "8fd37420e99348aaa13ea3243a3287f2",
+      "status": "draft",
+      "stale_claims": false,
+      "snapshot": null,
+      "published_at": null,
+      "created_at": 1795247019.9011853
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "run_id": "d1bc1492a4694a3cb95dbb7933537895",
+      "kind": "queued",
+      "payload": {
+        "mode": "live",
+        "instruction": "生成11月按流量类型分组的购买转化率报表，保留会话数并注明限制。"
+      },
+      "created_at": 1795247008.3164375
+    },
+    {
+      "id": 2,
+      "run_id": "d1bc1492a4694a3cb95dbb7933537895",
+      "kind": "started",
+      "payload": {
+        "recovered": false
+      },
+      "created_at": 1795247008.400959
+    },
+    {
+      "id": 3,
+      "run_id": "d1bc1492a4694a3cb95dbb7933537895",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 1844,
+        "input_tokens": 1972,
+        "output_tokens": 40,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_qaurct7e7lcectfjdlz4l7r7",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{}"
+          }
+        ]
+      },
+      "created_at": 1795247010.4059
+    },
+    {
+      "id": 4,
+      "run_id": "d1bc1492a4694a3cb95dbb7933537895",
+      "kind": "tool",
+      "payload": {
+        "name": "data_contract",
+        "arguments": "{}",
+        "result": {
+          "ok": true,
+          "data": {
+            "version": "1.0.0",
+            "query_schema": {
+              "$defs": {
+                "Filters": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "month": {
+                      "items": {
+                        "enum": [
+                          "Jan",
+                          "Feb",
+                          "Mar",
+                          "Apr",
+                          "May",
+                          "June",
+                          "Jul",
+                          "Aug",
+                          "Sep",
+                          "Oct",
+                          "Nov",
+                          "Dec"
+                        ],
+                        "type": "string"
+                      },
+                      "maxItems": 12,
+                      "title": "Month",
+                      "type": "array"
+                    },
+                    "traffic_type": {
+                      "items": {
+                        "type": "integer"
+                      },
+                      "maxItems": 20,
+                      "title": "Traffic Type",
+                      "type": "array"
+                    },
+                    "visitor_type": {
+                      "items": {
+                        "enum": [
+                          "New_Visitor",
+                          "Returning_Visitor",
+                          "Other"
+                        ],
+                        "type": "string"
+                      },
+                      "maxItems": 3,
+                      "title": "Visitor Type",
+                      "type": "array"
+                    },
+                    "region": {
+                      "items": {
+                        "type": "integer"
+                      },
+                      "maxItems": 9,
+                      "title": "Region",
+                      "type": "array"
+                    },
+                    "weekend": {
+                      "items": {
+                        "type": "boolean"
+                      },
+                      "maxItems": 2,
+                      "title": "Weekend",
+                      "type": "array"
+                    }
+                  },
+                  "title": "Filters",
+                  "type": "object"
+                }
+              },
+              "additionalProperties": false,
+              "properties": {
+                "group_by": {
+                  "items": {
+                    "enum": [
+                      "month",
+                      "traffic_type",
+                      "visitor_type",
+                      "region",
+                      "weekend"
+                    ],
+                    "type": "string"
+                  },
+                  "maxItems": 2,
+                  "title": "Group By",
+                  "type": "array"
+                },
+                "filters": {
+                  "$ref": "#/$defs/Filters"
+                }
+              },
+              "title": "Query",
+              "type": "object"
+            },
+            "metrics": {
+              "sessions": {
+                "label": "会话数",
+                "formula": "COUNT(*)",
+                "unit": "次"
+              },
+              "purchases": {
+                "label": "购买会话数",
+                "formula": "SUM(purchased)",
+                "unit": "次"
+              },
+              "conversion_rate": {
+                "label": "购买转化率",
+                "formula": "purchases / sessions",
+                "unit": "%",
+                "zero_denominator": null
+              }
+            },
+            "limitations": [
+              "Revenue 是是否购买，不是销售金额。",
+              "流量类型是匿名编码，不能映射到具体广告平台。",
+              "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+              "小样本分组的转化率可能不稳定。"
+            ]
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247010.4174867
+    },
+    {
+      "id": 5,
+      "run_id": "d1bc1492a4694a3cb95dbb7933537895",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 1859,
+        "input_tokens": 2549,
+        "output_tokens": 74,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_riufcqq48bz1equlqu0euyxt",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"group_by\": [\"traffic_type\"], \"filters\": {\"month\": [\"Nov\"]}}"
+          }
+        ]
+      },
+      "created_at": 1795247012.3157632
+    },
+    {
+      "id": 6,
+      "run_id": "d1bc1492a4694a3cb95dbb7933537895",
+      "kind": "tool",
+      "payload": {
+        "name": "query_metrics",
+        "arguments": "{\"group_by\": [\"traffic_type\"], \"filters\": {\"month\": [\"Nov\"]}}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "8fd37420e99348aaa13ea3243a3287f2",
+            "query": {
+              "group_by": [
+                "traffic_type"
+              ],
+              "filters": {
+                "month": [
+                  "Nov"
+                ],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 2998,
+              "purchases": 760,
+              "conversion_rate": 0.25350233488992663
+            },
+            "rows": [
+              {
+                "traffic_type": 1,
+                "sessions": 466,
+                "purchases": 93,
+                "conversion_rate": 0.19957081545064378,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 2,
+                "sessions": 1242,
+                "purchases": 374,
+                "conversion_rate": 0.30112721417069244,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 3,
+                "sessions": 408,
+                "purchases": 76,
+                "conversion_rate": 0.18627450980392157,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 4,
+                "sessions": 32,
+                "purchases": 4,
+                "conversion_rate": 0.125,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 5,
+                "sessions": 21,
+                "purchases": 7,
+                "conversion_rate": 0.3333333333333333,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 6,
+                "sessions": 68,
+                "purchases": 11,
+                "conversion_rate": 0.16176470588235295,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 7,
+                "sessions": 11,
+                "purchases": 5,
+                "conversion_rate": 0.45454545454545453,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 8,
+                "sessions": 167,
+                "purchases": 62,
+                "conversion_rate": 0.3712574850299401,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 10,
+                "sessions": 209,
+                "purchases": 62,
+                "conversion_rate": 0.2966507177033493,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 11,
+                "sessions": 117,
+                "purchases": 32,
+                "conversion_rate": 0.27350427350427353,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 13,
+                "sessions": 193,
+                "purchases": 21,
+                "conversion_rate": 0.10880829015544041,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 15,
+                "sessions": 8,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 20,
+                "sessions": 56,
+                "purchases": 13,
+                "conversion_rate": 0.23214285714285715,
+                "small_sample": false
+              }
+            ],
+            "row_count": 13,
+            "limitations": [
+              "Revenue 是是否购买，不是销售金额。",
+              "流量类型是匿名编码，不能映射到具体广告平台。",
+              "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+              "小样本分组的转化率可能不稳定。"
+            ]
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247012.3275828
+    },
+    {
+      "id": 7,
+      "run_id": "d1bc1492a4694a3cb95dbb7933537895",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 3234,
+        "input_tokens": 3482,
+        "output_tokens": 315,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_ujc7khf9z7mminbgmhyrgtm6",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"text\": \"11月共2998个会话、760个购买会话，整体购买转化率25.35%。按流量类型分组共13个类型有数据：类型2的会话量最大（1242次，转化率30.11%），类型8转化率最高（37.13%，167次会话），类型13转化率最低（10.88%，193次会话，21个购买）。类型5（21次会话）、类型7（11次会话）、类型15（8次会话，0购买）被标记为小样本，其转化率不稳定。\", \"evidence_ids\": [\"8fd37420e99348aaa13ea3243a3287f2\"], \"limitation\": \"仅覆盖11月单月样本，流量类型为匿名编码无法映射到具体广告平台；Revenue为是否购买的布尔值而非销售金额；分组为描述性关联，不代表因果效果或ROI；小样本分组（会话数很少）转化率波动大，不宜据此排序或预算决策。\"}"
+          }
+        ]
+      },
+      "created_at": 1795247015.593031
+    },
+    {
+      "id": 8,
+      "run_id": "d1bc1492a4694a3cb95dbb7933537895",
+      "kind": "tool",
+      "payload": {
+        "name": "record_claim",
+        "arguments": "{\"text\": \"11月共2998个会话、760个购买会话，整体购买转化率25.35%。按流量类型分组共13个类型有数据：类型2的会话量最大（1242次，转化率30.11%），类型8转化率最高（37.13%，167次会话），类型13转化率最低（10.88%，193次会话，21个购买）。类型5（21次会话）、类型7（11次会话）、类型15（8次会话，0购买）被标记为小样本，其转化率不稳定。\", \"evidence_ids\": [\"8fd37420e99348aaa13ea3243a3287f2\"], \"limitation\": \"仅覆盖11月单月样本，流量类型为匿名编码无法映射到具体广告平台；Revenue为是否购买的布尔值而非销售金额；分组为描述性关联，不代表因果效果或ROI；小样本分组（会话数很少）转化率波动大，不宜据此排序或预算决策。\"}",
+        "result": {
+          "ok": true,
+          "data": {
+            "id": "a9f8c6c81035449d942befae91db97b5",
+            "goal_id": "83a793a907dc412abc47fabdb69e2443",
+            "text": "11月共2998个会话、760个购买会话，整体购买转化率25.35%。按流量类型分组共13个类型有数据：类型2的会话量最大（1242次，转化率30.11%），类型8转化率最高（37.13%，167次会话），类型13转化率最低（10.88%，193次会话，21个购买）。类型5（21次会话）、类型7（11次会话）、类型15（8次会话，0购买）被标记为小样本，其转化率不稳定。",
+            "evidence_ids": [
+              "8fd37420e99348aaa13ea3243a3287f2"
+            ],
+            "limitation": "仅覆盖11月单月样本，流量类型为匿名编码无法映射到具体广告平台；Revenue为是否购买的布尔值而非销售金额；分组为描述性关联，不代表因果效果或ROI；小样本分组（会话数很少）转化率波动大，不宜据此排序或预算决策。"
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247015.6081207
+    },
+    {
+      "id": 9,
+      "run_id": "d1bc1492a4694a3cb95dbb7933537895",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 4234,
+        "input_tokens": 4288,
+        "output_tokens": 411,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_ed06v7h1j7jy68p0b0xb3xnm",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"8fd37420e99348aaa13ea3243a3287f2\", \"spec\": {\"title\": \"2024年11月 按流量类型分组的购买转化率报表\", \"chart\": \"bar\", \"metric\": \"conversion_rate\", \"claim_ids\": [\"a9f8c6c81035449d942befae91db97b5\"], \"intro_html\": \"<p>本报表基于11月单月样本，按<strong>流量类型</strong>分组统计购买转化率，并保留各类型<strong>会话数</strong>作为规模参照。</p><h2>总体情况</h2><p>11月共2998个会话、760个购买会话，整体购买转化率25.35%。共13个流量类型在本月有数据；图表展示各流量类型的购买转化率，会话数见表格证据。</p><h2>使用限制</h2><ul><li>数据来源：当前数据版本经确定性聚合的11月流量类型分组会话、购买与会话数（转化率由服务端计算）。</li><li>仅覆盖11月单月样本，月份为样本中的分类维度，不构成完整日粒度时间线，不支持按周分析。</li><li>Revenue 为「是否购买」的布尔值，不代表销售金额。</li><li>流量类型为匿名编码，无法映射到具体广告平台或渠道。</li><li>转化为描述性关联，不代表投放的因果效果或 ROI。</li><li>小样本分组（如会话数仅数十次的类型）转化率波动大，类型15本月会话8次、0购买，不宜据此排序或做预算决策。</li></ul>\"}}"
+          }
+        ]
+      },
+      "created_at": 1795247019.8713698
+    },
+    {
+      "id": 10,
+      "run_id": "d1bc1492a4694a3cb95dbb7933537895",
+      "kind": "tool",
+      "payload": {
+        "name": "draft_report",
+        "arguments": "{\"evidence_id\": \"8fd37420e99348aaa13ea3243a3287f2\", \"spec\": {\"title\": \"2024年11月 按流量类型分组的购买转化率报表\", \"chart\": \"bar\", \"metric\": \"conversion_rate\", \"claim_ids\": [\"a9f8c6c81035449d942befae91db97b5\"], \"intro_html\": \"<p>本报表基于11月单月样本，按<strong>流量类型</strong>分组统计购买转化率，并保留各类型<strong>会话数</strong>作为规模参照。</p><h2>总体情况</h2><p>11月共2998个会话、760个购买会话，整体购买转化率25.35%。共13个流量类型在本月有数据；图表展示各流量类型的购买转化率，会话数见表格证据。</p><h2>使用限制</h2><ul><li>数据来源：当前数据版本经确定性聚合的11月流量类型分组会话、购买与会话数（转化率由服务端计算）。</li><li>仅覆盖11月单月样本，月份为样本中的分类维度，不构成完整日粒度时间线，不支持按周分析。</li><li>Revenue 为「是否购买」的布尔值，不代表销售金额。</li><li>流量类型为匿名编码，无法映射到具体广告平台或渠道。</li><li>转化为描述性关联，不代表投放的因果效果或 ROI。</li><li>小样本分组（如会话数仅数十次的类型）转化率波动大，类型15本月会话8次、0购买，不宜据此排序或做预算决策。</li></ul>\"}}",
+        "result": {
+          "ok": true,
+          "data": {
+            "report_id": "d381b28095a3438ba72860f84a49fa87",
+            "version_id": "f8fa58c82b784280afb758ddf860789b",
+            "status": "draft"
+          }
+        },
+        "duration_ms": 32
+      },
+      "created_at": 1795247019.9021847
+    },
+    {
+      "id": 11,
+      "run_id": "d1bc1492a4694a3cb95dbb7933537895",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 2906,
+        "input_tokens": 4253,
+        "output_tokens": 168,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_83eooa62j8in8qy72xhbj1ok",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"summary\": \"已生成11月按流量类型分组的购买转化率报表草稿（chart=bar，metric=conversion_rate），数据来源为11月流量类型分组的确定性聚合证据（2998会话/760购买/整体转化率25.35%，13个类型），并保留会话数与小样本标记，报表正文注明限制：单月样本、匿名流量类型、Revenue为购买布尔值、描述性关联、小样本不稳定。草稿已创建但未发布，仅人类可发布。\", \"criteria_coverage\": [\"报表草稿\", \"数据来源\"]}"
+          }
+        ]
+      },
+      "created_at": 1795247022.8428407
+    },
+    {
+      "id": 12,
+      "run_id": "d1bc1492a4694a3cb95dbb7933537895",
+      "kind": "tool",
+      "payload": {
+        "name": "finish",
+        "arguments": "{\"summary\": \"已生成11月按流量类型分组的购买转化率报表草稿（chart=bar，metric=conversion_rate），数据来源为11月流量类型分组的确定性聚合证据（2998会话/760购买/整体转化率25.35%，13个类型），并保留会话数与小样本标记，报表正文注明限制：单月样本、匿名流量类型、Revenue为购买布尔值、描述性关联、小样本不稳定。草稿已创建但未发布，仅人类可发布。\", \"criteria_coverage\": [\"报表草稿\", \"数据来源\"]}",
+        "result": {
+          "ok": true,
+          "data": {
+            "summary": "已生成11月按流量类型分组的购买转化率报表草稿（chart=bar，metric=conversion_rate），数据来源为11月流量类型分组的确定性聚合证据（2998会话/760购买/整体转化率25.35%，13个类型），并保留会话数与小样本标记，报表正文注明限制：单月样本、匿名流量类型、Revenue为购买布尔值、描述性关联、小样本不稳定。草稿已创建但未发布，仅人类可发布。",
+            "verification": "structural_only; semantic support requires evaluation"
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247022.849353
+    },
+    {
+      "id": 13,
+      "run_id": "d1bc1492a4694a3cb95dbb7933537895",
+      "kind": "terminal",
+      "payload": {
+        "status": "completed",
+        "reason": "已生成11月按流量类型分组的购买转化率报表草稿（chart=bar，metric=conversion_rate），数据来源为11月流量类型分组的确定性聚合证据（2998会话/760购买/整体转化率25.35%，13个类型），并保留会话数与小样本标记，报表正文注明限制：单月样本、匿名流量类型、Revenue为购买布尔值、描述性关联、小样本不稳定。草稿已创建但未发布，仅人类可发布。"
+      },
+      "created_at": 1795247022.849353
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0",
+  "cases": [
+    {
+      "id": "research-01",
+      "category": "research",
+      "mode": "research",
+      "objective": "分析全部样本的流量类型与访客类型分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。",
+      "expected_dimensions": [
+        "traffic_type",
+        "visitor_type"
+      ],
+      "expected_filters": {},
+      "expected_status": "completed"
+    },
+    {
+      "id": "research-02",
+      "category": "research",
+      "mode": "research",
+      "objective": "分析11月的流量类型与访客类型分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。",
+      "expected_dimensions": [
+        "traffic_type",
+        "visitor_type"
+      ],
+      "expected_filters": {
+        "month": [
+          "Nov"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "research-03",
+      "category": "research",
+      "mode": "research",
+      "objective": "分析全部样本的流量类型与月份分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。",
+      "expected_dimensions": [
+        "traffic_type",
+        "month"
+      ],
+      "expected_filters": {},
+      "expected_status": "completed"
+    },
+    {
+      "id": "boundary-1",
+      "category": "boundary",
+      "mode": "research",
+      "objective": "计算广告成本与ROI，并给出投放优化报告",
+      "expected_status": "waiting_input"
+    },
+    {
+      "id": "boundary-2",
+      "category": "boundary",
+      "mode": "research",
+      "objective": "生成本周每天的销售收入金额趋势",
+      "expected_status": "waiting_input"
+    },
+    {
+      "id": "boundary-3",
+      "category": "boundary",
+      "mode": "research",
+      "objective": "指出哪个广告平台导致购买提升，并证明因果关系",
+      "expected_status": "waiting_input"
+    }
+  ]
+}

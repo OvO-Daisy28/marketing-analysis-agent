@@ -1,0 +1,1895 @@
+{
+  "case_id": "research-01",
+  "category": "research",
+  "variant": "full",
+  "repeat": 1,
+  "mode": "live",
+  "model": "deepreasoning-ds-v4.1flash",
+  "status": "completed",
+  "reason": "完成全样本流量类型与访客类型的转化差异分析（12330 会话、1908 购买、整体转化率 15.47%）。分组比较：访客类型维度 New_Visitor 24.91%、Other 18.82%、Returning_Visitor 13.93%；流量类型维度类型 8 最高 27.70%，类型 13 最低 5.83%。使用 traffic_type × visitor_type 联合分组（48 行，证据 5d6af4ce…）检验假设：访客类型差异是否由流量类型构成混杂造成——分层后新访客优势在类型 2、3、4、5、6、8、10、20 等多数类型内保留，假设被拒绝（supported 记录为反向结论）。已登记 2 条含证据引用的 claim 及各自限制，并生成草稿报告 abcfd7e2…（draft，未发布）。限制：Revenue 仅为购买布尔值不含金额；流量类型匿名无法映射平台；若干联合分组单元样本极小（类型 9、12、14–19）导致转化率不稳定；类型 11、13 存在例外；全部为描述性关联而非因果效果。",
+  "structural_success": true,
+  "intent_matched": true,
+  "numerical_checks": [
+    true,
+    true,
+    true
+  ],
+  "valid_references": true,
+  "semantic_support": "pending_human_review",
+  "seconds": 44.70299999999406,
+  "steps": 6,
+  "input_tokens": 22034,
+  "output_tokens": 3254,
+  "evidence": [
+    {
+      "id": "8425d79441fd4b208845a4e54949c679",
+      "goal_id": "24b1fd58a6364ab2a960bb145cb63e1c",
+      "query_hash": "759567894dd1cdd556f1791379dcdb0f40cb81eb4c59af2194c96e57eeedd953",
+      "query": {
+        "group_by": [
+          "traffic_type"
+        ],
+        "filters": {
+          "month": [],
+          "traffic_type": [],
+          "visitor_type": [],
+          "region": [],
+          "weekend": []
+        }
+      },
+      "result": {
+        "rows": [
+          {
+            "traffic_type": 1,
+            "sessions": 2451,
+            "purchases": 262,
+            "conversion_rate": 0.10689514483884129,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 2,
+            "sessions": 3913,
+            "purchases": 847,
+            "conversion_rate": 0.21645796064400716,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 3,
+            "sessions": 2052,
+            "purchases": 180,
+            "conversion_rate": 0.08771929824561403,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 4,
+            "sessions": 1069,
+            "purchases": 165,
+            "conversion_rate": 0.15434985968194576,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 5,
+            "sessions": 260,
+            "purchases": 56,
+            "conversion_rate": 0.2153846153846154,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 6,
+            "sessions": 444,
+            "purchases": 53,
+            "conversion_rate": 0.11936936936936937,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 7,
+            "sessions": 40,
+            "purchases": 12,
+            "conversion_rate": 0.3,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 8,
+            "sessions": 343,
+            "purchases": 95,
+            "conversion_rate": 0.27696793002915454,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 9,
+            "sessions": 42,
+            "purchases": 4,
+            "conversion_rate": 0.09523809523809523,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 10,
+            "sessions": 450,
+            "purchases": 90,
+            "conversion_rate": 0.2,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 11,
+            "sessions": 247,
+            "purchases": 47,
+            "conversion_rate": 0.1902834008097166,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 12,
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 13,
+            "sessions": 738,
+            "purchases": 43,
+            "conversion_rate": 0.058265582655826556,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 14,
+            "sessions": 13,
+            "purchases": 2,
+            "conversion_rate": 0.15384615384615385,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 15,
+            "sessions": 38,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 16,
+            "sessions": 3,
+            "purchases": 1,
+            "conversion_rate": 0.3333333333333333,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 17,
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 18,
+            "sessions": 10,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 19,
+            "sessions": 17,
+            "purchases": 1,
+            "conversion_rate": 0.058823529411764705,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 20,
+            "sessions": 198,
+            "purchases": 50,
+            "conversion_rate": 0.25252525252525254,
+            "small_sample": false
+          }
+        ],
+        "totals": {
+          "sessions": 12330,
+          "purchases": 1908,
+          "conversion_rate": 0.15474452554744525
+        },
+        "dataset_id": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+        "metric_version": "1.0.0",
+        "query": {
+          "group_by": [
+            "traffic_type"
+          ],
+          "filters": {
+            "month": [],
+            "traffic_type": [],
+            "visitor_type": [],
+            "region": [],
+            "weekend": []
+          }
+        },
+        "empty": false,
+        "limitations": [
+          "Revenue 是是否购买，不是销售金额。",
+          "流量类型是匿名编码，不能映射到具体广告平台。",
+          "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+          "小样本分组的转化率可能不稳定。"
+        ]
+      },
+      "created_at": 1795247251.524748
+    },
+    {
+      "id": "f7315dab35cd443eb1792bdd0b4e9186",
+      "goal_id": "24b1fd58a6364ab2a960bb145cb63e1c",
+      "query_hash": "34dc817ac5a5e2d0c54614c9848a514aee6ace96aecd4c46d2230df312f03094",
+      "query": {
+        "group_by": [
+          "visitor_type"
+        ],
+        "filters": {
+          "month": [],
+          "traffic_type": [],
+          "visitor_type": [],
+          "region": [],
+          "weekend": []
+        }
+      },
+      "result": {
+        "rows": [
+          {
+            "visitor_type": "New_Visitor",
+            "sessions": 1694,
+            "purchases": 422,
+            "conversion_rate": 0.24911452184179456,
+            "small_sample": false
+          },
+          {
+            "visitor_type": "Other",
+            "sessions": 85,
+            "purchases": 16,
+            "conversion_rate": 0.18823529411764706,
+            "small_sample": false
+          },
+          {
+            "visitor_type": "Returning_Visitor",
+            "sessions": 10551,
+            "purchases": 1470,
+            "conversion_rate": 0.1393232868922377,
+            "small_sample": false
+          }
+        ],
+        "totals": {
+          "sessions": 12330,
+          "purchases": 1908,
+          "conversion_rate": 0.15474452554744525
+        },
+        "dataset_id": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+        "metric_version": "1.0.0",
+        "query": {
+          "group_by": [
+            "visitor_type"
+          ],
+          "filters": {
+            "month": [],
+            "traffic_type": [],
+            "visitor_type": [],
+            "region": [],
+            "weekend": []
+          }
+        },
+        "empty": false,
+        "limitations": [
+          "Revenue 是是否购买，不是销售金额。",
+          "流量类型是匿名编码，不能映射到具体广告平台。",
+          "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+          "小样本分组的转化率可能不稳定。"
+        ]
+      },
+      "created_at": 1795247251.5436137
+    },
+    {
+      "id": "5d6af4cec3114710994167edacef1a42",
+      "goal_id": "24b1fd58a6364ab2a960bb145cb63e1c",
+      "query_hash": "da23aa2341b24c9611d6ba1c854530d20515e13ff00c160b9011b7bc8f79d8a5",
+      "query": {
+        "group_by": [
+          "traffic_type",
+          "visitor_type"
+        ],
+        "filters": {
+          "month": [],
+          "traffic_type": [],
+          "visitor_type": [],
+          "region": [],
+          "weekend": []
+        }
+      },
+      "result": {
+        "rows": [
+          {
+            "traffic_type": 1,
+            "visitor_type": "New_Visitor",
+            "sessions": 37,
+            "purchases": 7,
+            "conversion_rate": 0.1891891891891892,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 1,
+            "visitor_type": "Other",
+            "sessions": 7,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 1,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 2407,
+            "purchases": 255,
+            "conversion_rate": 0.105941005400914,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 2,
+            "visitor_type": "New_Visitor",
+            "sessions": 936,
+            "purchases": 238,
+            "conversion_rate": 0.25427350427350426,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 2,
+            "visitor_type": "Other",
+            "sessions": 11,
+            "purchases": 1,
+            "conversion_rate": 0.09090909090909091,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 2,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 2966,
+            "purchases": 608,
+            "conversion_rate": 0.20498988536749832,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 3,
+            "visitor_type": "New_Visitor",
+            "sessions": 140,
+            "purchases": 25,
+            "conversion_rate": 0.17857142857142858,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 3,
+            "visitor_type": "Other",
+            "sessions": 7,
+            "purchases": 1,
+            "conversion_rate": 0.14285714285714285,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 3,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 1905,
+            "purchases": 154,
+            "conversion_rate": 0.08083989501312336,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 4,
+            "visitor_type": "New_Visitor",
+            "sessions": 99,
+            "purchases": 33,
+            "conversion_rate": 0.3333333333333333,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 4,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 970,
+            "purchases": 132,
+            "conversion_rate": 0.1360824742268041,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 5,
+            "visitor_type": "New_Visitor",
+            "sessions": 149,
+            "purchases": 39,
+            "conversion_rate": 0.26174496644295303,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 5,
+            "visitor_type": "Other",
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 5,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 110,
+            "purchases": 17,
+            "conversion_rate": 0.15454545454545454,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 6,
+            "visitor_type": "New_Visitor",
+            "sessions": 42,
+            "purchases": 11,
+            "conversion_rate": 0.2619047619047619,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 6,
+            "visitor_type": "Other",
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 6,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 401,
+            "purchases": 42,
+            "conversion_rate": 0.10473815461346633,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 7,
+            "visitor_type": "New_Visitor",
+            "sessions": 5,
+            "purchases": 1,
+            "conversion_rate": 0.2,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 7,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 35,
+            "purchases": 11,
+            "conversion_rate": 0.3142857142857143,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 8,
+            "visitor_type": "New_Visitor",
+            "sessions": 175,
+            "purchases": 50,
+            "conversion_rate": 0.2857142857142857,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 8,
+            "visitor_type": "Other",
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 8,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 167,
+            "purchases": 45,
+            "conversion_rate": 0.2694610778443114,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 9,
+            "visitor_type": "New_Visitor",
+            "sessions": 9,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 9,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 33,
+            "purchases": 4,
+            "conversion_rate": 0.12121212121212122,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 10,
+            "visitor_type": "New_Visitor",
+            "sessions": 22,
+            "purchases": 5,
+            "conversion_rate": 0.22727272727272727,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 10,
+            "visitor_type": "Other",
+            "sessions": 3,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 10,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 425,
+            "purchases": 85,
+            "conversion_rate": 0.2,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 11,
+            "visitor_type": "New_Visitor",
+            "sessions": 51,
+            "purchases": 6,
+            "conversion_rate": 0.11764705882352941,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 11,
+            "visitor_type": "Other",
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 11,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 195,
+            "purchases": 41,
+            "conversion_rate": 0.21025641025641026,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 12,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 13,
+            "visitor_type": "New_Visitor",
+            "sessions": 6,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 13,
+            "visitor_type": "Other",
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 13,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 731,
+            "purchases": 43,
+            "conversion_rate": 0.058823529411764705,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 14,
+            "visitor_type": "New_Visitor",
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 14,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 12,
+            "purchases": 2,
+            "conversion_rate": 0.16666666666666666,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 15,
+            "visitor_type": "New_Visitor",
+            "sessions": 2,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 15,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 36,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 16,
+            "visitor_type": "New_Visitor",
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 16,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 2,
+            "purchases": 1,
+            "conversion_rate": 0.5,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 17,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 18,
+            "visitor_type": "New_Visitor",
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 18,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 9,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 19,
+            "visitor_type": "New_Visitor",
+            "sessions": 1,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 19,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 16,
+            "purchases": 1,
+            "conversion_rate": 0.0625,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 20,
+            "visitor_type": "New_Visitor",
+            "sessions": 17,
+            "purchases": 7,
+            "conversion_rate": 0.4117647058823529,
+            "small_sample": true
+          },
+          {
+            "traffic_type": 20,
+            "visitor_type": "Other",
+            "sessions": 52,
+            "purchases": 14,
+            "conversion_rate": 0.2692307692307692,
+            "small_sample": false
+          },
+          {
+            "traffic_type": 20,
+            "visitor_type": "Returning_Visitor",
+            "sessions": 129,
+            "purchases": 29,
+            "conversion_rate": 0.2248062015503876,
+            "small_sample": false
+          }
+        ],
+        "totals": {
+          "sessions": 12330,
+          "purchases": 1908,
+          "conversion_rate": 0.15474452554744525
+        },
+        "dataset_id": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+        "metric_version": "1.0.0",
+        "query": {
+          "group_by": [
+            "traffic_type",
+            "visitor_type"
+          ],
+          "filters": {
+            "month": [],
+            "traffic_type": [],
+            "visitor_type": [],
+            "region": [],
+            "weekend": []
+          }
+        },
+        "empty": false,
+        "limitations": [
+          "Revenue 是是否购买，不是销售金额。",
+          "流量类型是匿名编码，不能映射到具体广告平台。",
+          "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+          "小样本分组的转化率可能不稳定。"
+        ]
+      },
+      "created_at": 1795247251.564342
+    }
+  ],
+  "claims": [
+    {
+      "id": "b05f1c2f94664512a74fb668d9481497",
+      "goal_id": "24b1fd58a6364ab2a960bb145cb63e1c",
+      "text": "全样本 12330 会话、1908 购买、整体转化率 15.47%。按访客类型：New_Visitor 24.91%（1694 会话）、Other 18.82%（85 会话）、Returning_Visitor 13.93%（10551 会话），新访客较回访访客高约 11 个百分点；联合分组显示该优势在多数流量类型内仍存在（类型2 25.4% vs 20.5%，类型3 17.9% vs 8.1%，类型4 33.3% vs 13.6%，类型5 26.2% vs 15.5%，类型6 26.2% vs 10.5%，类型20 41.2% vs 22.5%）。",
+      "evidence_ids": [
+        "f7315dab35cd443eb1792bdd0b4e9186",
+        "5d6af4cec3114710994167edacef1a42"
+      ],
+      "limitation": "描述性关联，非因果；流量类型为匿名编码；部分联合分组单元样本极小（如类型7、9、14、16-19 不足 20 会话），其转化率不稳定；类型11 与类型13 内部新访客反而低于回访访客，说明规律并非普遍成立。"
+    },
+    {
+      "id": "b5ce6f9b4c004b259adc4ace0fa40a97",
+      "goal_id": "24b1fd58a6364ab2a960bb145cb63e1c",
+      "text": "流量类型间转化率差异显著：类型8 为 27.70%（343 会话）、类型2 为 21.65%（3913 会话）、类型5 为 21.54%（260 会话）、类型20 为 25.25%（198 会话），而类型3 仅 8.77%（2052 会话）、类型13 仅 5.83%（738 会话）、类型1 为 10.69%（2451 会话）。高低差异同时来自流量类型构成：回访访客高度集中在低转化的类型1/3/13（类型3 中 92.8%、类型13 中 99.1% 为回访访客）。",
+      "evidence_ids": [
+        "8425d79441fd4b208845a4e54949c679",
+        "5d6af4cec3114710994167edacef1a42"
+      ],
+      "limitation": "类型7（40 会话，30.0%）等小样本类型的高转化不可靠；流量类型匿名，无法对应具体平台或投放策略；仅为样本内描述，不可外推为投放效果或 ROI。"
+    }
+  ],
+  "reports": [
+    {
+      "id": "97a083c7d18e4b48b45c1fd61e108c7a",
+      "report_id": "abcfd7e2062e4570a2abf3ccbb9eae72",
+      "version": 1,
+      "request_key": "5:fc_call_00_p44q6zlijexaxq5wn68tox1n",
+      "spec": {
+        "title": "流量类型 × 访客类型分组转化差异分析",
+        "intro_html": "<p>本报告基于全部样本 <strong>12330 会话、1908 次购买</strong>（整体转化率 15.47%），比较流量类型与访客类型两个维度的购买转化差异，并用二者联合分组检验一个假设。</p><h2>主要发现</h2><ul><li><strong>访客类型</strong>：新访客转化率 24.91%，Other 18.82%，回访访客 13.93%；新访客比回访访客高约 11 个百分点。</li><li><strong>流量类型</strong>：类型 8（27.70%）、类型 20（25.25%）、类型 2（21.65%）、类型 5（21.54%）偏高；类型 13（5.83%）、类型 3（8.77%）、类型 1（10.69%）偏低。</li><li><strong>联合分组</strong>：在多数流量类型内部，新访客转化率仍高于回访访客（类型 2：25.4% 对 20.5%；类型 3：17.9% 对 8.1%；类型 4：33.3% 对 13.6%；类型 6：26.2% 对 10.5%；类型 20：41.2% 对 22.5%），说明访客类型的差异并非完全由流量类型构成造成。</li></ul><h2>假设检查</h2><p>假设为：访客类型差异主要是流量类型构成造成的混杂，分层后应消失。分层结果不支持该假设——新访客优势在多数可比的流量类型中保留，假设被拒绝。</p><h2>限制</h2><ul><li>Revenue 仅为是否购买的布尔值，不代表销售金额，本报告不涉及花费或 ROI。</li><li>流量类型为匿名编码，无法对应具体平台或投放策略。</li><li>全部结论为样本内描述性关联，不是因果效果。</li><li>多个联合分组单元样本极小（类型 7、9、12、14–19 的若干单元不足 20 会话），这些单元的转化率不稳定，不应单独解读；类型 11 与 13 内部出现新访客低于回访访客的例外。</li></ul>",
+        "chart": "bar",
+        "metric": "conversion_rate",
+        "claim_ids": [
+          "b05f1c2f94664512a74fb668d9481497",
+          "b5ce6f9b4c004b259adc4ace0fa40a97"
+        ]
+      },
+      "evidence_id": "5d6af4cec3114710994167edacef1a42",
+      "status": "draft",
+      "stale_claims": false,
+      "snapshot": null,
+      "published_at": null,
+      "created_at": 1795247273.2607846
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "queued",
+      "payload": {
+        "mode": "live",
+        "instruction": "分析全部样本的流量类型与访客类型分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。"
+      },
+      "created_at": 1795247232.3289952
+    },
+    {
+      "id": 2,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "started",
+      "payload": {
+        "recovered": false
+      },
+      "created_at": 1795247232.350129
+    },
+    {
+      "id": 3,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 11532,
+        "input_tokens": 157,
+        "output_tokens": 38,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_5b860fb6a40e4b048100774c",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{}"
+          }
+        ]
+      },
+      "created_at": 1795247243.9028938
+    },
+    {
+      "id": 4,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "tool",
+      "payload": {
+        "name": "data_contract",
+        "arguments": "{}",
+        "result": {
+          "ok": true,
+          "data": {
+            "version": "1.0.0",
+            "query_schema": {
+              "$defs": {
+                "Filters": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "month": {
+                      "items": {
+                        "enum": [
+                          "Jan",
+                          "Feb",
+                          "Mar",
+                          "Apr",
+                          "May",
+                          "June",
+                          "Jul",
+                          "Aug",
+                          "Sep",
+                          "Oct",
+                          "Nov",
+                          "Dec"
+                        ],
+                        "type": "string"
+                      },
+                      "maxItems": 12,
+                      "title": "Month",
+                      "type": "array"
+                    },
+                    "traffic_type": {
+                      "items": {
+                        "type": "integer"
+                      },
+                      "maxItems": 20,
+                      "title": "Traffic Type",
+                      "type": "array"
+                    },
+                    "visitor_type": {
+                      "items": {
+                        "enum": [
+                          "New_Visitor",
+                          "Returning_Visitor",
+                          "Other"
+                        ],
+                        "type": "string"
+                      },
+                      "maxItems": 3,
+                      "title": "Visitor Type",
+                      "type": "array"
+                    },
+                    "region": {
+                      "items": {
+                        "type": "integer"
+                      },
+                      "maxItems": 9,
+                      "title": "Region",
+                      "type": "array"
+                    },
+                    "weekend": {
+                      "items": {
+                        "type": "boolean"
+                      },
+                      "maxItems": 2,
+                      "title": "Weekend",
+                      "type": "array"
+                    }
+                  },
+                  "title": "Filters",
+                  "type": "object"
+                }
+              },
+              "additionalProperties": false,
+              "properties": {
+                "group_by": {
+                  "items": {
+                    "enum": [
+                      "month",
+                      "traffic_type",
+                      "visitor_type",
+                      "region",
+                      "weekend"
+                    ],
+                    "type": "string"
+                  },
+                  "maxItems": 2,
+                  "title": "Group By",
+                  "type": "array"
+                },
+                "filters": {
+                  "$ref": "#/$defs/Filters"
+                }
+              },
+              "title": "Query",
+              "type": "object"
+            },
+            "metrics": {
+              "sessions": {
+                "label": "会话数",
+                "formula": "COUNT(*)",
+                "unit": "次"
+              },
+              "purchases": {
+                "label": "购买会话数",
+                "formula": "SUM(purchased)",
+                "unit": "次"
+              },
+              "conversion_rate": {
+                "label": "购买转化率",
+                "formula": "purchases / sessions",
+                "unit": "%",
+                "zero_denominator": null
+              }
+            },
+            "limitations": [
+              "Revenue 是是否购买，不是销售金额。",
+              "流量类型是匿名编码，不能映射到具体广告平台。",
+              "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+              "小样本分组的转化率可能不稳定。"
+            ]
+          }
+        },
+        "duration_ms": 15
+      },
+      "created_at": 1795247243.9103017
+    },
+    {
+      "id": 5,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 7578,
+        "input_tokens": 2780,
+        "output_tokens": 189,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_nfgwealwm37th7hw6tk40h6n",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"group_by\": [\"traffic_type\"]}"
+          },
+          {
+            "call_id": "fc_call_01_aurnzdcnvr23798ckeq3dhxz",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"group_by\": [\"visitor_type\"]}"
+          },
+          {
+            "call_id": "fc_call_02_9bdfgqi6qoas0e9fgqoowub2",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"group_by\": [\"traffic_type\", \"visitor_type\"]}"
+          }
+        ]
+      },
+      "created_at": 1795247251.5068867
+    },
+    {
+      "id": 6,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "tool",
+      "payload": {
+        "name": "query_metrics",
+        "arguments": "{\"group_by\": [\"traffic_type\"]}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "8425d79441fd4b208845a4e54949c679",
+            "query": {
+              "group_by": [
+                "traffic_type"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "traffic_type": 1,
+                "sessions": 2451,
+                "purchases": 262,
+                "conversion_rate": 0.10689514483884129,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 2,
+                "sessions": 3913,
+                "purchases": 847,
+                "conversion_rate": 0.21645796064400716,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 3,
+                "sessions": 2052,
+                "purchases": 180,
+                "conversion_rate": 0.08771929824561403,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 4,
+                "sessions": 1069,
+                "purchases": 165,
+                "conversion_rate": 0.15434985968194576,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 5,
+                "sessions": 260,
+                "purchases": 56,
+                "conversion_rate": 0.2153846153846154,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 6,
+                "sessions": 444,
+                "purchases": 53,
+                "conversion_rate": 0.11936936936936937,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 7,
+                "sessions": 40,
+                "purchases": 12,
+                "conversion_rate": 0.3,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 8,
+                "sessions": 343,
+                "purchases": 95,
+                "conversion_rate": 0.27696793002915454,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 9,
+                "sessions": 42,
+                "purchases": 4,
+                "conversion_rate": 0.09523809523809523,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 10,
+                "sessions": 450,
+                "purchases": 90,
+                "conversion_rate": 0.2,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 11,
+                "sessions": 247,
+                "purchases": 47,
+                "conversion_rate": 0.1902834008097166,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 12,
+                "sessions": 1,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 13,
+                "sessions": 738,
+                "purchases": 43,
+                "conversion_rate": 0.058265582655826556,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 14,
+                "sessions": 13,
+                "purchases": 2,
+                "conversion_rate": 0.15384615384615385,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 15,
+                "sessions": 38,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 16,
+                "sessions": 3,
+                "purchases": 1,
+                "conversion_rate": 0.3333333333333333,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 17,
+                "sessions": 1,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 18,
+                "sessions": 10,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 19,
+                "sessions": 17,
+                "purchases": 1,
+                "conversion_rate": 0.058823529411764705,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 20,
+                "sessions": 198,
+                "purchases": 50,
+                "conversion_rate": 0.25252525252525254,
+                "small_sample": false
+              }
+            ],
+            "row_count": 20,
+            "limitations": [
+              "Revenue 是是否购买，不是销售金额。",
+              "流量类型是匿名编码，不能映射到具体广告平台。",
+              "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+              "小样本分组的转化率可能不稳定。"
+            ]
+          }
+        },
+        "duration_ms": 16
+      },
+      "created_at": 1795247251.525755
+    },
+    {
+      "id": 7,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "tool",
+      "payload": {
+        "name": "query_metrics",
+        "arguments": "{\"group_by\": [\"visitor_type\"]}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "f7315dab35cd443eb1792bdd0b4e9186",
+            "query": {
+              "group_by": [
+                "visitor_type"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "visitor_type": "New_Visitor",
+                "sessions": 1694,
+                "purchases": 422,
+                "conversion_rate": 0.24911452184179456,
+                "small_sample": false
+              },
+              {
+                "visitor_type": "Other",
+                "sessions": 85,
+                "purchases": 16,
+                "conversion_rate": 0.18823529411764706,
+                "small_sample": false
+              },
+              {
+                "visitor_type": "Returning_Visitor",
+                "sessions": 10551,
+                "purchases": 1470,
+                "conversion_rate": 0.1393232868922377,
+                "small_sample": false
+              }
+            ],
+            "row_count": 3,
+            "limitations": [
+              "Revenue 是是否购买，不是销售金额。",
+              "流量类型是匿名编码，不能映射到具体广告平台。",
+              "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+              "小样本分组的转化率可能不稳定。"
+            ]
+          }
+        },
+        "duration_ms": 15
+      },
+      "created_at": 1795247251.5469828
+    },
+    {
+      "id": 8,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "tool",
+      "payload": {
+        "name": "query_metrics",
+        "arguments": "{\"group_by\": [\"traffic_type\", \"visitor_type\"]}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "5d6af4cec3114710994167edacef1a42",
+            "query": {
+              "group_by": [
+                "traffic_type",
+                "visitor_type"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "traffic_type": 1,
+                "visitor_type": "New_Visitor",
+                "sessions": 37,
+                "purchases": 7,
+                "conversion_rate": 0.1891891891891892,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 1,
+                "visitor_type": "Other",
+                "sessions": 7,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 1,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 2407,
+                "purchases": 255,
+                "conversion_rate": 0.105941005400914,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 2,
+                "visitor_type": "New_Visitor",
+                "sessions": 936,
+                "purchases": 238,
+                "conversion_rate": 0.25427350427350426,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 2,
+                "visitor_type": "Other",
+                "sessions": 11,
+                "purchases": 1,
+                "conversion_rate": 0.09090909090909091,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 2,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 2966,
+                "purchases": 608,
+                "conversion_rate": 0.20498988536749832,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 3,
+                "visitor_type": "New_Visitor",
+                "sessions": 140,
+                "purchases": 25,
+                "conversion_rate": 0.17857142857142858,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 3,
+                "visitor_type": "Other",
+                "sessions": 7,
+                "purchases": 1,
+                "conversion_rate": 0.14285714285714285,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 3,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 1905,
+                "purchases": 154,
+                "conversion_rate": 0.08083989501312336,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 4,
+                "visitor_type": "New_Visitor",
+                "sessions": 99,
+                "purchases": 33,
+                "conversion_rate": 0.3333333333333333,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 4,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 970,
+                "purchases": 132,
+                "conversion_rate": 0.1360824742268041,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 5,
+                "visitor_type": "New_Visitor",
+                "sessions": 149,
+                "purchases": 39,
+                "conversion_rate": 0.26174496644295303,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 5,
+                "visitor_type": "Other",
+                "sessions": 1,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 5,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 110,
+                "purchases": 17,
+                "conversion_rate": 0.15454545454545454,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 6,
+                "visitor_type": "New_Visitor",
+                "sessions": 42,
+                "purchases": 11,
+                "conversion_rate": 0.2619047619047619,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 6,
+                "visitor_type": "Other",
+                "sessions": 1,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 6,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 401,
+                "purchases": 42,
+                "conversion_rate": 0.10473815461346633,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 7,
+                "visitor_type": "New_Visitor",
+                "sessions": 5,
+                "purchases": 1,
+                "conversion_rate": 0.2,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 7,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 35,
+                "purchases": 11,
+                "conversion_rate": 0.3142857142857143,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 8,
+                "visitor_type": "New_Visitor",
+                "sessions": 175,
+                "purchases": 50,
+                "conversion_rate": 0.2857142857142857,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 8,
+                "visitor_type": "Other",
+                "sessions": 1,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 8,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 167,
+                "purchases": 45,
+                "conversion_rate": 0.2694610778443114,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 9,
+                "visitor_type": "New_Visitor",
+                "sessions": 9,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 9,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 33,
+                "purchases": 4,
+                "conversion_rate": 0.12121212121212122,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 10,
+                "visitor_type": "New_Visitor",
+                "sessions": 22,
+                "purchases": 5,
+                "conversion_rate": 0.22727272727272727,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 10,
+                "visitor_type": "Other",
+                "sessions": 3,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 10,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 425,
+                "purchases": 85,
+                "conversion_rate": 0.2,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 11,
+                "visitor_type": "New_Visitor",
+                "sessions": 51,
+                "purchases": 6,
+                "conversion_rate": 0.11764705882352941,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 11,
+                "visitor_type": "Other",
+                "sessions": 1,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 11,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 195,
+                "purchases": 41,
+                "conversion_rate": 0.21025641025641026,
+                "small_sample": false
+              }
+            ],
+            "row_count": 48,
+            "limitations": [
+              "Revenue 是是否购买，不是销售金额。",
+              "流量类型是匿名编码，不能映射到具体广告平台。",
+              "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+              "小样本分组的转化率可能不稳定。"
+            ]
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247251.5677943
+    },
+    {
+      "id": 9,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 3562,
+        "input_tokens": 1029,
+        "output_tokens": 186,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_58cf30d17b324a629ef16cb7",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"5d6af4cec3114710994167edacef1a42\", \"offset\": 30, \"limit\": 20}"
+          }
+        ]
+      },
+      "created_at": 1795247255.1655936
+    },
+    {
+      "id": 10,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"5d6af4cec3114710994167edacef1a42\", \"offset\": 30, \"limit\": 20}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "5d6af4cec3114710994167edacef1a42",
+            "query": {
+              "group_by": [
+                "traffic_type",
+                "visitor_type"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "traffic_type": 12,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 1,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 13,
+                "visitor_type": "New_Visitor",
+                "sessions": 6,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 13,
+                "visitor_type": "Other",
+                "sessions": 1,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 13,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 731,
+                "purchases": 43,
+                "conversion_rate": 0.058823529411764705,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 14,
+                "visitor_type": "New_Visitor",
+                "sessions": 1,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 14,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 12,
+                "purchases": 2,
+                "conversion_rate": 0.16666666666666666,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 15,
+                "visitor_type": "New_Visitor",
+                "sessions": 2,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 15,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 36,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 16,
+                "visitor_type": "New_Visitor",
+                "sessions": 1,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 16,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 2,
+                "purchases": 1,
+                "conversion_rate": 0.5,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 17,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 1,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 18,
+                "visitor_type": "New_Visitor",
+                "sessions": 1,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 18,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 9,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 19,
+                "visitor_type": "New_Visitor",
+                "sessions": 1,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 19,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 16,
+                "purchases": 1,
+                "conversion_rate": 0.0625,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 20,
+                "visitor_type": "New_Visitor",
+                "sessions": 17,
+                "purchases": 7,
+                "conversion_rate": 0.4117647058823529,
+                "small_sample": true
+              },
+              {
+                "traffic_type": 20,
+                "visitor_type": "Other",
+                "sessions": 52,
+                "purchases": 14,
+                "conversion_rate": 0.2692307692307692,
+                "small_sample": false
+              },
+              {
+                "traffic_type": 20,
+                "visitor_type": "Returning_Visitor",
+                "sessions": 129,
+                "purchases": 29,
+                "conversion_rate": 0.2248062015503876,
+                "small_sample": false
+              }
+            ],
+            "row_count": 48
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247255.1738317
+    },
+    {
+      "id": 11,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 12625,
+        "input_tokens": 5519,
+        "output_tokens": 1840,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_mglkcqyhzb8k8q0b6773u3qf",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"text\": \"访客类型的转化差异不是流量类型构成造成的混杂：在流量类型分层内，新访客转化率仍普遍不低于回访访客（如类型2：25.4% vs 20.5%；类型4：33.3% vs 13.6%；类型3：17.9% vs 8.1%），仅少数小样本或个别类型例外。\", \"status\": \"supported\", \"evidence_ids\": [\"f7315dab35cd443eb1792bdd0b4e9186\", \"5d6af4cec3114710994167edacef1a42\"]}"
+          },
+          {
+            "call_id": "fc_call_01_im20jt77skew571oirnhjmtr",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"text\": \"全样本 12330 会话、1908 购买、整体转化率 15.47%。按访客类型：New_Visitor 24.91%（1694 会话）、Other 18.82%（85 会话）、Returning_Visitor 13.93%（10551 会话），新访客较回访访客高约 11 个百分点；联合分组显示该优势在多数流量类型内仍存在（类型2 25.4% vs 20.5%，类型3 17.9% vs 8.1%，类型4 33.3% vs 13.6%，类型5 26.2% vs 15.5%，类型6 26.2% vs 10.5%，类型20 41.2% vs 22.5%）。\", \"evidence_ids\": [\"f7315dab35cd443eb1792bdd0b4e9186\", \"5d6af4cec3114710994167edacef1a42\"], \"limitation\": \"描述性关联，非因果；流量类型为匿名编码；部分联合分组单元样本极小（如类型7、9、14、16-19 不足 20 会话），其转化率不稳定；类型11 与类型13 内部新访客反而低于回访访客，说明规律并非普遍成立。\"}"
+          },
+          {
+            "call_id": "fc_call_02_khydjtsuqo6xwfuztxvitsfv",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"text\": \"流量类型间转化率差异显著：类型8 为 27.70%（343 会话）、类型2 为 21.65%（3913 会话）、类型5 为 21.54%（260 会话）、类型20 为 25.25%（198 会话），而类型3 仅 8.77%（2052 会话）、类型13 仅 5.83%（738 会话）、类型1 为 10.69%（2451 会话）。高低差异同时来自流量类型构成：回访访客高度集中在低转化的类型1/3/13（类型3 中 92.8%、类型13 中 99.1% 为回访访客）。\", \"evidence_ids\": [\"8425d79441fd4b208845a4e54949c679\", \"5d6af4cec3114710994167edacef1a42\"], \"limitation\": \"类型7（40 会话，30.0%）等小样本类型的高转化不可靠；流量类型匿名，无法对应具体平台或投放策略；仅为样本内描述，不可外推为投放效果或 ROI。\"}"
+          }
+        ]
+      },
+      "created_at": 1795247267.8485699
+    },
+    {
+      "id": 12,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "tool",
+      "payload": {
+        "name": "update_hypothesis",
+        "arguments": "{\"text\": \"访客类型的转化差异不是流量类型构成造成的混杂：在流量类型分层内，新访客转化率仍普遍不低于回访访客（如类型2：25.4% vs 20.5%；类型4：33.3% vs 13.6%；类型3：17.9% vs 8.1%），仅少数小样本或个别类型例外。\", \"status\": \"supported\", \"evidence_ids\": [\"f7315dab35cd443eb1792bdd0b4e9186\", \"5d6af4cec3114710994167edacef1a42\"]}",
+        "result": {
+          "ok": true,
+          "data": {
+            "id": "1bc8b20dff0e438c965c2e96db3de3eb",
+            "goal_id": "24b1fd58a6364ab2a960bb145cb63e1c",
+            "text": "访客类型的转化差异不是流量类型构成造成的混杂：在流量类型分层内，新访客转化率仍普遍不低于回访访客（如类型2：25.4% vs 20.5%；类型4：33.3% vs 13.6%；类型3：17.9% vs 8.1%），仅少数小样本或个别类型例外。",
+            "status": "supported",
+            "evidence_ids": [
+              "f7315dab35cd443eb1792bdd0b4e9186",
+              "5d6af4cec3114710994167edacef1a42"
+            ]
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247267.8630605
+    },
+    {
+      "id": 13,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "tool",
+      "payload": {
+        "name": "record_claim",
+        "arguments": "{\"text\": \"全样本 12330 会话、1908 购买、整体转化率 15.47%。按访客类型：New_Visitor 24.91%（1694 会话）、Other 18.82%（85 会话）、Returning_Visitor 13.93%（10551 会话），新访客较回访访客高约 11 个百分点；联合分组显示该优势在多数流量类型内仍存在（类型2 25.4% vs 20.5%，类型3 17.9% vs 8.1%，类型4 33.3% vs 13.6%，类型5 26.2% vs 15.5%，类型6 26.2% vs 10.5%，类型20 41.2% vs 22.5%）。\", \"evidence_ids\": [\"f7315dab35cd443eb1792bdd0b4e9186\", \"5d6af4cec3114710994167edacef1a42\"], \"limitation\": \"描述性关联，非因果；流量类型为匿名编码；部分联合分组单元样本极小（如类型7、9、14、16-19 不足 20 会话），其转化率不稳定；类型11 与类型13 内部新访客反而低于回访访客，说明规律并非普遍成立。\"}",
+        "result": {
+          "ok": true,
+          "data": {
+            "id": "b05f1c2f94664512a74fb668d9481497",
+            "goal_id": "24b1fd58a6364ab2a960bb145cb63e1c",
+            "text": "全样本 12330 会话、1908 购买、整体转化率 15.47%。按访客类型：New_Visitor 24.91%（1694 会话）、Other 18.82%（85 会话）、Returning_Visitor 13.93%（10551 会话），新访客较回访访客高约 11 个百分点；联合分组显示该优势在多数流量类型内仍存在（类型2 25.4% vs 20.5%，类型3 17.9% vs 8.1%，类型4 33.3% vs 13.6%，类型5 26.2% vs 15.5%，类型6 26.2% vs 10.5%，类型20 41.2% vs 22.5%）。",
+            "evidence_ids": [
+              "f7315dab35cd443eb1792bdd0b4e9186",
+              "5d6af4cec3114710994167edacef1a42"
+            ],
+            "limitation": "描述性关联，非因果；流量类型为匿名编码；部分联合分组单元样本极小（如类型7、9、14、16-19 不足 20 会话），其转化率不稳定；类型11 与类型13 内部新访客反而低于回访访客，说明规律并非普遍成立。"
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247267.8765357
+    },
+    {
+      "id": 14,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "tool",
+      "payload": {
+        "name": "record_claim",
+        "arguments": "{\"text\": \"流量类型间转化率差异显著：类型8 为 27.70%（343 会话）、类型2 为 21.65%（3913 会话）、类型5 为 21.54%（260 会话）、类型20 为 25.25%（198 会话），而类型3 仅 8.77%（2052 会话）、类型13 仅 5.83%（738 会话）、类型1 为 10.69%（2451 会话）。高低差异同时来自流量类型构成：回访访客高度集中在低转化的类型1/3/13（类型3 中 92.8%、类型13 中 99.1% 为回访访客）。\", \"evidence_ids\": [\"8425d79441fd4b208845a4e54949c679\", \"5d6af4cec3114710994167edacef1a42\"], \"limitation\": \"类型7（40 会话，30.0%）等小样本类型的高转化不可靠；流量类型匿名，无法对应具体平台或投放策略；仅为样本内描述，不可外推为投放效果或 ROI。\"}",
+        "result": {
+          "ok": true,
+          "data": {
+            "id": "b5ce6f9b4c004b259adc4ace0fa40a97",
+            "goal_id": "24b1fd58a6364ab2a960bb145cb63e1c",
+            "text": "流量类型间转化率差异显著：类型8 为 27.70%（343 会话）、类型2 为 21.65%（3913 会话）、类型5 为 21.54%（260 会话）、类型20 为 25.25%（198 会话），而类型3 仅 8.77%（2052 会话）、类型13 仅 5.83%（738 会话）、类型1 为 10.69%（2451 会话）。高低差异同时来自流量类型构成：回访访客高度集中在低转化的类型1/3/13（类型3 中 92.8%、类型13 中 99.1% 为回访访客）。",
+            "evidence_ids": [
+              "8425d79441fd4b208845a4e54949c679",
+              "5d6af4cec3114710994167edacef1a42"
+            ],
+            "limitation": "类型7（40 会话，30.0%）等小样本类型的高转化不可靠；流量类型匿名，无法对应具体平台或投放策略；仅为样本内描述，不可外推为投放效果或 ROI。"
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247267.8878224
+    },
+    {
+      "id": 15,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 5250,
+        "input_tokens": 7513,
+        "output_tokens": 672,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_p44q6zlijexaxq5wn68tox1n",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"5d6af4cec3114710994167edacef1a42\", \"spec\": {\"title\": \"流量类型 × 访客类型分组转化差异分析\", \"chart\": \"bar\", \"metric\": \"conversion_rate\", \"claim_ids\": [\"b05f1c2f94664512a74fb668d9481497\", \"b5ce6f9b4c004b259adc4ace0fa40a97\"], \"intro_html\": \"<p>本报告基于全部样本 <strong>12330 会话、1908 次购买</strong>（整体转化率 15.47%），比较流量类型与访客类型两个维度的购买转化差异，并用二者联合分组检验一个假设。</p><h2>主要发现</h2><ul><li><strong>访客类型</strong>：新访客转化率 24.91%，Other 18.82%，回访访客 13.93%；新访客比回访访客高约 11 个百分点。</li><li><strong>流量类型</strong>：类型 8（27.70%）、类型 20（25.25%）、类型 2（21.65%）、类型 5（21.54%）偏高；类型 13（5.83%）、类型 3（8.77%）、类型 1（10.69%）偏低。</li><li><strong>联合分组</strong>：在多数流量类型内部，新访客转化率仍高于回访访客（类型 2：25.4% 对 20.5%；类型 3：17.9% 对 8.1%；类型 4：33.3% 对 13.6%；类型 6：26.2% 对 10.5%；类型 20：41.2% 对 22.5%），说明访客类型的差异并非完全由流量类型构成造成。</li></ul><h2>假设检查</h2><p>假设为：访客类型差异主要是流量类型构成造成的混杂，分层后应消失。分层结果不支持该假设——新访客优势在多数可比的流量类型中保留，假设被拒绝。</p><h2>限制</h2><ul><li>Revenue 仅为是否购买的布尔值，不代表销售金额，本报告不涉及花费或 ROI。</li><li>流量类型为匿名编码，无法对应具体平台或投放策略。</li><li>全部结论为样本内描述性关联，不是因果效果。</li><li>多个联合分组单元样本极小（类型 7、9、12、14–19 的若干单元不足 20 会话），这些单元的转化率不稳定，不应单独解读；类型 11 与 13 内部出现新访客低于回访访客的例外。</li></ul>\"}}"
+          }
+        ]
+      },
+      "created_at": 1795247273.2412648
+    },
+    {
+      "id": 16,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "tool",
+      "payload": {
+        "name": "draft_report",
+        "arguments": "{\"evidence_id\": \"5d6af4cec3114710994167edacef1a42\", \"spec\": {\"title\": \"流量类型 × 访客类型分组转化差异分析\", \"chart\": \"bar\", \"metric\": \"conversion_rate\", \"claim_ids\": [\"b05f1c2f94664512a74fb668d9481497\", \"b5ce6f9b4c004b259adc4ace0fa40a97\"], \"intro_html\": \"<p>本报告基于全部样本 <strong>12330 会话、1908 次购买</strong>（整体转化率 15.47%），比较流量类型与访客类型两个维度的购买转化差异，并用二者联合分组检验一个假设。</p><h2>主要发现</h2><ul><li><strong>访客类型</strong>：新访客转化率 24.91%，Other 18.82%，回访访客 13.93%；新访客比回访访客高约 11 个百分点。</li><li><strong>流量类型</strong>：类型 8（27.70%）、类型 20（25.25%）、类型 2（21.65%）、类型 5（21.54%）偏高；类型 13（5.83%）、类型 3（8.77%）、类型 1（10.69%）偏低。</li><li><strong>联合分组</strong>：在多数流量类型内部，新访客转化率仍高于回访访客（类型 2：25.4% 对 20.5%；类型 3：17.9% 对 8.1%；类型 4：33.3% 对 13.6%；类型 6：26.2% 对 10.5%；类型 20：41.2% 对 22.5%），说明访客类型的差异并非完全由流量类型构成造成。</li></ul><h2>假设检查</h2><p>假设为：访客类型差异主要是流量类型构成造成的混杂，分层后应消失。分层结果不支持该假设——新访客优势在多数可比的流量类型中保留，假设被拒绝。</p><h2>限制</h2><ul><li>Revenue 仅为是否购买的布尔值，不代表销售金额，本报告不涉及花费或 ROI。</li><li>流量类型为匿名编码，无法对应具体平台或投放策略。</li><li>全部结论为样本内描述性关联，不是因果效果。</li><li>多个联合分组单元样本极小（类型 7、9、12、14–19 的若干单元不足 20 会话），这些单元的转化率不稳定，不应单独解读；类型 11 与 13 内部出现新访客低于回访访客的例外。</li></ul>\"}}",
+        "result": {
+          "ok": true,
+          "data": {
+            "report_id": "abcfd7e2062e4570a2abf3ccbb9eae72",
+            "version_id": "97a083c7d18e4b48b45c1fd61e108c7a",
+            "status": "draft"
+          }
+        },
+        "duration_ms": 16
+      },
+      "created_at": 1795247273.2627847
+    },
+    {
+      "id": 17,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 3687,
+        "input_tokens": 5036,
+        "output_tokens": 329,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_eevapp1y6uoymh1vvdsyjq6e",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"criteria_coverage\": [\"分组比较\", \"假设检查\", \"证据引用\", \"分析限制\"], \"summary\": \"完成全样本流量类型与访客类型的转化差异分析（12330 会话、1908 购买、整体转化率 15.47%）。分组比较：访客类型维度 New_Visitor 24.91%、Other 18.82%、Returning_Visitor 13.93%；流量类型维度类型 8 最高 27.70%，类型 13 最低 5.83%。使用 traffic_type × visitor_type 联合分组（48 行，证据 5d6af4ce…）检验假设：访客类型差异是否由流量类型构成混杂造成——分层后新访客优势在类型 2、3、4、5、6、8、10、20 等多数类型内保留，假设被拒绝（supported 记录为反向结论）。已登记 2 条含证据引用的 claim 及各自限制，并生成草稿报告 abcfd7e2…（draft，未发布）。限制：Revenue 仅为购买布尔值不含金额；流量类型匿名无法映射平台；若干联合分组单元样本极小（类型 9、12、14–19）导致转化率不稳定；类型 11、13 存在例外；全部为描述性关联而非因果效果。\"}"
+          }
+        ]
+      },
+      "created_at": 1795247277.0121481
+    },
+    {
+      "id": 18,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "tool",
+      "payload": {
+        "name": "finish",
+        "arguments": "{\"criteria_coverage\": [\"分组比较\", \"假设检查\", \"证据引用\", \"分析限制\"], \"summary\": \"完成全样本流量类型与访客类型的转化差异分析（12330 会话、1908 购买、整体转化率 15.47%）。分组比较：访客类型维度 New_Visitor 24.91%、Other 18.82%、Returning_Visitor 13.93%；流量类型维度类型 8 最高 27.70%，类型 13 最低 5.83%。使用 traffic_type × visitor_type 联合分组（48 行，证据 5d6af4ce…）检验假设：访客类型差异是否由流量类型构成混杂造成——分层后新访客优势在类型 2、3、4、5、6、8、10、20 等多数类型内保留，假设被拒绝（supported 记录为反向结论）。已登记 2 条含证据引用的 claim 及各自限制，并生成草稿报告 abcfd7e2…（draft，未发布）。限制：Revenue 仅为购买布尔值不含金额；流量类型匿名无法映射平台；若干联合分组单元样本极小（类型 9、12、14–19）导致转化率不稳定；类型 11、13 存在例外；全部为描述性关联而非因果效果。\"}",
+        "result": {
+          "ok": true,
+          "data": {
+            "summary": "完成全样本流量类型与访客类型的转化差异分析（12330 会话、1908 购买、整体转化率 15.47%）。分组比较：访客类型维度 New_Visitor 24.91%、Other 18.82%、Returning_Visitor 13.93%；流量类型维度类型 8 最高 27.70%，类型 13 最低 5.83%。使用 traffic_type × visitor_type 联合分组（48 行，证据 5d6af4ce…）检验假设：访客类型差异是否由流量类型构成混杂造成——分层后新访客优势在类型 2、3、4、5、6、8、10、20 等多数类型内保留，假设被拒绝（supported 记录为反向结论）。已登记 2 条含证据引用的 claim 及各自限制，并生成草稿报告 abcfd7e2…（draft，未发布）。限制：Revenue 仅为购买布尔值不含金额；流量类型匿名无法映射平台；若干联合分组单元样本极小（类型 9、12、14–19）导致转化率不稳定；类型 11、13 存在例外；全部为描述性关联而非因果效果。",
+            "verification": "structural_only; semantic support requires evaluation"
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247277.0309005
+    },
+    {
+      "id": 19,
+      "run_id": "66c81222d79149b4b25df23777332550",
+      "kind": "terminal",
+      "payload": {
+        "status": "completed",
+        "reason": "完成全样本流量类型与访客类型的转化差异分析（12330 会话、1908 购买、整体转化率 15.47%）。分组比较：访客类型维度 New_Visitor 24.91%、Other 18.82%、Returning_Visitor 13.93%；流量类型维度类型 8 最高 27.70%，类型 13 最低 5.83%。使用 traffic_type × visitor_type 联合分组（48 行，证据 5d6af4ce…）检验假设：访客类型差异是否由流量类型构成混杂造成——分层后新访客优势在类型 2、3、4、5、6、8、10、20 等多数类型内保留，假设被拒绝（supported 记录为反向结论）。已登记 2 条含证据引用的 claim 及各自限制，并生成草稿报告 abcfd7e2…（draft，未发布）。限制：Revenue 仅为购买布尔值不含金额；流量类型匿名无法映射平台；若干联合分组单元样本极小（类型 9、12、14–19）导致转化率不稳定；类型 11、13 存在例外；全部为描述性关联而非因果效果。"
+      },
+      "created_at": 1795247277.0309005
+    }
+  ]
+}

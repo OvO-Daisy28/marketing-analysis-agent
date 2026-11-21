@@ -1,0 +1,5509 @@
+{
+  "case_id": "research-15",
+  "category": "research",
+  "variant": "full",
+  "repeat": 1,
+  "mode": "live",
+  "model": "deepreasoning-ds-v4.1flash",
+  "status": "stopped",
+  "reason": "TOKEN_BUDGET",
+  "structural_success": false,
+  "intent_matched": true,
+  "numerical_checks": [
+    true,
+    true,
+    true
+  ],
+  "valid_references": true,
+  "semantic_support": "pending_human_review",
+  "seconds": 50.09399999999732,
+  "steps": 18,
+  "input_tokens": 70346,
+  "output_tokens": 3206,
+  "evidence": [
+    {
+      "id": "69676343a5bc4f82abc1005e8172b270",
+      "goal_id": "e780e9f8894e44ac8a804bb18378150b",
+      "query_hash": "d51af46b8292c968f0df47d863d868cda0f57a340df3731253f5502979538b5f",
+      "query": {
+        "group_by": [
+          "month",
+          "region"
+        ],
+        "filters": {
+          "month": [],
+          "traffic_type": [],
+          "visitor_type": [],
+          "region": [],
+          "weekend": []
+        }
+      },
+      "result": {
+        "rows": [
+          {
+            "month": "Aug",
+            "region": 1,
+            "sessions": 157,
+            "purchases": 27,
+            "conversion_rate": 0.17197452229299362,
+            "small_sample": false
+          },
+          {
+            "month": "Aug",
+            "region": 2,
+            "sessions": 34,
+            "purchases": 9,
+            "conversion_rate": 0.2647058823529412,
+            "small_sample": false
+          },
+          {
+            "month": "Aug",
+            "region": 3,
+            "sessions": 94,
+            "purchases": 12,
+            "conversion_rate": 0.1276595744680851,
+            "small_sample": false
+          },
+          {
+            "month": "Aug",
+            "region": 4,
+            "sessions": 44,
+            "purchases": 12,
+            "conversion_rate": 0.2727272727272727,
+            "small_sample": false
+          },
+          {
+            "month": "Aug",
+            "region": 5,
+            "sessions": 11,
+            "purchases": 1,
+            "conversion_rate": 0.09090909090909091,
+            "small_sample": true
+          },
+          {
+            "month": "Aug",
+            "region": 6,
+            "sessions": 29,
+            "purchases": 4,
+            "conversion_rate": 0.13793103448275862,
+            "small_sample": true
+          },
+          {
+            "month": "Aug",
+            "region": 7,
+            "sessions": 31,
+            "purchases": 4,
+            "conversion_rate": 0.12903225806451613,
+            "small_sample": false
+          },
+          {
+            "month": "Aug",
+            "region": 8,
+            "sessions": 19,
+            "purchases": 6,
+            "conversion_rate": 0.3157894736842105,
+            "small_sample": true
+          },
+          {
+            "month": "Aug",
+            "region": 9,
+            "sessions": 14,
+            "purchases": 1,
+            "conversion_rate": 0.07142857142857142,
+            "small_sample": true
+          },
+          {
+            "month": "Dec",
+            "region": 1,
+            "sessions": 626,
+            "purchases": 76,
+            "conversion_rate": 0.12140575079872204,
+            "small_sample": false
+          },
+          {
+            "month": "Dec",
+            "region": 2,
+            "sessions": 142,
+            "purchases": 16,
+            "conversion_rate": 0.11267605633802817,
+            "small_sample": false
+          },
+          {
+            "month": "Dec",
+            "region": 3,
+            "sessions": 351,
+            "purchases": 38,
+            "conversion_rate": 0.10826210826210826,
+            "small_sample": false
+          },
+          {
+            "month": "Dec",
+            "region": 4,
+            "sessions": 161,
+            "purchases": 22,
+            "conversion_rate": 0.13664596273291926,
+            "small_sample": false
+          },
+          {
+            "month": "Dec",
+            "region": 5,
+            "sessions": 41,
+            "purchases": 7,
+            "conversion_rate": 0.17073170731707318,
+            "small_sample": false
+          },
+          {
+            "month": "Dec",
+            "region": 6,
+            "sessions": 100,
+            "purchases": 11,
+            "conversion_rate": 0.11,
+            "small_sample": false
+          },
+          {
+            "month": "Dec",
+            "region": 7,
+            "sessions": 119,
+            "purchases": 16,
+            "conversion_rate": 0.13445378151260504,
+            "small_sample": false
+          },
+          {
+            "month": "Dec",
+            "region": 8,
+            "sessions": 67,
+            "purchases": 7,
+            "conversion_rate": 0.1044776119402985,
+            "small_sample": false
+          },
+          {
+            "month": "Dec",
+            "region": 9,
+            "sessions": 120,
+            "purchases": 23,
+            "conversion_rate": 0.19166666666666668,
+            "small_sample": false
+          },
+          {
+            "month": "Feb",
+            "region": 1,
+            "sessions": 85,
+            "purchases": 1,
+            "conversion_rate": 0.011764705882352941,
+            "small_sample": false
+          },
+          {
+            "month": "Feb",
+            "region": 2,
+            "sessions": 15,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "month": "Feb",
+            "region": 3,
+            "sessions": 40,
+            "purchases": 1,
+            "conversion_rate": 0.025,
+            "small_sample": false
+          },
+          {
+            "month": "Feb",
+            "region": 4,
+            "sessions": 16,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "month": "Feb",
+            "region": 5,
+            "sessions": 5,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "month": "Feb",
+            "region": 6,
+            "sessions": 9,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "month": "Feb",
+            "region": 7,
+            "sessions": 5,
+            "purchases": 1,
+            "conversion_rate": 0.2,
+            "small_sample": true
+          },
+          {
+            "month": "Feb",
+            "region": 8,
+            "sessions": 4,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "month": "Feb",
+            "region": 9,
+            "sessions": 5,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "month": "Jul",
+            "region": 1,
+            "sessions": 148,
+            "purchases": 27,
+            "conversion_rate": 0.18243243243243243,
+            "small_sample": false
+          },
+          {
+            "month": "Jul",
+            "region": 2,
+            "sessions": 42,
+            "purchases": 5,
+            "conversion_rate": 0.11904761904761904,
+            "small_sample": false
+          },
+          {
+            "month": "Jul",
+            "region": 3,
+            "sessions": 81,
+            "purchases": 11,
+            "conversion_rate": 0.13580246913580246,
+            "small_sample": false
+          },
+          {
+            "month": "Jul",
+            "region": 4,
+            "sessions": 43,
+            "purchases": 4,
+            "conversion_rate": 0.09302325581395349,
+            "small_sample": false
+          },
+          {
+            "month": "Jul",
+            "region": 5,
+            "sessions": 13,
+            "purchases": 2,
+            "conversion_rate": 0.15384615384615385,
+            "small_sample": true
+          },
+          {
+            "month": "Jul",
+            "region": 6,
+            "sessions": 34,
+            "purchases": 6,
+            "conversion_rate": 0.17647058823529413,
+            "small_sample": false
+          },
+          {
+            "month": "Jul",
+            "region": 7,
+            "sessions": 29,
+            "purchases": 4,
+            "conversion_rate": 0.13793103448275862,
+            "small_sample": true
+          },
+          {
+            "month": "Jul",
+            "region": 8,
+            "sessions": 22,
+            "purchases": 5,
+            "conversion_rate": 0.22727272727272727,
+            "small_sample": true
+          },
+          {
+            "month": "Jul",
+            "region": 9,
+            "sessions": 20,
+            "purchases": 2,
+            "conversion_rate": 0.1,
+            "small_sample": true
+          },
+          {
+            "month": "June",
+            "region": 1,
+            "sessions": 100,
+            "purchases": 13,
+            "conversion_rate": 0.13,
+            "small_sample": false
+          },
+          {
+            "month": "June",
+            "region": 2,
+            "sessions": 38,
+            "purchases": 1,
+            "conversion_rate": 0.02631578947368421,
+            "small_sample": false
+          },
+          {
+            "month": "June",
+            "region": 3,
+            "sessions": 57,
+            "purchases": 3,
+            "conversion_rate": 0.05263157894736842,
+            "small_sample": false
+          },
+          {
+            "month": "June",
+            "region": 4,
+            "sessions": 22,
+            "purchases": 3,
+            "conversion_rate": 0.13636363636363635,
+            "small_sample": true
+          },
+          {
+            "month": "June",
+            "region": 5,
+            "sessions": 10,
+            "purchases": 3,
+            "conversion_rate": 0.3,
+            "small_sample": true
+          },
+          {
+            "month": "June",
+            "region": 6,
+            "sessions": 23,
+            "purchases": 3,
+            "conversion_rate": 0.13043478260869565,
+            "small_sample": true
+          },
+          {
+            "month": "June",
+            "region": 7,
+            "sessions": 18,
+            "purchases": 1,
+            "conversion_rate": 0.05555555555555555,
+            "small_sample": true
+          },
+          {
+            "month": "June",
+            "region": 8,
+            "sessions": 10,
+            "purchases": 2,
+            "conversion_rate": 0.2,
+            "small_sample": true
+          },
+          {
+            "month": "June",
+            "region": 9,
+            "sessions": 10,
+            "purchases": 0,
+            "conversion_rate": 0.0,
+            "small_sample": true
+          },
+          {
+            "month": "Mar",
+            "region": 1,
+            "sessions": 778,
+            "purchases": 80,
+            "conversion_rate": 0.10282776349614396,
+            "small_sample": false
+          },
+          {
+            "month": "Mar",
+            "region": 2,
+            "sessions": 197,
+            "purchases": 25,
+            "conversion_rate": 0.12690355329949238,
+            "small_sample": false
+          },
+          {
+            "month": "Mar",
+            "region": 3,
+            "sessions": 352,
+            "purchases": 33,
+            "conversion_rate": 0.09375,
+            "small_sample": false
+          },
+          {
+            "month": "Mar",
+            "region": 4,
+            "sessions": 156,
+            "purchases": 14,
+            "conversion_rate": 0.08974358974358974,
+            "small_sample": false
+          },
+          {
+            "month": "Mar",
+            "region": 5,
+            "sessions": 39,
+            "purchases": 2,
+            "conversion_rate": 0.05128205128205128,
+            "small_sample": false
+          },
+          {
+            "month": "Mar",
+            "region": 6,
+            "sessions": 130,
+            "purchases": 9,
+            "conversion_rate": 0.06923076923076923,
+            "small_sample": false
+          },
+          {
+            "month": "Mar",
+            "region": 7,
+            "sessions": 134,
+            "purchases": 18,
+            "conversion_rate": 0.13432835820895522,
+            "small_sample": false
+          },
+          {
+            "month": "Mar",
+            "region": 8,
+            "sessions": 69,
+            "purchases": 3,
+            "conversion_rate": 0.043478260869565216,
+            "small_sample": false
+          },
+          {
+            "month": "Mar",
+            "region": 9,
+            "sessions": 52,
+            "purchases": 8,
+            "conversion_rate": 0.15384615384615385,
+            "small_sample": false
+          },
+          {
+            "month": "May",
+            "region": 1,
+            "sessions": 1227,
+            "purchases": 121,
+            "conversion_rate": 0.09861450692746536,
+            "small_sample": false
+          },
+          {
+            "month": "May",
+            "region": 2,
+            "sessions": 347,
+            "purchases": 41,
+            "conversion_rate": 0.11815561959654179,
+            "small_sample": false
+          },
+          {
+            "month": "May",
+            "region": 3,
+            "sessions": 669,
+            "purchases": 67,
+            "conversion_rate": 0.10014947683109118,
+            "small_sample": false
+          },
+          {
+            "month": "May",
+            "region": 4,
+            "sessions": 354,
+            "purchases": 38,
+            "conversion_rate": 0.10734463276836158,
+            "small_sample": false
+          },
+          {
+            "month": "May",
+            "region": 5,
+            "sessions": 103,
+            "purchases": 17,
+            "conversion_rate": 0.1650485436893204,
+            "small_sample": false
+          },
+          {
+            "month": "May",
+            "region": 6,
+            "sessions": 258,
+            "purchases": 34,
+            "conversion_rate": 0.13178294573643412,
+            "small_sample": false
+          },
+          {
+            "month": "May",
+            "region": 7,
+            "sessions": 196,
+            "purchases": 18,
+            "conversion_rate": 0.09183673469387756,
+            "small_sample": false
+          },
+          {
+            "month": "May",
+            "region": 8,
+            "sessions": 123,
+            "purchases": 16,
+            "conversion_rate": 0.13008130081300814,
+            "small_sample": false
+          },
+          {
+            "month": "May",
+            "region": 9,
+            "sessions": 87,
+            "purchases": 13,
+            "conversion_rate": 0.14942528735632185,
+            "small_sample": false
+          },
+          {
+            "month": "Nov",
+            "region": 1,
+            "sessions": 1288,
+            "purchases": 350,
+            "conversion_rate": 0.2717391304347826,
+            "small_sample": false
+          },
+          {
+            "month": "Nov",
+            "region": 2,
+            "sessions": 235,
+            "purchases": 70,
+            "conversion_rate": 0.2978723404255319,
+            "small_sample": false
+          },
+          {
+            "month": "Nov",
+            "region": 3,
+            "sessions": 567,
+            "purchases": 148,
+            "conversion_rate": 0.26102292768959434,
+            "small_sample": false
+          },
+          {
+            "month": "Nov",
+            "region": 4,
+            "sessions": 285,
+            "purchases": 62,
+            "conversion_rate": 0.21754385964912282,
+            "small_sample": false
+          },
+          {
+            "month": "Nov",
+            "region": 5,
+            "sessions": 64,
+            "purchases": 13,
+            "conversion_rate": 0.203125,
+            "small_sample": false
+          },
+          {
+            "month": "Nov",
+            "region": 6,
+            "sessions": 147,
+            "purchases": 30,
+            "conversion_rate": 0.20408163265306123,
+            "small_sample": false
+          },
+          {
+            "month": "Nov",
+            "region": 7,
+            "sessions": 164,
+            "purchases": 41,
+            "conversion_rate": 0.25,
+            "small_sample": false
+          },
+          {
+            "month": "Nov",
+            "region": 8,
+            "sessions": 86,
+            "purchases": 14,
+            "conversion_rate": 0.16279069767441862,
+            "small_sample": false
+          },
+          {
+            "month": "Nov",
+            "region": 9,
+            "sessions": 162,
+            "purchases": 32,
+            "conversion_rate": 0.19753086419753085,
+            "small_sample": false
+          },
+          {
+            "month": "Oct",
+            "region": 1,
+            "sessions": 215,
+            "purchases": 44,
+            "conversion_rate": 0.20465116279069767,
+            "small_sample": false
+          },
+          {
+            "month": "Oct",
+            "region": 2,
+            "sessions": 45,
+            "purchases": 11,
+            "conversion_rate": 0.24444444444444444,
+            "small_sample": false
+          },
+          {
+            "month": "Oct",
+            "region": 3,
+            "sessions": 109,
+            "purchases": 22,
+            "conversion_rate": 0.2018348623853211,
+            "small_sample": false
+          },
+          {
+            "month": "Oct",
+            "region": 4,
+            "sessions": 46,
+            "purchases": 12,
+            "conversion_rate": 0.2608695652173913,
+            "small_sample": false
+          },
+          {
+            "month": "Oct",
+            "region": 5,
+            "sessions": 14,
+            "purchases": 4,
+            "conversion_rate": 0.2857142857142857,
+            "small_sample": true
+          },
+          {
+            "month": "Oct",
+            "region": 6,
+            "sessions": 39,
+            "purchases": 8,
+            "conversion_rate": 0.20512820512820512,
+            "small_sample": false
+          },
+          {
+            "month": "Oct",
+            "region": 7,
+            "sessions": 39,
+            "purchases": 9,
+            "conversion_rate": 0.23076923076923078,
+            "small_sample": false
+          },
+          {
+            "month": "Oct",
+            "region": 8,
+            "sessions": 18,
+            "purchases": 1,
+            "conversion_rate": 0.05555555555555555,
+            "small_sample": true
+          },
+          {
+            "month": "Oct",
+            "region": 9,
+            "sessions": 24,
+            "purchases": 4,
+            "conversion_rate": 0.16666666666666666,
+            "small_sample": true
+          },
+          {
+            "month": "Sep",
+            "region": 1,
+            "sessions": 156,
+            "purchases": 32,
+            "conversion_rate": 0.20512820512820512,
+            "small_sample": false
+          },
+          {
+            "month": "Sep",
+            "region": 2,
+            "sessions": 41,
+            "purchases": 10,
+            "conversion_rate": 0.24390243902439024,
+            "small_sample": false
+          },
+          {
+            "month": "Sep",
+            "region": 3,
+            "sessions": 83,
+            "purchases": 14,
+            "conversion_rate": 0.1686746987951807,
+            "small_sample": false
+          },
+          {
+            "month": "Sep",
+            "region": 4,
+            "sessions": 55,
+            "purchases": 8,
+            "conversion_rate": 0.14545454545454545,
+            "small_sample": false
+          },
+          {
+            "month": "Sep",
+            "region": 5,
+            "sessions": 18,
+            "purchases": 3,
+            "conversion_rate": 0.16666666666666666,
+            "small_sample": true
+          },
+          {
+            "month": "Sep",
+            "region": 6,
+            "sessions": 36,
+            "purchases": 7,
+            "conversion_rate": 0.19444444444444445,
+            "small_sample": false
+          },
+          {
+            "month": "Sep",
+            "region": 7,
+            "sessions": 26,
+            "purchases": 7,
+            "conversion_rate": 0.2692307692307692,
+            "small_sample": true
+          },
+          {
+            "month": "Sep",
+            "region": 8,
+            "sessions": 16,
+            "purchases": 2,
+            "conversion_rate": 0.125,
+            "small_sample": true
+          },
+          {
+            "month": "Sep",
+            "region": 9,
+            "sessions": 17,
+            "purchases": 3,
+            "conversion_rate": 0.17647058823529413,
+            "small_sample": true
+          }
+        ],
+        "totals": {
+          "sessions": 12330,
+          "purchases": 1908,
+          "conversion_rate": 0.15474452554744525
+        },
+        "dataset_id": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+        "metric_version": "1.0.0",
+        "query": {
+          "group_by": [
+            "month",
+            "region"
+          ],
+          "filters": {
+            "month": [],
+            "traffic_type": [],
+            "visitor_type": [],
+            "region": [],
+            "weekend": []
+          }
+        },
+        "empty": false,
+        "limitations": [
+          "Revenue 是是否购买，不是销售金额。",
+          "流量类型是匿名编码，不能映射到具体广告平台。",
+          "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+          "小样本分组的转化率可能不稳定。"
+        ]
+      },
+      "created_at": 1795247642.507798
+    },
+    {
+      "id": "5458229df0a645f2bfed4711bbd971a0",
+      "goal_id": "e780e9f8894e44ac8a804bb18378150b",
+      "query_hash": "fab87738c36e3487992842e1ebb6ea892766aa438f79457314343b9bdfeaf736",
+      "query": {
+        "group_by": [
+          "month"
+        ],
+        "filters": {
+          "month": [],
+          "traffic_type": [],
+          "visitor_type": [],
+          "region": [],
+          "weekend": []
+        }
+      },
+      "result": {
+        "rows": [
+          {
+            "month": "Aug",
+            "sessions": 433,
+            "purchases": 76,
+            "conversion_rate": 0.17551963048498845,
+            "small_sample": false
+          },
+          {
+            "month": "Dec",
+            "sessions": 1727,
+            "purchases": 216,
+            "conversion_rate": 0.1250723798494499,
+            "small_sample": false
+          },
+          {
+            "month": "Feb",
+            "sessions": 184,
+            "purchases": 3,
+            "conversion_rate": 0.016304347826086956,
+            "small_sample": false
+          },
+          {
+            "month": "Jul",
+            "sessions": 432,
+            "purchases": 66,
+            "conversion_rate": 0.1527777777777778,
+            "small_sample": false
+          },
+          {
+            "month": "June",
+            "sessions": 288,
+            "purchases": 29,
+            "conversion_rate": 0.10069444444444445,
+            "small_sample": false
+          },
+          {
+            "month": "Mar",
+            "sessions": 1907,
+            "purchases": 192,
+            "conversion_rate": 0.10068169900367069,
+            "small_sample": false
+          },
+          {
+            "month": "May",
+            "sessions": 3364,
+            "purchases": 365,
+            "conversion_rate": 0.10850178359096314,
+            "small_sample": false
+          },
+          {
+            "month": "Nov",
+            "sessions": 2998,
+            "purchases": 760,
+            "conversion_rate": 0.25350233488992663,
+            "small_sample": false
+          },
+          {
+            "month": "Oct",
+            "sessions": 549,
+            "purchases": 115,
+            "conversion_rate": 0.20947176684881602,
+            "small_sample": false
+          },
+          {
+            "month": "Sep",
+            "sessions": 448,
+            "purchases": 86,
+            "conversion_rate": 0.19196428571428573,
+            "small_sample": false
+          }
+        ],
+        "totals": {
+          "sessions": 12330,
+          "purchases": 1908,
+          "conversion_rate": 0.15474452554744525
+        },
+        "dataset_id": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+        "metric_version": "1.0.0",
+        "query": {
+          "group_by": [
+            "month"
+          ],
+          "filters": {
+            "month": [],
+            "traffic_type": [],
+            "visitor_type": [],
+            "region": [],
+            "weekend": []
+          }
+        },
+        "empty": false,
+        "limitations": [
+          "Revenue 是是否购买，不是销售金额。",
+          "流量类型是匿名编码，不能映射到具体广告平台。",
+          "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+          "小样本分组的转化率可能不稳定。"
+        ]
+      },
+      "created_at": 1795247642.5238934
+    },
+    {
+      "id": "6c00c0596c514c308c99f7eb9b276c75",
+      "goal_id": "e780e9f8894e44ac8a804bb18378150b",
+      "query_hash": "3f319133a70b6e0a46090381c928993032fa700dd20e520bb29c98411b841862",
+      "query": {
+        "group_by": [
+          "region"
+        ],
+        "filters": {
+          "month": [],
+          "traffic_type": [],
+          "visitor_type": [],
+          "region": [],
+          "weekend": []
+        }
+      },
+      "result": {
+        "rows": [
+          {
+            "region": 1,
+            "sessions": 4780,
+            "purchases": 771,
+            "conversion_rate": 0.16129707112970712,
+            "small_sample": false
+          },
+          {
+            "region": 2,
+            "sessions": 1136,
+            "purchases": 188,
+            "conversion_rate": 0.16549295774647887,
+            "small_sample": false
+          },
+          {
+            "region": 3,
+            "sessions": 2403,
+            "purchases": 349,
+            "conversion_rate": 0.14523512276321265,
+            "small_sample": false
+          },
+          {
+            "region": 4,
+            "sessions": 1182,
+            "purchases": 175,
+            "conversion_rate": 0.14805414551607446,
+            "small_sample": false
+          },
+          {
+            "region": 5,
+            "sessions": 318,
+            "purchases": 52,
+            "conversion_rate": 0.16352201257861634,
+            "small_sample": false
+          },
+          {
+            "region": 6,
+            "sessions": 805,
+            "purchases": 112,
+            "conversion_rate": 0.1391304347826087,
+            "small_sample": false
+          },
+          {
+            "region": 7,
+            "sessions": 761,
+            "purchases": 119,
+            "conversion_rate": 0.15637319316688567,
+            "small_sample": false
+          },
+          {
+            "region": 8,
+            "sessions": 434,
+            "purchases": 56,
+            "conversion_rate": 0.12903225806451613,
+            "small_sample": false
+          },
+          {
+            "region": 9,
+            "sessions": 511,
+            "purchases": 86,
+            "conversion_rate": 0.16829745596868884,
+            "small_sample": false
+          }
+        ],
+        "totals": {
+          "sessions": 12330,
+          "purchases": 1908,
+          "conversion_rate": 0.15474452554744525
+        },
+        "dataset_id": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+        "metric_version": "1.0.0",
+        "query": {
+          "group_by": [
+            "region"
+          ],
+          "filters": {
+            "month": [],
+            "traffic_type": [],
+            "visitor_type": [],
+            "region": [],
+            "weekend": []
+          }
+        },
+        "empty": false,
+        "limitations": [
+          "Revenue 是是否购买，不是销售金额。",
+          "流量类型是匿名编码，不能映射到具体广告平台。",
+          "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+          "小样本分组的转化率可能不稳定。"
+        ]
+      },
+      "created_at": 1795247645.2812572
+    }
+  ],
+  "claims": [],
+  "reports": [],
+  "events": [
+    {
+      "id": 1,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "queued",
+      "payload": {
+        "mode": "live",
+        "instruction": "分析全部样本的月份与地区编码分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。"
+      },
+      "created_at": 1795247638.5657167
+    },
+    {
+      "id": 2,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "started",
+      "payload": {
+        "recovered": false
+      },
+      "created_at": 1795247638.5898583
+    },
+    {
+      "id": 3,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 1765,
+        "input_tokens": 2201,
+        "output_tokens": 31,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_ytutcr8asdyuvz2gwvstbdai",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{}"
+          }
+        ]
+      },
+      "created_at": 1795247640.3792279
+    },
+    {
+      "id": 4,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "data_contract",
+        "arguments": "{}",
+        "result": {
+          "ok": true,
+          "data": {
+            "version": "1.0.0",
+            "query_schema": {
+              "$defs": {
+                "Filters": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "month": {
+                      "items": {
+                        "enum": [
+                          "Jan",
+                          "Feb",
+                          "Mar",
+                          "Apr",
+                          "May",
+                          "June",
+                          "Jul",
+                          "Aug",
+                          "Sep",
+                          "Oct",
+                          "Nov",
+                          "Dec"
+                        ],
+                        "type": "string"
+                      },
+                      "maxItems": 12,
+                      "title": "Month",
+                      "type": "array"
+                    },
+                    "traffic_type": {
+                      "items": {
+                        "type": "integer"
+                      },
+                      "maxItems": 20,
+                      "title": "Traffic Type",
+                      "type": "array"
+                    },
+                    "visitor_type": {
+                      "items": {
+                        "enum": [
+                          "New_Visitor",
+                          "Returning_Visitor",
+                          "Other"
+                        ],
+                        "type": "string"
+                      },
+                      "maxItems": 3,
+                      "title": "Visitor Type",
+                      "type": "array"
+                    },
+                    "region": {
+                      "items": {
+                        "type": "integer"
+                      },
+                      "maxItems": 9,
+                      "title": "Region",
+                      "type": "array"
+                    },
+                    "weekend": {
+                      "items": {
+                        "type": "boolean"
+                      },
+                      "maxItems": 2,
+                      "title": "Weekend",
+                      "type": "array"
+                    }
+                  },
+                  "title": "Filters",
+                  "type": "object"
+                }
+              },
+              "additionalProperties": false,
+              "properties": {
+                "group_by": {
+                  "items": {
+                    "enum": [
+                      "month",
+                      "traffic_type",
+                      "visitor_type",
+                      "region",
+                      "weekend"
+                    ],
+                    "type": "string"
+                  },
+                  "maxItems": 2,
+                  "title": "Group By",
+                  "type": "array"
+                },
+                "filters": {
+                  "$ref": "#/$defs/Filters"
+                }
+              },
+              "title": "Query",
+              "type": "object"
+            },
+            "metrics": {
+              "sessions": {
+                "label": "会话数",
+                "formula": "COUNT(*)",
+                "unit": "次"
+              },
+              "purchases": {
+                "label": "购买会话数",
+                "formula": "SUM(purchased)",
+                "unit": "次"
+              },
+              "conversion_rate": {
+                "label": "购买转化率",
+                "formula": "purchases / sessions",
+                "unit": "%",
+                "zero_denominator": null
+              }
+            },
+            "limitations": [
+              "Revenue 是是否购买，不是销售金额。",
+              "流量类型是匿名编码，不能映射到具体广告平台。",
+              "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+              "小样本分组的转化率可能不稳定。"
+            ]
+          }
+        },
+        "duration_ms": 16
+      },
+      "created_at": 1795247640.3966944
+    },
+    {
+      "id": 5,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 2047,
+        "input_tokens": 722,
+        "output_tokens": 109,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_qv6tpuolua9qso0jvgha11ta",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"group_by\": [\"month\", \"region\"]}"
+          },
+          {
+            "call_id": "fc_call_01_44u7qis0uiglzx8sja5mvm37",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"group_by\": [\"month\"]}"
+          }
+        ]
+      },
+      "created_at": 1795247642.484984
+    },
+    {
+      "id": 6,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "query_metrics",
+        "arguments": "{\"group_by\": [\"month\", \"region\"]}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "69676343a5bc4f82abc1005e8172b270",
+            "query": {
+              "group_by": [
+                "month",
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "Aug",
+                "region": 1,
+                "sessions": 157,
+                "purchases": 27,
+                "conversion_rate": 0.17197452229299362,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 2,
+                "sessions": 34,
+                "purchases": 9,
+                "conversion_rate": 0.2647058823529412,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 3,
+                "sessions": 94,
+                "purchases": 12,
+                "conversion_rate": 0.1276595744680851,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 4,
+                "sessions": 44,
+                "purchases": 12,
+                "conversion_rate": 0.2727272727272727,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 5,
+                "sessions": 11,
+                "purchases": 1,
+                "conversion_rate": 0.09090909090909091,
+                "small_sample": true
+              },
+              {
+                "month": "Aug",
+                "region": 6,
+                "sessions": 29,
+                "purchases": 4,
+                "conversion_rate": 0.13793103448275862,
+                "small_sample": true
+              },
+              {
+                "month": "Aug",
+                "region": 7,
+                "sessions": 31,
+                "purchases": 4,
+                "conversion_rate": 0.12903225806451613,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 8,
+                "sessions": 19,
+                "purchases": 6,
+                "conversion_rate": 0.3157894736842105,
+                "small_sample": true
+              },
+              {
+                "month": "Aug",
+                "region": 9,
+                "sessions": 14,
+                "purchases": 1,
+                "conversion_rate": 0.07142857142857142,
+                "small_sample": true
+              },
+              {
+                "month": "Dec",
+                "region": 1,
+                "sessions": 626,
+                "purchases": 76,
+                "conversion_rate": 0.12140575079872204,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 2,
+                "sessions": 142,
+                "purchases": 16,
+                "conversion_rate": 0.11267605633802817,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 3,
+                "sessions": 351,
+                "purchases": 38,
+                "conversion_rate": 0.10826210826210826,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 4,
+                "sessions": 161,
+                "purchases": 22,
+                "conversion_rate": 0.13664596273291926,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 5,
+                "sessions": 41,
+                "purchases": 7,
+                "conversion_rate": 0.17073170731707318,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 6,
+                "sessions": 100,
+                "purchases": 11,
+                "conversion_rate": 0.11,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 7,
+                "sessions": 119,
+                "purchases": 16,
+                "conversion_rate": 0.13445378151260504,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 8,
+                "sessions": 67,
+                "purchases": 7,
+                "conversion_rate": 0.1044776119402985,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 9,
+                "sessions": 120,
+                "purchases": 23,
+                "conversion_rate": 0.19166666666666668,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "region": 1,
+                "sessions": 85,
+                "purchases": 1,
+                "conversion_rate": 0.011764705882352941,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "region": 2,
+                "sessions": 15,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 3,
+                "sessions": 40,
+                "purchases": 1,
+                "conversion_rate": 0.025,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "region": 4,
+                "sessions": 16,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 5,
+                "sessions": 5,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 6,
+                "sessions": 9,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 7,
+                "sessions": 5,
+                "purchases": 1,
+                "conversion_rate": 0.2,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 8,
+                "sessions": 4,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 9,
+                "sessions": 5,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 1,
+                "sessions": 148,
+                "purchases": 27,
+                "conversion_rate": 0.18243243243243243,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 2,
+                "sessions": 42,
+                "purchases": 5,
+                "conversion_rate": 0.11904761904761904,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 3,
+                "sessions": 81,
+                "purchases": 11,
+                "conversion_rate": 0.13580246913580246,
+                "small_sample": false
+              }
+            ],
+            "row_count": 90,
+            "limitations": [
+              "Revenue 是是否购买，不是销售金额。",
+              "流量类型是匿名编码，不能映射到具体广告平台。",
+              "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+              "小样本分组的转化率可能不稳定。"
+            ]
+          }
+        },
+        "duration_ms": 16
+      },
+      "created_at": 1795247642.5087714
+    },
+    {
+      "id": 7,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "query_metrics",
+        "arguments": "{\"group_by\": [\"month\"]}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "5458229df0a645f2bfed4711bbd971a0",
+            "query": {
+              "group_by": [
+                "month"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "Aug",
+                "sessions": 433,
+                "purchases": 76,
+                "conversion_rate": 0.17551963048498845,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "sessions": 1727,
+                "purchases": 216,
+                "conversion_rate": 0.1250723798494499,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "sessions": 184,
+                "purchases": 3,
+                "conversion_rate": 0.016304347826086956,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "sessions": 432,
+                "purchases": 66,
+                "conversion_rate": 0.1527777777777778,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "sessions": 288,
+                "purchases": 29,
+                "conversion_rate": 0.10069444444444445,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "sessions": 1907,
+                "purchases": 192,
+                "conversion_rate": 0.10068169900367069,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "sessions": 3364,
+                "purchases": 365,
+                "conversion_rate": 0.10850178359096314,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "sessions": 2998,
+                "purchases": 760,
+                "conversion_rate": 0.25350233488992663,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "sessions": 549,
+                "purchases": 115,
+                "conversion_rate": 0.20947176684881602,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "sessions": 448,
+                "purchases": 86,
+                "conversion_rate": 0.19196428571428573,
+                "small_sample": false
+              }
+            ],
+            "row_count": 10,
+            "limitations": [
+              "Revenue 是是否购买，不是销售金额。",
+              "流量类型是匿名编码，不能映射到具体广告平台。",
+              "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+              "小样本分组的转化率可能不稳定。"
+            ]
+          }
+        },
+        "duration_ms": 16
+      },
+      "created_at": 1795247642.5262213
+    },
+    {
+      "id": 8,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 2703,
+        "input_tokens": 5267,
+        "output_tokens": 209,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_a2eql0x5rd59zzcbhrpy7599",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"group_by\": [\"region\"]}"
+          },
+          {
+            "call_id": "fc_call_01_5t8m3x3ohzn0ou5mndmtf1y5",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"offset\": 30, \"limit\": 50}"
+          }
+        ]
+      },
+      "created_at": 1795247645.258371
+    },
+    {
+      "id": 9,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "query_metrics",
+        "arguments": "{\"group_by\": [\"region\"]}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "6c00c0596c514c308c99f7eb9b276c75",
+            "query": {
+              "group_by": [
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "region": 1,
+                "sessions": 4780,
+                "purchases": 771,
+                "conversion_rate": 0.16129707112970712,
+                "small_sample": false
+              },
+              {
+                "region": 2,
+                "sessions": 1136,
+                "purchases": 188,
+                "conversion_rate": 0.16549295774647887,
+                "small_sample": false
+              },
+              {
+                "region": 3,
+                "sessions": 2403,
+                "purchases": 349,
+                "conversion_rate": 0.14523512276321265,
+                "small_sample": false
+              },
+              {
+                "region": 4,
+                "sessions": 1182,
+                "purchases": 175,
+                "conversion_rate": 0.14805414551607446,
+                "small_sample": false
+              },
+              {
+                "region": 5,
+                "sessions": 318,
+                "purchases": 52,
+                "conversion_rate": 0.16352201257861634,
+                "small_sample": false
+              },
+              {
+                "region": 6,
+                "sessions": 805,
+                "purchases": 112,
+                "conversion_rate": 0.1391304347826087,
+                "small_sample": false
+              },
+              {
+                "region": 7,
+                "sessions": 761,
+                "purchases": 119,
+                "conversion_rate": 0.15637319316688567,
+                "small_sample": false
+              },
+              {
+                "region": 8,
+                "sessions": 434,
+                "purchases": 56,
+                "conversion_rate": 0.12903225806451613,
+                "small_sample": false
+              },
+              {
+                "region": 9,
+                "sessions": 511,
+                "purchases": 86,
+                "conversion_rate": 0.16829745596868884,
+                "small_sample": false
+              }
+            ],
+            "row_count": 9,
+            "limitations": [
+              "Revenue 是是否购买，不是销售金额。",
+              "流量类型是匿名编码，不能映射到具体广告平台。",
+              "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+              "小样本分组的转化率可能不稳定。"
+            ]
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247645.2822998
+    },
+    {
+      "id": 10,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"offset\": 30, \"limit\": 50}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "69676343a5bc4f82abc1005e8172b270",
+            "query": {
+              "group_by": [
+                "month",
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "Jul",
+                "region": 4,
+                "sessions": 43,
+                "purchases": 4,
+                "conversion_rate": 0.09302325581395349,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 5,
+                "sessions": 13,
+                "purchases": 2,
+                "conversion_rate": 0.15384615384615385,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 6,
+                "sessions": 34,
+                "purchases": 6,
+                "conversion_rate": 0.17647058823529413,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 7,
+                "sessions": 29,
+                "purchases": 4,
+                "conversion_rate": 0.13793103448275862,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 8,
+                "sessions": 22,
+                "purchases": 5,
+                "conversion_rate": 0.22727272727272727,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 9,
+                "sessions": 20,
+                "purchases": 2,
+                "conversion_rate": 0.1,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 1,
+                "sessions": 100,
+                "purchases": 13,
+                "conversion_rate": 0.13,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "region": 2,
+                "sessions": 38,
+                "purchases": 1,
+                "conversion_rate": 0.02631578947368421,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "region": 3,
+                "sessions": 57,
+                "purchases": 3,
+                "conversion_rate": 0.05263157894736842,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "region": 4,
+                "sessions": 22,
+                "purchases": 3,
+                "conversion_rate": 0.13636363636363635,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 5,
+                "sessions": 10,
+                "purchases": 3,
+                "conversion_rate": 0.3,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 6,
+                "sessions": 23,
+                "purchases": 3,
+                "conversion_rate": 0.13043478260869565,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 7,
+                "sessions": 18,
+                "purchases": 1,
+                "conversion_rate": 0.05555555555555555,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 8,
+                "sessions": 10,
+                "purchases": 2,
+                "conversion_rate": 0.2,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 9,
+                "sessions": 10,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Mar",
+                "region": 1,
+                "sessions": 778,
+                "purchases": 80,
+                "conversion_rate": 0.10282776349614396,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 2,
+                "sessions": 197,
+                "purchases": 25,
+                "conversion_rate": 0.12690355329949238,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 3,
+                "sessions": 352,
+                "purchases": 33,
+                "conversion_rate": 0.09375,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 4,
+                "sessions": 156,
+                "purchases": 14,
+                "conversion_rate": 0.08974358974358974,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 5,
+                "sessions": 39,
+                "purchases": 2,
+                "conversion_rate": 0.05128205128205128,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 6,
+                "sessions": 130,
+                "purchases": 9,
+                "conversion_rate": 0.06923076923076923,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 7,
+                "sessions": 134,
+                "purchases": 18,
+                "conversion_rate": 0.13432835820895522,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 8,
+                "sessions": 69,
+                "purchases": 3,
+                "conversion_rate": 0.043478260869565216,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 9,
+                "sessions": 52,
+                "purchases": 8,
+                "conversion_rate": 0.15384615384615385,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 1,
+                "sessions": 1227,
+                "purchases": 121,
+                "conversion_rate": 0.09861450692746536,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 2,
+                "sessions": 347,
+                "purchases": 41,
+                "conversion_rate": 0.11815561959654179,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 3,
+                "sessions": 669,
+                "purchases": 67,
+                "conversion_rate": 0.10014947683109118,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 4,
+                "sessions": 354,
+                "purchases": 38,
+                "conversion_rate": 0.10734463276836158,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 5,
+                "sessions": 103,
+                "purchases": 17,
+                "conversion_rate": 0.1650485436893204,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 6,
+                "sessions": 258,
+                "purchases": 34,
+                "conversion_rate": 0.13178294573643412,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 7,
+                "sessions": 196,
+                "purchases": 18,
+                "conversion_rate": 0.09183673469387756,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 8,
+                "sessions": 123,
+                "purchases": 16,
+                "conversion_rate": 0.13008130081300814,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 9,
+                "sessions": 87,
+                "purchases": 13,
+                "conversion_rate": 0.14942528735632185,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 1,
+                "sessions": 1288,
+                "purchases": 350,
+                "conversion_rate": 0.2717391304347826,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 2,
+                "sessions": 235,
+                "purchases": 70,
+                "conversion_rate": 0.2978723404255319,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 3,
+                "sessions": 567,
+                "purchases": 148,
+                "conversion_rate": 0.26102292768959434,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 4,
+                "sessions": 285,
+                "purchases": 62,
+                "conversion_rate": 0.21754385964912282,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 5,
+                "sessions": 64,
+                "purchases": 13,
+                "conversion_rate": 0.203125,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 6,
+                "sessions": 147,
+                "purchases": 30,
+                "conversion_rate": 0.20408163265306123,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 7,
+                "sessions": 164,
+                "purchases": 41,
+                "conversion_rate": 0.25,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 8,
+                "sessions": 86,
+                "purchases": 14,
+                "conversion_rate": 0.16279069767441862,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 9,
+                "sessions": 162,
+                "purchases": 32,
+                "conversion_rate": 0.19753086419753085,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 1,
+                "sessions": 215,
+                "purchases": 44,
+                "conversion_rate": 0.20465116279069767,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 2,
+                "sessions": 45,
+                "purchases": 11,
+                "conversion_rate": 0.24444444444444444,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 3,
+                "sessions": 109,
+                "purchases": 22,
+                "conversion_rate": 0.2018348623853211,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 4,
+                "sessions": 46,
+                "purchases": 12,
+                "conversion_rate": 0.2608695652173913,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 5,
+                "sessions": 14,
+                "purchases": 4,
+                "conversion_rate": 0.2857142857142857,
+                "small_sample": true
+              },
+              {
+                "month": "Oct",
+                "region": 6,
+                "sessions": 39,
+                "purchases": 8,
+                "conversion_rate": 0.20512820512820512,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 7,
+                "sessions": 39,
+                "purchases": 9,
+                "conversion_rate": 0.23076923076923078,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 8,
+                "sessions": 18,
+                "purchases": 1,
+                "conversion_rate": 0.05555555555555555,
+                "small_sample": true
+              }
+            ],
+            "row_count": 90
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247645.2888696
+    },
+    {
+      "id": 11,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 2578,
+        "input_tokens": 6520,
+        "output_tokens": 104,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_j7a04dhg0cvrqtzu0mmy0wan",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 20, \"offset\": 78}"
+          }
+        ]
+      },
+      "created_at": 1795247647.9013581
+    },
+    {
+      "id": 12,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 20, \"offset\": 78}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "69676343a5bc4f82abc1005e8172b270",
+            "query": {
+              "group_by": [
+                "month",
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "Oct",
+                "region": 7,
+                "sessions": 39,
+                "purchases": 9,
+                "conversion_rate": 0.23076923076923078,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 8,
+                "sessions": 18,
+                "purchases": 1,
+                "conversion_rate": 0.05555555555555555,
+                "small_sample": true
+              },
+              {
+                "month": "Oct",
+                "region": 9,
+                "sessions": 24,
+                "purchases": 4,
+                "conversion_rate": 0.16666666666666666,
+                "small_sample": true
+              },
+              {
+                "month": "Sep",
+                "region": 1,
+                "sessions": 156,
+                "purchases": 32,
+                "conversion_rate": 0.20512820512820512,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 2,
+                "sessions": 41,
+                "purchases": 10,
+                "conversion_rate": 0.24390243902439024,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 3,
+                "sessions": 83,
+                "purchases": 14,
+                "conversion_rate": 0.1686746987951807,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 4,
+                "sessions": 55,
+                "purchases": 8,
+                "conversion_rate": 0.14545454545454545,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 5,
+                "sessions": 18,
+                "purchases": 3,
+                "conversion_rate": 0.16666666666666666,
+                "small_sample": true
+              },
+              {
+                "month": "Sep",
+                "region": 6,
+                "sessions": 36,
+                "purchases": 7,
+                "conversion_rate": 0.19444444444444445,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 7,
+                "sessions": 26,
+                "purchases": 7,
+                "conversion_rate": 0.2692307692307692,
+                "small_sample": true
+              },
+              {
+                "month": "Sep",
+                "region": 8,
+                "sessions": 16,
+                "purchases": 2,
+                "conversion_rate": 0.125,
+                "small_sample": true
+              },
+              {
+                "month": "Sep",
+                "region": 9,
+                "sessions": 17,
+                "purchases": 3,
+                "conversion_rate": 0.17647058823529413,
+                "small_sample": true
+              }
+            ],
+            "row_count": 90
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247647.9087222
+    },
+    {
+      "id": 13,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 6093,
+        "input_tokens": 6743,
+        "output_tokens": 703,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_ayth21wa0sqrv3drv2gznm6b",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"text\": \"假设：月份对转化率的区分度大于地区；即各地区的转化率差异较小，而月份差异在所有地区方向一致（11月高于2月）。\", \"status\": \"open\"}"
+          }
+        ]
+      },
+      "created_at": 1795247654.0505264
+    },
+    {
+      "id": 14,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "update_hypothesis",
+        "arguments": "{\"text\": \"假设：月份对转化率的区分度大于地区；即各地区的转化率差异较小，而月份差异在所有地区方向一致（11月高于2月）。\", \"status\": \"open\"}",
+        "result": {
+          "ok": true,
+          "data": {
+            "id": "a87b166c81fd4074958eb8ad578277f7",
+            "goal_id": "e780e9f8894e44ac8a804bb18378150b",
+            "text": "假设：月份对转化率的区分度大于地区；即各地区的转化率差异较小，而月份差异在所有地区方向一致（11月高于2月）。",
+            "status": "open",
+            "evidence_ids": []
+          }
+        },
+        "duration_ms": 16
+      },
+      "created_at": 1795247654.0681932
+    },
+    {
+      "id": 15,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 1734,
+        "input_tokens": 4759,
+        "output_tokens": 109,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_lbknx8edfvavii1n7rdpih2d",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"5458229df0a645f2bfed4711bbd971a0\", \"limit\": 20}"
+          }
+        ]
+      },
+      "created_at": 1795247655.8461716
+    },
+    {
+      "id": 16,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"5458229df0a645f2bfed4711bbd971a0\", \"limit\": 20}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "5458229df0a645f2bfed4711bbd971a0",
+            "query": {
+              "group_by": [
+                "month"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "Aug",
+                "sessions": 433,
+                "purchases": 76,
+                "conversion_rate": 0.17551963048498845,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "sessions": 1727,
+                "purchases": 216,
+                "conversion_rate": 0.1250723798494499,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "sessions": 184,
+                "purchases": 3,
+                "conversion_rate": 0.016304347826086956,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "sessions": 432,
+                "purchases": 66,
+                "conversion_rate": 0.1527777777777778,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "sessions": 288,
+                "purchases": 29,
+                "conversion_rate": 0.10069444444444445,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "sessions": 1907,
+                "purchases": 192,
+                "conversion_rate": 0.10068169900367069,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "sessions": 3364,
+                "purchases": 365,
+                "conversion_rate": 0.10850178359096314,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "sessions": 2998,
+                "purchases": 760,
+                "conversion_rate": 0.25350233488992663,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "sessions": 549,
+                "purchases": 115,
+                "conversion_rate": 0.20947176684881602,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "sessions": 448,
+                "purchases": 86,
+                "conversion_rate": 0.19196428571428573,
+                "small_sample": false
+              }
+            ],
+            "row_count": 10
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247655.8801122
+    },
+    {
+      "id": 17,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 3610,
+        "input_tokens": 659,
+        "output_tokens": 234,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_90b9b62ab2374ca8b9d539d0",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"6c00c0596c514c308c99f7eb9b276c75\", \"limit\": 20}"
+          },
+          {
+            "call_id": "fc_call_8f602024bbc54514ab35c5ba",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 30, \"offset\": 0}"
+          }
+        ]
+      },
+      "created_at": 1795247659.5321648
+    },
+    {
+      "id": 18,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"6c00c0596c514c308c99f7eb9b276c75\", \"limit\": 20}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "6c00c0596c514c308c99f7eb9b276c75",
+            "query": {
+              "group_by": [
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "region": 1,
+                "sessions": 4780,
+                "purchases": 771,
+                "conversion_rate": 0.16129707112970712,
+                "small_sample": false
+              },
+              {
+                "region": 2,
+                "sessions": 1136,
+                "purchases": 188,
+                "conversion_rate": 0.16549295774647887,
+                "small_sample": false
+              },
+              {
+                "region": 3,
+                "sessions": 2403,
+                "purchases": 349,
+                "conversion_rate": 0.14523512276321265,
+                "small_sample": false
+              },
+              {
+                "region": 4,
+                "sessions": 1182,
+                "purchases": 175,
+                "conversion_rate": 0.14805414551607446,
+                "small_sample": false
+              },
+              {
+                "region": 5,
+                "sessions": 318,
+                "purchases": 52,
+                "conversion_rate": 0.16352201257861634,
+                "small_sample": false
+              },
+              {
+                "region": 6,
+                "sessions": 805,
+                "purchases": 112,
+                "conversion_rate": 0.1391304347826087,
+                "small_sample": false
+              },
+              {
+                "region": 7,
+                "sessions": 761,
+                "purchases": 119,
+                "conversion_rate": 0.15637319316688567,
+                "small_sample": false
+              },
+              {
+                "region": 8,
+                "sessions": 434,
+                "purchases": 56,
+                "conversion_rate": 0.12903225806451613,
+                "small_sample": false
+              },
+              {
+                "region": 9,
+                "sessions": 511,
+                "purchases": 86,
+                "conversion_rate": 0.16829745596868884,
+                "small_sample": false
+              }
+            ],
+            "row_count": 9
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247659.555804
+    },
+    {
+      "id": 19,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 30, \"offset\": 0}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "69676343a5bc4f82abc1005e8172b270",
+            "query": {
+              "group_by": [
+                "month",
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "Aug",
+                "region": 1,
+                "sessions": 157,
+                "purchases": 27,
+                "conversion_rate": 0.17197452229299362,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 2,
+                "sessions": 34,
+                "purchases": 9,
+                "conversion_rate": 0.2647058823529412,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 3,
+                "sessions": 94,
+                "purchases": 12,
+                "conversion_rate": 0.1276595744680851,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 4,
+                "sessions": 44,
+                "purchases": 12,
+                "conversion_rate": 0.2727272727272727,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 5,
+                "sessions": 11,
+                "purchases": 1,
+                "conversion_rate": 0.09090909090909091,
+                "small_sample": true
+              },
+              {
+                "month": "Aug",
+                "region": 6,
+                "sessions": 29,
+                "purchases": 4,
+                "conversion_rate": 0.13793103448275862,
+                "small_sample": true
+              },
+              {
+                "month": "Aug",
+                "region": 7,
+                "sessions": 31,
+                "purchases": 4,
+                "conversion_rate": 0.12903225806451613,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 8,
+                "sessions": 19,
+                "purchases": 6,
+                "conversion_rate": 0.3157894736842105,
+                "small_sample": true
+              },
+              {
+                "month": "Aug",
+                "region": 9,
+                "sessions": 14,
+                "purchases": 1,
+                "conversion_rate": 0.07142857142857142,
+                "small_sample": true
+              },
+              {
+                "month": "Dec",
+                "region": 1,
+                "sessions": 626,
+                "purchases": 76,
+                "conversion_rate": 0.12140575079872204,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 2,
+                "sessions": 142,
+                "purchases": 16,
+                "conversion_rate": 0.11267605633802817,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 3,
+                "sessions": 351,
+                "purchases": 38,
+                "conversion_rate": 0.10826210826210826,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 4,
+                "sessions": 161,
+                "purchases": 22,
+                "conversion_rate": 0.13664596273291926,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 5,
+                "sessions": 41,
+                "purchases": 7,
+                "conversion_rate": 0.17073170731707318,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 6,
+                "sessions": 100,
+                "purchases": 11,
+                "conversion_rate": 0.11,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 7,
+                "sessions": 119,
+                "purchases": 16,
+                "conversion_rate": 0.13445378151260504,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 8,
+                "sessions": 67,
+                "purchases": 7,
+                "conversion_rate": 0.1044776119402985,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 9,
+                "sessions": 120,
+                "purchases": 23,
+                "conversion_rate": 0.19166666666666668,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "region": 1,
+                "sessions": 85,
+                "purchases": 1,
+                "conversion_rate": 0.011764705882352941,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "region": 2,
+                "sessions": 15,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 3,
+                "sessions": 40,
+                "purchases": 1,
+                "conversion_rate": 0.025,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "region": 4,
+                "sessions": 16,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 5,
+                "sessions": 5,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 6,
+                "sessions": 9,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 7,
+                "sessions": 5,
+                "purchases": 1,
+                "conversion_rate": 0.2,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 8,
+                "sessions": 4,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 9,
+                "sessions": 5,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 1,
+                "sessions": 148,
+                "purchases": 27,
+                "conversion_rate": 0.18243243243243243,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 2,
+                "sessions": 42,
+                "purchases": 5,
+                "conversion_rate": 0.11904761904761904,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 3,
+                "sessions": 81,
+                "purchases": 11,
+                "conversion_rate": 0.13580246913580246,
+                "small_sample": false
+              }
+            ],
+            "row_count": 90
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247659.5763946
+    },
+    {
+      "id": 20,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 1843,
+        "input_tokens": 3595,
+        "output_tokens": 145,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_1jhcyni6e3x9lwcocg5rssbq",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 30, \"offset\": 30}"
+          }
+        ]
+      },
+      "created_at": 1795247661.4964318
+    },
+    {
+      "id": 21,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 30, \"offset\": 30}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "69676343a5bc4f82abc1005e8172b270",
+            "query": {
+              "group_by": [
+                "month",
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "Jul",
+                "region": 4,
+                "sessions": 43,
+                "purchases": 4,
+                "conversion_rate": 0.09302325581395349,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 5,
+                "sessions": 13,
+                "purchases": 2,
+                "conversion_rate": 0.15384615384615385,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 6,
+                "sessions": 34,
+                "purchases": 6,
+                "conversion_rate": 0.17647058823529413,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 7,
+                "sessions": 29,
+                "purchases": 4,
+                "conversion_rate": 0.13793103448275862,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 8,
+                "sessions": 22,
+                "purchases": 5,
+                "conversion_rate": 0.22727272727272727,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 9,
+                "sessions": 20,
+                "purchases": 2,
+                "conversion_rate": 0.1,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 1,
+                "sessions": 100,
+                "purchases": 13,
+                "conversion_rate": 0.13,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "region": 2,
+                "sessions": 38,
+                "purchases": 1,
+                "conversion_rate": 0.02631578947368421,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "region": 3,
+                "sessions": 57,
+                "purchases": 3,
+                "conversion_rate": 0.05263157894736842,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "region": 4,
+                "sessions": 22,
+                "purchases": 3,
+                "conversion_rate": 0.13636363636363635,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 5,
+                "sessions": 10,
+                "purchases": 3,
+                "conversion_rate": 0.3,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 6,
+                "sessions": 23,
+                "purchases": 3,
+                "conversion_rate": 0.13043478260869565,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 7,
+                "sessions": 18,
+                "purchases": 1,
+                "conversion_rate": 0.05555555555555555,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 8,
+                "sessions": 10,
+                "purchases": 2,
+                "conversion_rate": 0.2,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 9,
+                "sessions": 10,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Mar",
+                "region": 1,
+                "sessions": 778,
+                "purchases": 80,
+                "conversion_rate": 0.10282776349614396,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 2,
+                "sessions": 197,
+                "purchases": 25,
+                "conversion_rate": 0.12690355329949238,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 3,
+                "sessions": 352,
+                "purchases": 33,
+                "conversion_rate": 0.09375,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 4,
+                "sessions": 156,
+                "purchases": 14,
+                "conversion_rate": 0.08974358974358974,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 5,
+                "sessions": 39,
+                "purchases": 2,
+                "conversion_rate": 0.05128205128205128,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 6,
+                "sessions": 130,
+                "purchases": 9,
+                "conversion_rate": 0.06923076923076923,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 7,
+                "sessions": 134,
+                "purchases": 18,
+                "conversion_rate": 0.13432835820895522,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 8,
+                "sessions": 69,
+                "purchases": 3,
+                "conversion_rate": 0.043478260869565216,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 9,
+                "sessions": 52,
+                "purchases": 8,
+                "conversion_rate": 0.15384615384615385,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 1,
+                "sessions": 1227,
+                "purchases": 121,
+                "conversion_rate": 0.09861450692746536,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 2,
+                "sessions": 347,
+                "purchases": 41,
+                "conversion_rate": 0.11815561959654179,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 3,
+                "sessions": 669,
+                "purchases": 67,
+                "conversion_rate": 0.10014947683109118,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 4,
+                "sessions": 354,
+                "purchases": 38,
+                "conversion_rate": 0.10734463276836158,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 5,
+                "sessions": 103,
+                "purchases": 17,
+                "conversion_rate": 0.1650485436893204,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 6,
+                "sessions": 258,
+                "purchases": 34,
+                "conversion_rate": 0.13178294573643412,
+                "small_sample": false
+              }
+            ],
+            "row_count": 90
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247661.5028205
+    },
+    {
+      "id": 22,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 2016,
+        "input_tokens": 5025,
+        "output_tokens": 115,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_qesawx58ucvpnjqsrp7bf9kv",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 30, \"offset\": 60}"
+          }
+        ]
+      },
+      "created_at": 1795247663.5606334
+    },
+    {
+      "id": 23,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 30, \"offset\": 60}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "69676343a5bc4f82abc1005e8172b270",
+            "query": {
+              "group_by": [
+                "month",
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "May",
+                "region": 7,
+                "sessions": 196,
+                "purchases": 18,
+                "conversion_rate": 0.09183673469387756,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 8,
+                "sessions": 123,
+                "purchases": 16,
+                "conversion_rate": 0.13008130081300814,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 9,
+                "sessions": 87,
+                "purchases": 13,
+                "conversion_rate": 0.14942528735632185,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 1,
+                "sessions": 1288,
+                "purchases": 350,
+                "conversion_rate": 0.2717391304347826,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 2,
+                "sessions": 235,
+                "purchases": 70,
+                "conversion_rate": 0.2978723404255319,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 3,
+                "sessions": 567,
+                "purchases": 148,
+                "conversion_rate": 0.26102292768959434,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 4,
+                "sessions": 285,
+                "purchases": 62,
+                "conversion_rate": 0.21754385964912282,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 5,
+                "sessions": 64,
+                "purchases": 13,
+                "conversion_rate": 0.203125,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 6,
+                "sessions": 147,
+                "purchases": 30,
+                "conversion_rate": 0.20408163265306123,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 7,
+                "sessions": 164,
+                "purchases": 41,
+                "conversion_rate": 0.25,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 8,
+                "sessions": 86,
+                "purchases": 14,
+                "conversion_rate": 0.16279069767441862,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 9,
+                "sessions": 162,
+                "purchases": 32,
+                "conversion_rate": 0.19753086419753085,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 1,
+                "sessions": 215,
+                "purchases": 44,
+                "conversion_rate": 0.20465116279069767,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 2,
+                "sessions": 45,
+                "purchases": 11,
+                "conversion_rate": 0.24444444444444444,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 3,
+                "sessions": 109,
+                "purchases": 22,
+                "conversion_rate": 0.2018348623853211,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 4,
+                "sessions": 46,
+                "purchases": 12,
+                "conversion_rate": 0.2608695652173913,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 5,
+                "sessions": 14,
+                "purchases": 4,
+                "conversion_rate": 0.2857142857142857,
+                "small_sample": true
+              },
+              {
+                "month": "Oct",
+                "region": 6,
+                "sessions": 39,
+                "purchases": 8,
+                "conversion_rate": 0.20512820512820512,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 7,
+                "sessions": 39,
+                "purchases": 9,
+                "conversion_rate": 0.23076923076923078,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 8,
+                "sessions": 18,
+                "purchases": 1,
+                "conversion_rate": 0.05555555555555555,
+                "small_sample": true
+              },
+              {
+                "month": "Oct",
+                "region": 9,
+                "sessions": 24,
+                "purchases": 4,
+                "conversion_rate": 0.16666666666666666,
+                "small_sample": true
+              },
+              {
+                "month": "Sep",
+                "region": 1,
+                "sessions": 156,
+                "purchases": 32,
+                "conversion_rate": 0.20512820512820512,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 2,
+                "sessions": 41,
+                "purchases": 10,
+                "conversion_rate": 0.24390243902439024,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 3,
+                "sessions": 83,
+                "purchases": 14,
+                "conversion_rate": 0.1686746987951807,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 4,
+                "sessions": 55,
+                "purchases": 8,
+                "conversion_rate": 0.14545454545454545,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 5,
+                "sessions": 18,
+                "purchases": 3,
+                "conversion_rate": 0.16666666666666666,
+                "small_sample": true
+              },
+              {
+                "month": "Sep",
+                "region": 6,
+                "sessions": 36,
+                "purchases": 7,
+                "conversion_rate": 0.19444444444444445,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 7,
+                "sessions": 26,
+                "purchases": 7,
+                "conversion_rate": 0.2692307692307692,
+                "small_sample": true
+              },
+              {
+                "month": "Sep",
+                "region": 8,
+                "sessions": 16,
+                "purchases": 2,
+                "conversion_rate": 0.125,
+                "small_sample": true
+              },
+              {
+                "month": "Sep",
+                "region": 9,
+                "sessions": 17,
+                "purchases": 3,
+                "conversion_rate": 0.17647058823529413,
+                "small_sample": true
+              }
+            ],
+            "row_count": 90
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247663.5703502
+    },
+    {
+      "id": 24,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 6250,
+        "input_tokens": 6045,
+        "output_tokens": 362,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_262febb5a5f34c5ca4e2e1aa",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"5458229df0a645f2bfed4711bbd971a0\", \"limit\": 20}"
+          }
+        ]
+      },
+      "created_at": 1795247669.856139
+    },
+    {
+      "id": 25,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"5458229df0a645f2bfed4711bbd971a0\", \"limit\": 20}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "5458229df0a645f2bfed4711bbd971a0",
+            "query": {
+              "group_by": [
+                "month"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "Aug",
+                "sessions": 433,
+                "purchases": 76,
+                "conversion_rate": 0.17551963048498845,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "sessions": 1727,
+                "purchases": 216,
+                "conversion_rate": 0.1250723798494499,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "sessions": 184,
+                "purchases": 3,
+                "conversion_rate": 0.016304347826086956,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "sessions": 432,
+                "purchases": 66,
+                "conversion_rate": 0.1527777777777778,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "sessions": 288,
+                "purchases": 29,
+                "conversion_rate": 0.10069444444444445,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "sessions": 1907,
+                "purchases": 192,
+                "conversion_rate": 0.10068169900367069,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "sessions": 3364,
+                "purchases": 365,
+                "conversion_rate": 0.10850178359096314,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "sessions": 2998,
+                "purchases": 760,
+                "conversion_rate": 0.25350233488992663,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "sessions": 549,
+                "purchases": 115,
+                "conversion_rate": 0.20947176684881602,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "sessions": 448,
+                "purchases": 86,
+                "conversion_rate": 0.19196428571428573,
+                "small_sample": false
+              }
+            ],
+            "row_count": 10
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247669.8689716
+    },
+    {
+      "id": 26,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 1984,
+        "input_tokens": 4481,
+        "output_tokens": 75,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_qsdi8b8e22m5otr59kd7q1lo",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"6c00c0596c514c308c99f7eb9b276c75\", \"limit\": 20}"
+          }
+        ]
+      },
+      "created_at": 1795247671.890952
+    },
+    {
+      "id": 27,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"6c00c0596c514c308c99f7eb9b276c75\", \"limit\": 20}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "6c00c0596c514c308c99f7eb9b276c75",
+            "query": {
+              "group_by": [
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "region": 1,
+                "sessions": 4780,
+                "purchases": 771,
+                "conversion_rate": 0.16129707112970712,
+                "small_sample": false
+              },
+              {
+                "region": 2,
+                "sessions": 1136,
+                "purchases": 188,
+                "conversion_rate": 0.16549295774647887,
+                "small_sample": false
+              },
+              {
+                "region": 3,
+                "sessions": 2403,
+                "purchases": 349,
+                "conversion_rate": 0.14523512276321265,
+                "small_sample": false
+              },
+              {
+                "region": 4,
+                "sessions": 1182,
+                "purchases": 175,
+                "conversion_rate": 0.14805414551607446,
+                "small_sample": false
+              },
+              {
+                "region": 5,
+                "sessions": 318,
+                "purchases": 52,
+                "conversion_rate": 0.16352201257861634,
+                "small_sample": false
+              },
+              {
+                "region": 6,
+                "sessions": 805,
+                "purchases": 112,
+                "conversion_rate": 0.1391304347826087,
+                "small_sample": false
+              },
+              {
+                "region": 7,
+                "sessions": 761,
+                "purchases": 119,
+                "conversion_rate": 0.15637319316688567,
+                "small_sample": false
+              },
+              {
+                "region": 8,
+                "sessions": 434,
+                "purchases": 56,
+                "conversion_rate": 0.12903225806451613,
+                "small_sample": false
+              },
+              {
+                "region": 9,
+                "sessions": 511,
+                "purchases": 86,
+                "conversion_rate": 0.16829745596868884,
+                "small_sample": false
+              }
+            ],
+            "row_count": 9
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247671.9002638
+    },
+    {
+      "id": 28,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 2406,
+        "input_tokens": 878,
+        "output_tokens": 126,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_af6df768d9ad47ec9ce60107",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 30, \"offset\": 0}"
+          }
+        ]
+      },
+      "created_at": 1795247674.3356795
+    },
+    {
+      "id": 29,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 30, \"offset\": 0}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "69676343a5bc4f82abc1005e8172b270",
+            "query": {
+              "group_by": [
+                "month",
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "Aug",
+                "region": 1,
+                "sessions": 157,
+                "purchases": 27,
+                "conversion_rate": 0.17197452229299362,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 2,
+                "sessions": 34,
+                "purchases": 9,
+                "conversion_rate": 0.2647058823529412,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 3,
+                "sessions": 94,
+                "purchases": 12,
+                "conversion_rate": 0.1276595744680851,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 4,
+                "sessions": 44,
+                "purchases": 12,
+                "conversion_rate": 0.2727272727272727,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 5,
+                "sessions": 11,
+                "purchases": 1,
+                "conversion_rate": 0.09090909090909091,
+                "small_sample": true
+              },
+              {
+                "month": "Aug",
+                "region": 6,
+                "sessions": 29,
+                "purchases": 4,
+                "conversion_rate": 0.13793103448275862,
+                "small_sample": true
+              },
+              {
+                "month": "Aug",
+                "region": 7,
+                "sessions": 31,
+                "purchases": 4,
+                "conversion_rate": 0.12903225806451613,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 8,
+                "sessions": 19,
+                "purchases": 6,
+                "conversion_rate": 0.3157894736842105,
+                "small_sample": true
+              },
+              {
+                "month": "Aug",
+                "region": 9,
+                "sessions": 14,
+                "purchases": 1,
+                "conversion_rate": 0.07142857142857142,
+                "small_sample": true
+              },
+              {
+                "month": "Dec",
+                "region": 1,
+                "sessions": 626,
+                "purchases": 76,
+                "conversion_rate": 0.12140575079872204,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 2,
+                "sessions": 142,
+                "purchases": 16,
+                "conversion_rate": 0.11267605633802817,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 3,
+                "sessions": 351,
+                "purchases": 38,
+                "conversion_rate": 0.10826210826210826,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 4,
+                "sessions": 161,
+                "purchases": 22,
+                "conversion_rate": 0.13664596273291926,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 5,
+                "sessions": 41,
+                "purchases": 7,
+                "conversion_rate": 0.17073170731707318,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 6,
+                "sessions": 100,
+                "purchases": 11,
+                "conversion_rate": 0.11,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 7,
+                "sessions": 119,
+                "purchases": 16,
+                "conversion_rate": 0.13445378151260504,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 8,
+                "sessions": 67,
+                "purchases": 7,
+                "conversion_rate": 0.1044776119402985,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 9,
+                "sessions": 120,
+                "purchases": 23,
+                "conversion_rate": 0.19166666666666668,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "region": 1,
+                "sessions": 85,
+                "purchases": 1,
+                "conversion_rate": 0.011764705882352941,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "region": 2,
+                "sessions": 15,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 3,
+                "sessions": 40,
+                "purchases": 1,
+                "conversion_rate": 0.025,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "region": 4,
+                "sessions": 16,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 5,
+                "sessions": 5,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 6,
+                "sessions": 9,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 7,
+                "sessions": 5,
+                "purchases": 1,
+                "conversion_rate": 0.2,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 8,
+                "sessions": 4,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 9,
+                "sessions": 5,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 1,
+                "sessions": 148,
+                "purchases": 27,
+                "conversion_rate": 0.18243243243243243,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 2,
+                "sessions": 42,
+                "purchases": 5,
+                "conversion_rate": 0.11904761904761904,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 3,
+                "sessions": 81,
+                "purchases": 11,
+                "conversion_rate": 0.13580246913580246,
+                "small_sample": false
+              }
+            ],
+            "row_count": 90
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247674.3421016
+    },
+    {
+      "id": 30,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 2532,
+        "input_tokens": 3407,
+        "output_tokens": 108,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_tn60lb51zucwjxkcoslddkm6",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 40, \"offset\": 30}"
+          }
+        ]
+      },
+      "created_at": 1795247676.9026086
+    },
+    {
+      "id": 31,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 40, \"offset\": 30}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "69676343a5bc4f82abc1005e8172b270",
+            "query": {
+              "group_by": [
+                "month",
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "Jul",
+                "region": 4,
+                "sessions": 43,
+                "purchases": 4,
+                "conversion_rate": 0.09302325581395349,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 5,
+                "sessions": 13,
+                "purchases": 2,
+                "conversion_rate": 0.15384615384615385,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 6,
+                "sessions": 34,
+                "purchases": 6,
+                "conversion_rate": 0.17647058823529413,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 7,
+                "sessions": 29,
+                "purchases": 4,
+                "conversion_rate": 0.13793103448275862,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 8,
+                "sessions": 22,
+                "purchases": 5,
+                "conversion_rate": 0.22727272727272727,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 9,
+                "sessions": 20,
+                "purchases": 2,
+                "conversion_rate": 0.1,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 1,
+                "sessions": 100,
+                "purchases": 13,
+                "conversion_rate": 0.13,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "region": 2,
+                "sessions": 38,
+                "purchases": 1,
+                "conversion_rate": 0.02631578947368421,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "region": 3,
+                "sessions": 57,
+                "purchases": 3,
+                "conversion_rate": 0.05263157894736842,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "region": 4,
+                "sessions": 22,
+                "purchases": 3,
+                "conversion_rate": 0.13636363636363635,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 5,
+                "sessions": 10,
+                "purchases": 3,
+                "conversion_rate": 0.3,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 6,
+                "sessions": 23,
+                "purchases": 3,
+                "conversion_rate": 0.13043478260869565,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 7,
+                "sessions": 18,
+                "purchases": 1,
+                "conversion_rate": 0.05555555555555555,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 8,
+                "sessions": 10,
+                "purchases": 2,
+                "conversion_rate": 0.2,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 9,
+                "sessions": 10,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Mar",
+                "region": 1,
+                "sessions": 778,
+                "purchases": 80,
+                "conversion_rate": 0.10282776349614396,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 2,
+                "sessions": 197,
+                "purchases": 25,
+                "conversion_rate": 0.12690355329949238,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 3,
+                "sessions": 352,
+                "purchases": 33,
+                "conversion_rate": 0.09375,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 4,
+                "sessions": 156,
+                "purchases": 14,
+                "conversion_rate": 0.08974358974358974,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 5,
+                "sessions": 39,
+                "purchases": 2,
+                "conversion_rate": 0.05128205128205128,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 6,
+                "sessions": 130,
+                "purchases": 9,
+                "conversion_rate": 0.06923076923076923,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 7,
+                "sessions": 134,
+                "purchases": 18,
+                "conversion_rate": 0.13432835820895522,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 8,
+                "sessions": 69,
+                "purchases": 3,
+                "conversion_rate": 0.043478260869565216,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 9,
+                "sessions": 52,
+                "purchases": 8,
+                "conversion_rate": 0.15384615384615385,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 1,
+                "sessions": 1227,
+                "purchases": 121,
+                "conversion_rate": 0.09861450692746536,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 2,
+                "sessions": 347,
+                "purchases": 41,
+                "conversion_rate": 0.11815561959654179,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 3,
+                "sessions": 669,
+                "purchases": 67,
+                "conversion_rate": 0.10014947683109118,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 4,
+                "sessions": 354,
+                "purchases": 38,
+                "conversion_rate": 0.10734463276836158,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 5,
+                "sessions": 103,
+                "purchases": 17,
+                "conversion_rate": 0.1650485436893204,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 6,
+                "sessions": 258,
+                "purchases": 34,
+                "conversion_rate": 0.13178294573643412,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 7,
+                "sessions": 196,
+                "purchases": 18,
+                "conversion_rate": 0.09183673469387756,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 8,
+                "sessions": 123,
+                "purchases": 16,
+                "conversion_rate": 0.13008130081300814,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 9,
+                "sessions": 87,
+                "purchases": 13,
+                "conversion_rate": 0.14942528735632185,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 1,
+                "sessions": 1288,
+                "purchases": 350,
+                "conversion_rate": 0.2717391304347826,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 2,
+                "sessions": 235,
+                "purchases": 70,
+                "conversion_rate": 0.2978723404255319,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 3,
+                "sessions": 567,
+                "purchases": 148,
+                "conversion_rate": 0.26102292768959434,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 4,
+                "sessions": 285,
+                "purchases": 62,
+                "conversion_rate": 0.21754385964912282,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 5,
+                "sessions": 64,
+                "purchases": 13,
+                "conversion_rate": 0.203125,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 6,
+                "sessions": 147,
+                "purchases": 30,
+                "conversion_rate": 0.20408163265306123,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 7,
+                "sessions": 164,
+                "purchases": 41,
+                "conversion_rate": 0.25,
+                "small_sample": false
+              }
+            ],
+            "row_count": 90
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247676.912055
+    },
+    {
+      "id": 32,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 2406,
+        "input_tokens": 4883,
+        "output_tokens": 88,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_bc3dczhxx4yof9x1237xn4it",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 40, \"offset\": 70}"
+          }
+        ]
+      },
+      "created_at": 1795247679.362304
+    },
+    {
+      "id": 33,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 40, \"offset\": 70}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "69676343a5bc4f82abc1005e8172b270",
+            "query": {
+              "group_by": [
+                "month",
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "Nov",
+                "region": 8,
+                "sessions": 86,
+                "purchases": 14,
+                "conversion_rate": 0.16279069767441862,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "region": 9,
+                "sessions": 162,
+                "purchases": 32,
+                "conversion_rate": 0.19753086419753085,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 1,
+                "sessions": 215,
+                "purchases": 44,
+                "conversion_rate": 0.20465116279069767,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 2,
+                "sessions": 45,
+                "purchases": 11,
+                "conversion_rate": 0.24444444444444444,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 3,
+                "sessions": 109,
+                "purchases": 22,
+                "conversion_rate": 0.2018348623853211,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 4,
+                "sessions": 46,
+                "purchases": 12,
+                "conversion_rate": 0.2608695652173913,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 5,
+                "sessions": 14,
+                "purchases": 4,
+                "conversion_rate": 0.2857142857142857,
+                "small_sample": true
+              },
+              {
+                "month": "Oct",
+                "region": 6,
+                "sessions": 39,
+                "purchases": 8,
+                "conversion_rate": 0.20512820512820512,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 7,
+                "sessions": 39,
+                "purchases": 9,
+                "conversion_rate": 0.23076923076923078,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "region": 8,
+                "sessions": 18,
+                "purchases": 1,
+                "conversion_rate": 0.05555555555555555,
+                "small_sample": true
+              },
+              {
+                "month": "Oct",
+                "region": 9,
+                "sessions": 24,
+                "purchases": 4,
+                "conversion_rate": 0.16666666666666666,
+                "small_sample": true
+              },
+              {
+                "month": "Sep",
+                "region": 1,
+                "sessions": 156,
+                "purchases": 32,
+                "conversion_rate": 0.20512820512820512,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 2,
+                "sessions": 41,
+                "purchases": 10,
+                "conversion_rate": 0.24390243902439024,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 3,
+                "sessions": 83,
+                "purchases": 14,
+                "conversion_rate": 0.1686746987951807,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 4,
+                "sessions": 55,
+                "purchases": 8,
+                "conversion_rate": 0.14545454545454545,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 5,
+                "sessions": 18,
+                "purchases": 3,
+                "conversion_rate": 0.16666666666666666,
+                "small_sample": true
+              },
+              {
+                "month": "Sep",
+                "region": 6,
+                "sessions": 36,
+                "purchases": 7,
+                "conversion_rate": 0.19444444444444445,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "region": 7,
+                "sessions": 26,
+                "purchases": 7,
+                "conversion_rate": 0.2692307692307692,
+                "small_sample": true
+              },
+              {
+                "month": "Sep",
+                "region": 8,
+                "sessions": 16,
+                "purchases": 2,
+                "conversion_rate": 0.125,
+                "small_sample": true
+              },
+              {
+                "month": "Sep",
+                "region": 9,
+                "sessions": 17,
+                "purchases": 3,
+                "conversion_rate": 0.17647058823529413,
+                "small_sample": true
+              }
+            ],
+            "row_count": 90
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247679.3766406
+    },
+    {
+      "id": 34,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 2625,
+        "input_tokens": 5470,
+        "output_tokens": 203,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_di8tnbm8st8km1568ofnqn8k",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"5458229df0a645f2bfed4711bbd971a0\", \"limit\": 20, \"offset\": 0}"
+          },
+          {
+            "call_id": "fc_call_01_2vlem2mb5eg6ylxu6p23wojh",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"6c00c0596c514c308c99f7eb9b276c75\", \"limit\": 20, \"offset\": 0}"
+          }
+        ]
+      },
+      "created_at": 1795247682.0408385
+    },
+    {
+      "id": 35,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"5458229df0a645f2bfed4711bbd971a0\", \"limit\": 20, \"offset\": 0}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "5458229df0a645f2bfed4711bbd971a0",
+            "query": {
+              "group_by": [
+                "month"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "Aug",
+                "sessions": 433,
+                "purchases": 76,
+                "conversion_rate": 0.17551963048498845,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "sessions": 1727,
+                "purchases": 216,
+                "conversion_rate": 0.1250723798494499,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "sessions": 184,
+                "purchases": 3,
+                "conversion_rate": 0.016304347826086956,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "sessions": 432,
+                "purchases": 66,
+                "conversion_rate": 0.1527777777777778,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "sessions": 288,
+                "purchases": 29,
+                "conversion_rate": 0.10069444444444445,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "sessions": 1907,
+                "purchases": 192,
+                "conversion_rate": 0.10068169900367069,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "sessions": 3364,
+                "purchases": 365,
+                "conversion_rate": 0.10850178359096314,
+                "small_sample": false
+              },
+              {
+                "month": "Nov",
+                "sessions": 2998,
+                "purchases": 760,
+                "conversion_rate": 0.25350233488992663,
+                "small_sample": false
+              },
+              {
+                "month": "Oct",
+                "sessions": 549,
+                "purchases": 115,
+                "conversion_rate": 0.20947176684881602,
+                "small_sample": false
+              },
+              {
+                "month": "Sep",
+                "sessions": 448,
+                "purchases": 86,
+                "conversion_rate": 0.19196428571428573,
+                "small_sample": false
+              }
+            ],
+            "row_count": 10
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247682.047921
+    },
+    {
+      "id": 36,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"6c00c0596c514c308c99f7eb9b276c75\", \"limit\": 20, \"offset\": 0}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "6c00c0596c514c308c99f7eb9b276c75",
+            "query": {
+              "group_by": [
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "region": 1,
+                "sessions": 4780,
+                "purchases": 771,
+                "conversion_rate": 0.16129707112970712,
+                "small_sample": false
+              },
+              {
+                "region": 2,
+                "sessions": 1136,
+                "purchases": 188,
+                "conversion_rate": 0.16549295774647887,
+                "small_sample": false
+              },
+              {
+                "region": 3,
+                "sessions": 2403,
+                "purchases": 349,
+                "conversion_rate": 0.14523512276321265,
+                "small_sample": false
+              },
+              {
+                "region": 4,
+                "sessions": 1182,
+                "purchases": 175,
+                "conversion_rate": 0.14805414551607446,
+                "small_sample": false
+              },
+              {
+                "region": 5,
+                "sessions": 318,
+                "purchases": 52,
+                "conversion_rate": 0.16352201257861634,
+                "small_sample": false
+              },
+              {
+                "region": 6,
+                "sessions": 805,
+                "purchases": 112,
+                "conversion_rate": 0.1391304347826087,
+                "small_sample": false
+              },
+              {
+                "region": 7,
+                "sessions": 761,
+                "purchases": 119,
+                "conversion_rate": 0.15637319316688567,
+                "small_sample": false
+              },
+              {
+                "region": 8,
+                "sessions": 434,
+                "purchases": 56,
+                "conversion_rate": 0.12903225806451613,
+                "small_sample": false
+              },
+              {
+                "region": 9,
+                "sessions": 511,
+                "purchases": 86,
+                "conversion_rate": 0.16829745596868884,
+                "small_sample": false
+              }
+            ],
+            "row_count": 9
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247682.0541024
+    },
+    {
+      "id": 37,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 4125,
+        "input_tokens": 5090,
+        "output_tokens": 397,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_bzinc7s0gxr91e0kz517ox9i",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 30, \"offset\": 0}"
+          }
+        ]
+      },
+      "created_at": 1795247686.218439
+    },
+    {
+      "id": 38,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 30, \"offset\": 0}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "69676343a5bc4f82abc1005e8172b270",
+            "query": {
+              "group_by": [
+                "month",
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "Aug",
+                "region": 1,
+                "sessions": 157,
+                "purchases": 27,
+                "conversion_rate": 0.17197452229299362,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 2,
+                "sessions": 34,
+                "purchases": 9,
+                "conversion_rate": 0.2647058823529412,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 3,
+                "sessions": 94,
+                "purchases": 12,
+                "conversion_rate": 0.1276595744680851,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 4,
+                "sessions": 44,
+                "purchases": 12,
+                "conversion_rate": 0.2727272727272727,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 5,
+                "sessions": 11,
+                "purchases": 1,
+                "conversion_rate": 0.09090909090909091,
+                "small_sample": true
+              },
+              {
+                "month": "Aug",
+                "region": 6,
+                "sessions": 29,
+                "purchases": 4,
+                "conversion_rate": 0.13793103448275862,
+                "small_sample": true
+              },
+              {
+                "month": "Aug",
+                "region": 7,
+                "sessions": 31,
+                "purchases": 4,
+                "conversion_rate": 0.12903225806451613,
+                "small_sample": false
+              },
+              {
+                "month": "Aug",
+                "region": 8,
+                "sessions": 19,
+                "purchases": 6,
+                "conversion_rate": 0.3157894736842105,
+                "small_sample": true
+              },
+              {
+                "month": "Aug",
+                "region": 9,
+                "sessions": 14,
+                "purchases": 1,
+                "conversion_rate": 0.07142857142857142,
+                "small_sample": true
+              },
+              {
+                "month": "Dec",
+                "region": 1,
+                "sessions": 626,
+                "purchases": 76,
+                "conversion_rate": 0.12140575079872204,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 2,
+                "sessions": 142,
+                "purchases": 16,
+                "conversion_rate": 0.11267605633802817,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 3,
+                "sessions": 351,
+                "purchases": 38,
+                "conversion_rate": 0.10826210826210826,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 4,
+                "sessions": 161,
+                "purchases": 22,
+                "conversion_rate": 0.13664596273291926,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 5,
+                "sessions": 41,
+                "purchases": 7,
+                "conversion_rate": 0.17073170731707318,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 6,
+                "sessions": 100,
+                "purchases": 11,
+                "conversion_rate": 0.11,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 7,
+                "sessions": 119,
+                "purchases": 16,
+                "conversion_rate": 0.13445378151260504,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 8,
+                "sessions": 67,
+                "purchases": 7,
+                "conversion_rate": 0.1044776119402985,
+                "small_sample": false
+              },
+              {
+                "month": "Dec",
+                "region": 9,
+                "sessions": 120,
+                "purchases": 23,
+                "conversion_rate": 0.19166666666666668,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "region": 1,
+                "sessions": 85,
+                "purchases": 1,
+                "conversion_rate": 0.011764705882352941,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "region": 2,
+                "sessions": 15,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 3,
+                "sessions": 40,
+                "purchases": 1,
+                "conversion_rate": 0.025,
+                "small_sample": false
+              },
+              {
+                "month": "Feb",
+                "region": 4,
+                "sessions": 16,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 5,
+                "sessions": 5,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 6,
+                "sessions": 9,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 7,
+                "sessions": 5,
+                "purchases": 1,
+                "conversion_rate": 0.2,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 8,
+                "sessions": 4,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Feb",
+                "region": 9,
+                "sessions": 5,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 1,
+                "sessions": 148,
+                "purchases": 27,
+                "conversion_rate": 0.18243243243243243,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 2,
+                "sessions": 42,
+                "purchases": 5,
+                "conversion_rate": 0.11904761904761904,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 3,
+                "sessions": 81,
+                "purchases": 11,
+                "conversion_rate": 0.13580246913580246,
+                "small_sample": false
+              }
+            ],
+            "row_count": 90
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247686.2279515
+    },
+    {
+      "id": 39,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 2375,
+        "input_tokens": 4601,
+        "output_tokens": 88,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_j1s713ffu3zly21gpjgnj976",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 30, \"offset\": 30}"
+          }
+        ]
+      },
+      "created_at": 1795247688.6372337
+    },
+    {
+      "id": 40,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "tool",
+      "payload": {
+        "name": "read_evidence",
+        "arguments": "{\"evidence_id\": \"69676343a5bc4f82abc1005e8172b270\", \"limit\": 30, \"offset\": 30}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "69676343a5bc4f82abc1005e8172b270",
+            "query": {
+              "group_by": [
+                "month",
+                "region"
+              ],
+              "filters": {
+                "month": [],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 12330,
+              "purchases": 1908,
+              "conversion_rate": 0.15474452554744525
+            },
+            "rows": [
+              {
+                "month": "Jul",
+                "region": 4,
+                "sessions": 43,
+                "purchases": 4,
+                "conversion_rate": 0.09302325581395349,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 5,
+                "sessions": 13,
+                "purchases": 2,
+                "conversion_rate": 0.15384615384615385,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 6,
+                "sessions": 34,
+                "purchases": 6,
+                "conversion_rate": 0.17647058823529413,
+                "small_sample": false
+              },
+              {
+                "month": "Jul",
+                "region": 7,
+                "sessions": 29,
+                "purchases": 4,
+                "conversion_rate": 0.13793103448275862,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 8,
+                "sessions": 22,
+                "purchases": 5,
+                "conversion_rate": 0.22727272727272727,
+                "small_sample": true
+              },
+              {
+                "month": "Jul",
+                "region": 9,
+                "sessions": 20,
+                "purchases": 2,
+                "conversion_rate": 0.1,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 1,
+                "sessions": 100,
+                "purchases": 13,
+                "conversion_rate": 0.13,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "region": 2,
+                "sessions": 38,
+                "purchases": 1,
+                "conversion_rate": 0.02631578947368421,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "region": 3,
+                "sessions": 57,
+                "purchases": 3,
+                "conversion_rate": 0.05263157894736842,
+                "small_sample": false
+              },
+              {
+                "month": "June",
+                "region": 4,
+                "sessions": 22,
+                "purchases": 3,
+                "conversion_rate": 0.13636363636363635,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 5,
+                "sessions": 10,
+                "purchases": 3,
+                "conversion_rate": 0.3,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 6,
+                "sessions": 23,
+                "purchases": 3,
+                "conversion_rate": 0.13043478260869565,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 7,
+                "sessions": 18,
+                "purchases": 1,
+                "conversion_rate": 0.05555555555555555,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 8,
+                "sessions": 10,
+                "purchases": 2,
+                "conversion_rate": 0.2,
+                "small_sample": true
+              },
+              {
+                "month": "June",
+                "region": 9,
+                "sessions": 10,
+                "purchases": 0,
+                "conversion_rate": 0.0,
+                "small_sample": true
+              },
+              {
+                "month": "Mar",
+                "region": 1,
+                "sessions": 778,
+                "purchases": 80,
+                "conversion_rate": 0.10282776349614396,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 2,
+                "sessions": 197,
+                "purchases": 25,
+                "conversion_rate": 0.12690355329949238,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 3,
+                "sessions": 352,
+                "purchases": 33,
+                "conversion_rate": 0.09375,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 4,
+                "sessions": 156,
+                "purchases": 14,
+                "conversion_rate": 0.08974358974358974,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 5,
+                "sessions": 39,
+                "purchases": 2,
+                "conversion_rate": 0.05128205128205128,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 6,
+                "sessions": 130,
+                "purchases": 9,
+                "conversion_rate": 0.06923076923076923,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 7,
+                "sessions": 134,
+                "purchases": 18,
+                "conversion_rate": 0.13432835820895522,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 8,
+                "sessions": 69,
+                "purchases": 3,
+                "conversion_rate": 0.043478260869565216,
+                "small_sample": false
+              },
+              {
+                "month": "Mar",
+                "region": 9,
+                "sessions": 52,
+                "purchases": 8,
+                "conversion_rate": 0.15384615384615385,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 1,
+                "sessions": 1227,
+                "purchases": 121,
+                "conversion_rate": 0.09861450692746536,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 2,
+                "sessions": 347,
+                "purchases": 41,
+                "conversion_rate": 0.11815561959654179,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 3,
+                "sessions": 669,
+                "purchases": 67,
+                "conversion_rate": 0.10014947683109118,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 4,
+                "sessions": 354,
+                "purchases": 38,
+                "conversion_rate": 0.10734463276836158,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 5,
+                "sessions": 103,
+                "purchases": 17,
+                "conversion_rate": 0.1650485436893204,
+                "small_sample": false
+              },
+              {
+                "month": "May",
+                "region": 6,
+                "sessions": 258,
+                "purchases": 34,
+                "conversion_rate": 0.13178294573643412,
+                "small_sample": false
+              }
+            ],
+            "row_count": 90
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247688.6462133
+    },
+    {
+      "id": 41,
+      "run_id": "8864c74bcfa54b80a7e8011b45fa7005",
+      "kind": "terminal",
+      "payload": {
+        "status": "stopped",
+        "reason": "TOKEN_BUDGET"
+      },
+      "created_at": 1795247688.682182
+    }
+  ]
+}

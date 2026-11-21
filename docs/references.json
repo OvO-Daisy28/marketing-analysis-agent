@@ -1,0 +1,20 @@
+[
+  {
+    "repository": "https://github.com/bytedance/deer-flow",
+    "commit": "40ef4f6ac1974ba3334f833c16da43b7e059ba47",
+    "date": "2026-11-21T03:41:57Z",
+    "reuse": "design reference only; no source copied"
+  },
+  {
+    "repository": "https://github.com/aliyun/data-agent-skill",
+    "commit": "c98e5a2e2c729d341c901e009463e2c2e39b7c97",
+    "date": "2026-11-12T09:37:23Z",
+    "reuse": "design reference only; no source copied"
+  },
+  {
+    "repository": "https://github.com/eosphoros-ai/DB-GPT",
+    "commit": "3f3d3cf4202816167a67bf8fe1a909df7b8d549c",
+    "date": "2026-11-21T05:47:12Z",
+    "reuse": "design reference only; no source copied"
+  }
+]

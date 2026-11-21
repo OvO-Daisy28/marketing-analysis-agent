@@ -1,0 +1,86 @@
+{
+  "case_id": "research-03",
+  "category": "research",
+  "variant": "full",
+  "repeat": 1,
+  "mode": "live",
+  "model": "deepreasoning-ds-v4.1flash",
+  "status": "failed",
+  "reason": "MODEL_NETWORK_TIMEOUT",
+  "structural_success": false,
+  "intent_matched": false,
+  "numerical_checks": [],
+  "valid_references": true,
+  "semantic_support": "pending_human_review",
+  "seconds": 18.327999999994063,
+  "steps": 1,
+  "input_tokens": 6696,
+  "output_tokens": 6144,
+  "evidence": [],
+  "claims": [],
+  "reports": [],
+  "events": [
+    {
+      "id": 1,
+      "run_id": "f96f754511464227bdf8625d0de41321",
+      "kind": "queued",
+      "payload": {
+        "mode": "live",
+        "instruction": "分析全部样本的流量类型与月份分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。"
+      },
+      "created_at": 1795247299.9396157
+    },
+    {
+      "id": 2,
+      "run_id": "f96f754511464227bdf8625d0de41321",
+      "kind": "started",
+      "payload": {
+        "recovered": false
+      },
+      "created_at": 1795247299.9738686
+    },
+    {
+      "id": 3,
+      "run_id": "f96f754511464227bdf8625d0de41321",
+      "kind": "model_error",
+      "payload": {
+        "code": "MODEL_NETWORK_TIMEOUT",
+        "attempt": 1,
+        "duration_ms": 5094
+      },
+      "created_at": 1795247305.082206
+    },
+    {
+      "id": 4,
+      "run_id": "f96f754511464227bdf8625d0de41321",
+      "kind": "model_error",
+      "payload": {
+        "code": "MODEL_NETWORK_TIMEOUT",
+        "attempt": 2,
+        "duration_ms": 5078
+      },
+      "created_at": 1795247311.1787596
+    },
+    {
+      "id": 5,
+      "run_id": "f96f754511464227bdf8625d0de41321",
+      "kind": "model_error",
+      "payload": {
+        "code": "MODEL_NETWORK_TIMEOUT",
+        "attempt": 3,
+        "duration_ms": 5094
+      },
+      "created_at": 1795247318.2776668
+    },
+    {
+      "id": 6,
+      "run_id": "f96f754511464227bdf8625d0de41321",
+      "kind": "terminal",
+      "payload": {
+        "status": "failed",
+        "reason": "MODEL_NETWORK_TIMEOUT"
+      },
+      "created_at": 1795247318.2776668
+    }
+  ]
+}

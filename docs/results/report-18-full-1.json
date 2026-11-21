@@ -1,0 +1,512 @@
+{
+  "case_id": "report-18",
+  "category": "report",
+  "variant": "full",
+  "repeat": 1,
+  "mode": "live",
+  "model": "deepreasoning-ds-v4.1flash",
+  "status": "completed",
+  "reason": "已通过 query_metrics 查询 2025 年 11 月按 weekend 分组的会话数、购买数与转化率（证据 5e48eae63aff42a2a3f70b64a4705e4f）：非周末 2,207 会话 / 550 购买 / 约 24.9%，周末 791 会话 / 210 购买 / 约 26.5%，合计 2,998 会话 / 760 购买 / 约 25.4%。已登记证据引用的结论（claim 46b92c153e204478980cb56daea6710f），并生成含会话数、柱状图转化率与限制说明的草稿报表（report 826e018cd63a4e9f82315ed8abe89836，状态 draft，未发布）。限制：Revenue 为是否购买而非金额；描述性关联，未做显著性检验，不支持因果效果、ROI 或按周分析；Month 为类别月份而非完整日粒度时间线。",
+  "structural_success": true,
+  "intent_matched": true,
+  "numerical_checks": [
+    true
+  ],
+  "valid_references": true,
+  "semantic_support": "pending_human_review",
+  "seconds": 16.625,
+  "steps": 5,
+  "input_tokens": 14731,
+  "output_tokens": 1298,
+  "evidence": [
+    {
+      "id": "5e48eae63aff42a2a3f70b64a4705e4f",
+      "goal_id": "05c55be4bab14b26bfef5931b32c6c83",
+      "query_hash": "6ffcfde8478eead0f750f559eb36a6cec0713af84b2a3880829a671dda55728e",
+      "query": {
+        "group_by": [
+          "weekend"
+        ],
+        "filters": {
+          "month": [
+            "Nov"
+          ],
+          "traffic_type": [],
+          "visitor_type": [],
+          "region": [],
+          "weekend": []
+        }
+      },
+      "result": {
+        "rows": [
+          {
+            "weekend": false,
+            "sessions": 2207,
+            "purchases": 550,
+            "conversion_rate": 0.24920706841866788,
+            "small_sample": false
+          },
+          {
+            "weekend": true,
+            "sessions": 791,
+            "purchases": 210,
+            "conversion_rate": 0.26548672566371684,
+            "small_sample": false
+          }
+        ],
+        "totals": {
+          "sessions": 2998,
+          "purchases": 760,
+          "conversion_rate": 0.25350233488992663
+        },
+        "dataset_id": "b3055ee355f59134d851d32641183cb4a8b45def7124d2f50442a042f358e0d9",
+        "metric_version": "1.0.0",
+        "query": {
+          "group_by": [
+            "weekend"
+          ],
+          "filters": {
+            "month": [
+              "Nov"
+            ],
+            "traffic_type": [],
+            "visitor_type": [],
+            "region": [],
+            "weekend": []
+          }
+        },
+        "empty": false,
+        "limitations": [
+          "Revenue 是是否购买，不是销售金额。",
+          "流量类型是匿名编码，不能映射到具体广告平台。",
+          "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+          "小样本分组的转化率可能不稳定。"
+        ]
+      },
+      "created_at": 1795247199.8850274
+    }
+  ],
+  "claims": [
+    {
+      "id": "46b92c153e204478980cb56daea6710f",
+      "goal_id": "05c55be4bab14b26bfef5931b32c6c83",
+      "text": "2025年11月样本中，周末会话的购买转化率（约26.5%）略高于非周末（约24.9%），非周末会话数（2207）明显多于周末（791），整体转化率约25.4%。",
+      "evidence_ids": [
+        "5e48eae63aff42a2a3f70b64a4705e4f"
+      ],
+      "limitation": "仅为11月单月描述性关联，两组差异未做显著性检验；Revenue 为是否购买而非销售金额；数据不支持投放因果效果、ROI 或按周分析；Month 为样本中的类别月份，非完整日粒度时间线。"
+    }
+  ],
+  "reports": [
+    {
+      "id": "c2343ae3daf8461fb00486023b1be924",
+      "report_id": "826e018cd63a4e9f82315ed8abe89836",
+      "version": 1,
+      "request_key": "4:fc_call_00_t55wh3yevag2tkmm78q67y8m",
+      "spec": {
+        "title": "2025年11月按是否周末分组的购买转化率报表",
+        "intro_html": "<p>本报表基于 2025 年 11 月样本，按<strong>是否周末</strong>分组，统计会话数、购买会话数与购买转化率（购买会话数 / 会话数）。</p><h2>主要观察</h2><ul><li>非周末：会话数 2,207，购买 550，转化率约 24.9%。</li><li>周末：会话数 791，购买 210，转化率约 26.5%。</li><li>11 月合计：会话数 2,998，购买 760，整体转化率约 25.4%。</li><li>周末转化率略高约 1.6 个百分点，但周末会话量仅为非周末的约 36%，样本量差异明显。</li></ul><h2>限制说明</h2><ul><li>Revenue 表示是否购买，不是销售金额，因此本报表不涉及收入或客单价。</li><li>数据支持描述性关联，不支持投放因果效果、ROI 或按周分析；两组转化率差异未做显著性检验。</li><li>Month 为样本中的类别月份，不代表完整的日均时间线。</li><li>流量类型为匿名编码，无法映射到具体广告平台；小样本分组的转化率可能不稳定（本次两组均未标记为小样本）。</li></ul>",
+        "chart": "bar",
+        "metric": "conversion_rate",
+        "claim_ids": [
+          "46b92c153e204478980cb56daea6710f"
+        ]
+      },
+      "evidence_id": "5e48eae63aff42a2a3f70b64a4705e4f",
+      "status": "draft",
+      "stale_claims": false,
+      "snapshot": null,
+      "published_at": null,
+      "created_at": 1795247208.7592297
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "run_id": "d59d77d9449c450c9deb374170000cf3",
+      "kind": "queued",
+      "payload": {
+        "mode": "live",
+        "instruction": "生成11月按是否周末分组的购买转化率报表，保留会话数并注明限制。"
+      },
+      "created_at": 1795247195.2384737
+    },
+    {
+      "id": 2,
+      "run_id": "d59d77d9449c450c9deb374170000cf3",
+      "kind": "started",
+      "payload": {
+        "recovered": false
+      },
+      "created_at": 1795247195.2595267
+    },
+    {
+      "id": 3,
+      "run_id": "d59d77d9449c450c9deb374170000cf3",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 2484,
+        "input_tokens": 1972,
+        "output_tokens": 31,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_vxkg9z3mbjisnp5l46u7ftq9",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{}"
+          }
+        ]
+      },
+      "created_at": 1795247197.7665834
+    },
+    {
+      "id": 4,
+      "run_id": "d59d77d9449c450c9deb374170000cf3",
+      "kind": "tool",
+      "payload": {
+        "name": "data_contract",
+        "arguments": "{}",
+        "result": {
+          "ok": true,
+          "data": {
+            "version": "1.0.0",
+            "query_schema": {
+              "$defs": {
+                "Filters": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "month": {
+                      "items": {
+                        "enum": [
+                          "Jan",
+                          "Feb",
+                          "Mar",
+                          "Apr",
+                          "May",
+                          "June",
+                          "Jul",
+                          "Aug",
+                          "Sep",
+                          "Oct",
+                          "Nov",
+                          "Dec"
+                        ],
+                        "type": "string"
+                      },
+                      "maxItems": 12,
+                      "title": "Month",
+                      "type": "array"
+                    },
+                    "traffic_type": {
+                      "items": {
+                        "type": "integer"
+                      },
+                      "maxItems": 20,
+                      "title": "Traffic Type",
+                      "type": "array"
+                    },
+                    "visitor_type": {
+                      "items": {
+                        "enum": [
+                          "New_Visitor",
+                          "Returning_Visitor",
+                          "Other"
+                        ],
+                        "type": "string"
+                      },
+                      "maxItems": 3,
+                      "title": "Visitor Type",
+                      "type": "array"
+                    },
+                    "region": {
+                      "items": {
+                        "type": "integer"
+                      },
+                      "maxItems": 9,
+                      "title": "Region",
+                      "type": "array"
+                    },
+                    "weekend": {
+                      "items": {
+                        "type": "boolean"
+                      },
+                      "maxItems": 2,
+                      "title": "Weekend",
+                      "type": "array"
+                    }
+                  },
+                  "title": "Filters",
+                  "type": "object"
+                }
+              },
+              "additionalProperties": false,
+              "properties": {
+                "group_by": {
+                  "items": {
+                    "enum": [
+                      "month",
+                      "traffic_type",
+                      "visitor_type",
+                      "region",
+                      "weekend"
+                    ],
+                    "type": "string"
+                  },
+                  "maxItems": 2,
+                  "title": "Group By",
+                  "type": "array"
+                },
+                "filters": {
+                  "$ref": "#/$defs/Filters"
+                }
+              },
+              "title": "Query",
+              "type": "object"
+            },
+            "metrics": {
+              "sessions": {
+                "label": "会话数",
+                "formula": "COUNT(*)",
+                "unit": "次"
+              },
+              "purchases": {
+                "label": "购买会话数",
+                "formula": "SUM(purchased)",
+                "unit": "次"
+              },
+              "conversion_rate": {
+                "label": "购买转化率",
+                "formula": "purchases / sessions",
+                "unit": "%",
+                "zero_denominator": null
+              }
+            },
+            "limitations": [
+              "Revenue 是是否购买，不是销售金额。",
+              "流量类型是匿名编码，不能映射到具体广告平台。",
+              "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+              "小样本分组的转化率可能不稳定。"
+            ]
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247197.774312
+    },
+    {
+      "id": 5,
+      "run_id": "d59d77d9449c450c9deb374170000cf3",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 2078,
+        "input_tokens": 2539,
+        "output_tokens": 72,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_5mxdr98h9ssxw1b2xj6qwbuf",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"group_by\": [\"weekend\"], \"filters\": {\"month\": [\"Nov\"]}}"
+          }
+        ]
+      },
+      "created_at": 1795247199.8661008
+    },
+    {
+      "id": 6,
+      "run_id": "d59d77d9449c450c9deb374170000cf3",
+      "kind": "tool",
+      "payload": {
+        "name": "query_metrics",
+        "arguments": "{\"group_by\": [\"weekend\"], \"filters\": {\"month\": [\"Nov\"]}}",
+        "result": {
+          "ok": true,
+          "data": {
+            "evidence_id": "5e48eae63aff42a2a3f70b64a4705e4f",
+            "query": {
+              "group_by": [
+                "weekend"
+              ],
+              "filters": {
+                "month": [
+                  "Nov"
+                ],
+                "traffic_type": [],
+                "visitor_type": [],
+                "region": [],
+                "weekend": []
+              }
+            },
+            "totals": {
+              "sessions": 2998,
+              "purchases": 760,
+              "conversion_rate": 0.25350233488992663
+            },
+            "rows": [
+              {
+                "weekend": false,
+                "sessions": 2207,
+                "purchases": 550,
+                "conversion_rate": 0.24920706841866788,
+                "small_sample": false
+              },
+              {
+                "weekend": true,
+                "sessions": 791,
+                "purchases": 210,
+                "conversion_rate": 0.26548672566371684,
+                "small_sample": false
+              }
+            ],
+            "row_count": 2,
+            "limitations": [
+              "Revenue 是是否购买，不是销售金额。",
+              "流量类型是匿名编码，不能映射到具体广告平台。",
+              "数据支持描述性关联，不支持投放因果效果、ROI 或按周分析。",
+              "小样本分组的转化率可能不稳定。"
+            ]
+          }
+        },
+        "duration_ms": 16
+      },
+      "created_at": 1795247199.8860285
+    },
+    {
+      "id": 7,
+      "run_id": "d59d77d9449c450c9deb374170000cf3",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 4640,
+        "input_tokens": 3002,
+        "output_tokens": 447,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_351ob43h8xq1oc8wqh0xfz79",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"text\": \"2025年11月样本中，周末会话的购买转化率（约26.5%）略高于非周末（约24.9%），非周末会话数（2207）明显多于周末（791），整体转化率约25.4%。\", \"evidence_ids\": [\"5e48eae63aff42a2a3f70b64a4705e4f\"], \"limitation\": \"仅为11月单月描述性关联，两组差异未做显著性检验；Revenue 为是否购买而非销售金额；数据不支持投放因果效果、ROI 或按周分析；Month 为样本中的类别月份，非完整日粒度时间线。\"}"
+          }
+        ]
+      },
+      "created_at": 1795247204.5431468
+    },
+    {
+      "id": 8,
+      "run_id": "d59d77d9449c450c9deb374170000cf3",
+      "kind": "tool",
+      "payload": {
+        "name": "record_claim",
+        "arguments": "{\"text\": \"2025年11月样本中，周末会话的购买转化率（约26.5%）略高于非周末（约24.9%），非周末会话数（2207）明显多于周末（791），整体转化率约25.4%。\", \"evidence_ids\": [\"5e48eae63aff42a2a3f70b64a4705e4f\"], \"limitation\": \"仅为11月单月描述性关联，两组差异未做显著性检验；Revenue 为是否购买而非销售金额；数据不支持投放因果效果、ROI 或按周分析；Month 为样本中的类别月份，非完整日粒度时间线。\"}",
+        "result": {
+          "ok": true,
+          "data": {
+            "id": "46b92c153e204478980cb56daea6710f",
+            "goal_id": "05c55be4bab14b26bfef5931b32c6c83",
+            "text": "2025年11月样本中，周末会话的购买转化率（约26.5%）略高于非周末（约24.9%），非周末会话数（2207）明显多于周末（791），整体转化率约25.4%。",
+            "evidence_ids": [
+              "5e48eae63aff42a2a3f70b64a4705e4f"
+            ],
+            "limitation": "仅为11月单月描述性关联，两组差异未做显著性检验；Revenue 为是否购买而非销售金额；数据不支持投放因果效果、ROI 或按周分析；Month 为样本中的类别月份，非完整日粒度时间线。"
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247204.5585697
+    },
+    {
+      "id": 9,
+      "run_id": "d59d77d9449c450c9deb374170000cf3",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 4171,
+        "input_tokens": 3607,
+        "output_tokens": 458,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_t55wh3yevag2tkmm78q67y8m",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"evidence_id\": \"5e48eae63aff42a2a3f70b64a4705e4f\", \"spec\": {\"title\": \"2025年11月按是否周末分组的购买转化率报表\", \"intro_html\": \"<p>本报表基于 2025 年 11 月样本，按<strong>是否周末</strong>分组，统计会话数、购买会话数与购买转化率（购买会话数 / 会话数）。</p><h2>主要观察</h2><ul><li>非周末：会话数 2,207，购买 550，转化率约 24.9%。</li><li>周末：会话数 791，购买 210，转化率约 26.5%。</li><li>11 月合计：会话数 2,998，购买 760，整体转化率约 25.4%。</li><li>周末转化率略高约 1.6 个百分点，但周末会话量仅为非周末的约 36%，样本量差异明显。</li></ul><h2>限制说明</h2><ul><li>Revenue 表示是否购买，不是销售金额，因此本报表不涉及收入或客单价。</li><li>数据支持描述性关联，不支持投放因果效果、ROI 或按周分析；两组转化率差异未做显著性检验。</li><li>Month 为样本中的类别月份，不代表完整的日均时间线。</li><li>流量类型为匿名编码，无法映射到具体广告平台；小样本分组的转化率可能不稳定（本次两组均未标记为小样本）。</li></ul>\", \"chart\": \"bar\", \"metric\": \"conversion_rate\", \"claim_ids\": [\"46b92c153e204478980cb56daea6710f\"]}}"
+          }
+        ]
+      },
+      "created_at": 1795247208.750117
+    },
+    {
+      "id": 10,
+      "run_id": "d59d77d9449c450c9deb374170000cf3",
+      "kind": "tool",
+      "payload": {
+        "name": "draft_report",
+        "arguments": "{\"evidence_id\": \"5e48eae63aff42a2a3f70b64a4705e4f\", \"spec\": {\"title\": \"2025年11月按是否周末分组的购买转化率报表\", \"intro_html\": \"<p>本报表基于 2025 年 11 月样本，按<strong>是否周末</strong>分组，统计会话数、购买会话数与购买转化率（购买会话数 / 会话数）。</p><h2>主要观察</h2><ul><li>非周末：会话数 2,207，购买 550，转化率约 24.9%。</li><li>周末：会话数 791，购买 210，转化率约 26.5%。</li><li>11 月合计：会话数 2,998，购买 760，整体转化率约 25.4%。</li><li>周末转化率略高约 1.6 个百分点，但周末会话量仅为非周末的约 36%，样本量差异明显。</li></ul><h2>限制说明</h2><ul><li>Revenue 表示是否购买，不是销售金额，因此本报表不涉及收入或客单价。</li><li>数据支持描述性关联，不支持投放因果效果、ROI 或按周分析；两组转化率差异未做显著性检验。</li><li>Month 为样本中的类别月份，不代表完整的日均时间线。</li><li>流量类型为匿名编码，无法映射到具体广告平台；小样本分组的转化率可能不稳定（本次两组均未标记为小样本）。</li></ul>\", \"chart\": \"bar\", \"metric\": \"conversion_rate\", \"claim_ids\": [\"46b92c153e204478980cb56daea6710f\"]}}",
+        "result": {
+          "ok": true,
+          "data": {
+            "report_id": "826e018cd63a4e9f82315ed8abe89836",
+            "version_id": "c2343ae3daf8461fb00486023b1be924",
+            "status": "draft"
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247208.760385
+    },
+    {
+      "id": 11,
+      "run_id": "d59d77d9449c450c9deb374170000cf3",
+      "kind": "model",
+      "payload": {
+        "model": "deepreasoning-ds-v4.1flash",
+        "mode": "live",
+        "duration_ms": 3078,
+        "input_tokens": 3611,
+        "output_tokens": 290,
+        "usage_estimated": false,
+        "protocol_adjustments": [
+          {
+            "call_id": "fc_call_00_f3hf3vuiriyqg4htscs7ukol",
+            "fix": "empty_object_prefix",
+            "original_arguments": "{}{\"summary\": \"已通过 query_metrics 查询 2025 年 11 月按 weekend 分组的会话数、购买数与转化率（证据 5e48eae63aff42a2a3f70b64a4705e4f）：非周末 2,207 会话 / 550 购买 / 约 24.9%，周末 791 会话 / 210 购买 / 约 26.5%，合计 2,998 会话 / 760 购买 / 约 25.4%。已登记证据引用的结论（claim 46b92c153e204478980cb56daea6710f），并生成含会话数、柱状图转化率与限制说明的草稿报表（report 826e018cd63a4e9f82315ed8abe89836，状态 draft，未发布）。限制：Revenue 为是否购买而非金额；描述性关联，未做显著性检验，不支持因果效果、ROI 或按周分析；Month 为类别月份而非完整日粒度时间线。\", \"criteria_coverage\": [\"报表草稿\", \"数据来源\"]}"
+          }
+        ]
+      },
+      "created_at": 1795247211.8781166
+    },
+    {
+      "id": 12,
+      "run_id": "d59d77d9449c450c9deb374170000cf3",
+      "kind": "tool",
+      "payload": {
+        "name": "finish",
+        "arguments": "{\"summary\": \"已通过 query_metrics 查询 2025 年 11 月按 weekend 分组的会话数、购买数与转化率（证据 5e48eae63aff42a2a3f70b64a4705e4f）：非周末 2,207 会话 / 550 购买 / 约 24.9%，周末 791 会话 / 210 购买 / 约 26.5%，合计 2,998 会话 / 760 购买 / 约 25.4%。已登记证据引用的结论（claim 46b92c153e204478980cb56daea6710f），并生成含会话数、柱状图转化率与限制说明的草稿报表（report 826e018cd63a4e9f82315ed8abe89836，状态 draft，未发布）。限制：Revenue 为是否购买而非金额；描述性关联，未做显著性检验，不支持因果效果、ROI 或按周分析；Month 为类别月份而非完整日粒度时间线。\", \"criteria_coverage\": [\"报表草稿\", \"数据来源\"]}",
+        "result": {
+          "ok": true,
+          "data": {
+            "summary": "已通过 query_metrics 查询 2025 年 11 月按 weekend 分组的会话数、购买数与转化率（证据 5e48eae63aff42a2a3f70b64a4705e4f）：非周末 2,207 会话 / 550 购买 / 约 24.9%，周末 791 会话 / 210 购买 / 约 26.5%，合计 2,998 会话 / 760 购买 / 约 25.4%。已登记证据引用的结论（claim 46b92c153e204478980cb56daea6710f），并生成含会话数、柱状图转化率与限制说明的草稿报表（report 826e018cd63a4e9f82315ed8abe89836，状态 draft，未发布）。限制：Revenue 为是否购买而非金额；描述性关联，未做显著性检验，不支持因果效果、ROI 或按周分析；Month 为类别月份而非完整日粒度时间线。",
+            "verification": "structural_only; semantic support requires evaluation"
+          }
+        },
+        "duration_ms": 0
+      },
+      "created_at": 1795247211.8848033
+    },
+    {
+      "id": 13,
+      "run_id": "d59d77d9449c450c9deb374170000cf3",
+      "kind": "terminal",
+      "payload": {
+        "status": "completed",
+        "reason": "已通过 query_metrics 查询 2025 年 11 月按 weekend 分组的会话数、购买数与转化率（证据 5e48eae63aff42a2a3f70b64a4705e4f）：非周末 2,207 会话 / 550 购买 / 约 24.9%，周末 791 会话 / 210 购买 / 约 26.5%，合计 2,998 会话 / 760 购买 / 约 25.4%。已登记证据引用的结论（claim 46b92c153e204478980cb56daea6710f），并生成含会话数、柱状图转化率与限制说明的草稿报表（report 826e018cd63a4e9f82315ed8abe89836，状态 draft，未发布）。限制：Revenue 为是否购买而非金额；描述性关联，未做显著性检验，不支持因果效果、ROI 或按周分析；Month 为类别月份而非完整日粒度时间线。"
+      },
+      "created_at": 1795247211.8848033
+    }
+  ]
+}

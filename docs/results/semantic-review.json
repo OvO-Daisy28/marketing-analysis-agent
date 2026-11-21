@@ -1,0 +1,84 @@
+{
+  "human_review": "not_performed",
+  "reviews": [
+    {
+      "case": "report-02-full-1",
+      "method": "same_model_automated_review",
+      "model": "deepreasoning-ds-v4.1flash",
+      "usage": {
+        "prompt_tokens": 1290,
+        "completion_tokens": 1164,
+        "total_tokens": 2454
+      },
+      "review": {
+        "claims": [
+          {
+            "claim_id": "a9f8c6c81035449d942befae91db97b5",
+            "verdict": "partial",
+            "reason": "总数和多数分组数值支持：2998会话、760购买、760/2998=25.3502%≈25.35%；共13行；类型2会话1242最大且转化率0.301127≈30.11%；类型8为167会话、0.371257≈37.13%；类型13为193会话、21购买、0.108808≈10.88%；类型5/7/15分别21/11/8会话，类型15为0购买，且三者small_sample=true。但“类型8转化率最高”和“类型13转化率最低”若按全部13类表述则不成立：类型7转化率0.454545高于类型8，类型15转化率0低于类型13；它们仅在不计小样本时成立，而原文未限定。"
+          }
+        ]
+      }
+    },
+    {
+      "case": "report-18-full-1",
+      "method": "same_model_automated_review",
+      "model": "deepreasoning-ds-v4.1flash",
+      "usage": {
+        "prompt_tokens": 753,
+        "completion_tokens": 368,
+        "total_tokens": 1121
+      },
+      "review": {
+        "claims": [
+          {
+            "claim_id": "46b92c153e204478980cb56daea6710f",
+            "verdict": "partial",
+            "reason": "All stated numbers match the evidence: weekend 210/791=26.5%, non-weekend 550/2207=24.9%, sessions 2207 vs 791, overall 760/2998≈25.4%. However, the evidence only filters month=Nov and does not establish the year 2025, so the '2025年11月' scope is not supported."
+          }
+        ]
+      }
+    },
+    {
+      "case": "research-01-full-1",
+      "method": "same_model_automated_review",
+      "model": "deepreasoning-ds-v4.1flash",
+      "usage": {
+        "prompt_tokens": 63,
+        "completion_tokens": 1800,
+        "total_tokens": 1863,
+        "prompt_tokens_details": {
+          "cached_tokens": 5248
+        }
+      },
+      "review": {
+        "parse_error": true,
+        "raw": "",
+        "finish_reason": "length",
+        "message_fields": [
+          "role",
+          "reasoning_content"
+        ]
+      }
+    },
+    {
+      "case": "research-04-baseline-1",
+      "method": "same_model_automated_review",
+      "model": "deepreasoning-ds-v4.1flash",
+      "usage": {
+        "prompt_tokens": 8788,
+        "completion_tokens": 1800,
+        "total_tokens": 10588
+      },
+      "review": {
+        "parse_error": true,
+        "raw": "",
+        "finish_reason": "length",
+        "message_fields": [
+          "role",
+          "reasoning_content"
+        ]
+      }
+    }
+  ]
+}

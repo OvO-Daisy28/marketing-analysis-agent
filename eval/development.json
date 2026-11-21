@@ -1,0 +1,465 @@
+{
+  "version": "1.0.0",
+  "cases": [
+    {
+      "id": "dev-01",
+      "category": "report",
+      "mode": "report",
+      "objective": "仅看非周末会话。生成全部样本按流量类型分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "traffic_type"
+      ],
+      "expected_filters": {
+        "weekend": [
+          false
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-02",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成10月按流量类型分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "traffic_type"
+      ],
+      "expected_filters": {
+        "month": [
+          "Oct"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-03",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成9月按流量类型分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "traffic_type"
+      ],
+      "expected_filters": {
+        "month": [
+          "Sep"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-04",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成3月按流量类型分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "traffic_type"
+      ],
+      "expected_filters": {
+        "month": [
+          "Mar"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-05",
+      "category": "report",
+      "mode": "report",
+      "objective": "仅看非周末会话。生成全部样本按访客类型分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "visitor_type"
+      ],
+      "expected_filters": {
+        "weekend": [
+          false
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-06",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成10月按访客类型分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "visitor_type"
+      ],
+      "expected_filters": {
+        "month": [
+          "Oct"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-07",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成9月按访客类型分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "visitor_type"
+      ],
+      "expected_filters": {
+        "month": [
+          "Sep"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-08",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成3月按访客类型分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "visitor_type"
+      ],
+      "expected_filters": {
+        "month": [
+          "Mar"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-09",
+      "category": "report",
+      "mode": "report",
+      "objective": "仅看非周末会话。生成全部样本按月份分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "month"
+      ],
+      "expected_filters": {
+        "weekend": [
+          false
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-10",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成10月按月份分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "month"
+      ],
+      "expected_filters": {
+        "month": [
+          "Oct"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-11",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成9月按月份分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "month"
+      ],
+      "expected_filters": {
+        "month": [
+          "Sep"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-12",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成3月按月份分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "month"
+      ],
+      "expected_filters": {
+        "month": [
+          "Mar"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-13",
+      "category": "report",
+      "mode": "report",
+      "objective": "仅看非周末会话。生成全部样本按地区编码分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "region"
+      ],
+      "expected_filters": {
+        "weekend": [
+          false
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-14",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成10月按地区编码分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "region"
+      ],
+      "expected_filters": {
+        "month": [
+          "Oct"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-15",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成9月按地区编码分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "region"
+      ],
+      "expected_filters": {
+        "month": [
+          "Sep"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-16",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成3月按地区编码分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "region"
+      ],
+      "expected_filters": {
+        "month": [
+          "Mar"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-17",
+      "category": "report",
+      "mode": "report",
+      "objective": "仅看非周末会话。生成全部样本按是否周末分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "weekend"
+      ],
+      "expected_filters": {
+        "weekend": [
+          false
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-18",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成10月按是否周末分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "weekend"
+      ],
+      "expected_filters": {
+        "month": [
+          "Oct"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-19",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成9月按是否周末分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "weekend"
+      ],
+      "expected_filters": {
+        "month": [
+          "Sep"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-20",
+      "category": "report",
+      "mode": "report",
+      "objective": "生成3月按是否周末分组的购买转化率报表，保留会话数并注明限制。",
+      "expected_dimensions": [
+        "weekend"
+      ],
+      "expected_filters": {
+        "month": [
+          "Mar"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-21",
+      "category": "research",
+      "mode": "research",
+      "objective": "仅看非周末会话。分析全部样本的流量类型与访客类型分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。",
+      "expected_dimensions": [
+        "traffic_type",
+        "visitor_type"
+      ],
+      "expected_filters": {
+        "weekend": [
+          false
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-22",
+      "category": "research",
+      "mode": "research",
+      "objective": "分析10月的流量类型与访客类型分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。",
+      "expected_dimensions": [
+        "traffic_type",
+        "visitor_type"
+      ],
+      "expected_filters": {
+        "month": [
+          "Oct"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-23",
+      "category": "research",
+      "mode": "research",
+      "objective": "仅看非周末会话。分析全部样本的流量类型与月份分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。",
+      "expected_dimensions": [
+        "traffic_type",
+        "month"
+      ],
+      "expected_filters": {
+        "weekend": [
+          false
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-24",
+      "category": "research",
+      "mode": "research",
+      "objective": "分析10月的流量类型与月份分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。",
+      "expected_dimensions": [
+        "traffic_type",
+        "month"
+      ],
+      "expected_filters": {
+        "month": [
+          "Oct"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-25",
+      "category": "research",
+      "mode": "research",
+      "objective": "仅看非周末会话。分析全部样本的流量类型与地区编码分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。",
+      "expected_dimensions": [
+        "traffic_type",
+        "region"
+      ],
+      "expected_filters": {
+        "weekend": [
+          false
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-26",
+      "category": "research",
+      "mode": "research",
+      "objective": "分析10月的流量类型与地区编码分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。",
+      "expected_dimensions": [
+        "traffic_type",
+        "region"
+      ],
+      "expected_filters": {
+        "month": [
+          "Oct"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-27",
+      "category": "research",
+      "mode": "research",
+      "objective": "仅看非周末会话。分析全部样本的流量类型与是否周末分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。",
+      "expected_dimensions": [
+        "traffic_type",
+        "weekend"
+      ],
+      "expected_filters": {
+        "weekend": [
+          false
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-28",
+      "category": "research",
+      "mode": "research",
+      "objective": "分析10月的流量类型与是否周末分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。",
+      "expected_dimensions": [
+        "traffic_type",
+        "weekend"
+      ],
+      "expected_filters": {
+        "month": [
+          "Oct"
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-29",
+      "category": "research",
+      "mode": "research",
+      "objective": "仅看非周末会话。分析全部样本的访客类型与月份分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。",
+      "expected_dimensions": [
+        "visitor_type",
+        "month"
+      ],
+      "expected_filters": {
+        "weekend": [
+          false
+        ]
+      },
+      "expected_status": "completed"
+    },
+    {
+      "id": "dev-30",
+      "category": "research",
+      "mode": "research",
+      "objective": "分析10月的访客类型与月份分组转化差异，使用联合分组检验一个假设，记录证据和限制并生成报告。",
+      "expected_dimensions": [
+        "visitor_type",
+        "month"
+      ],
+      "expected_filters": {
+        "month": [
+          "Oct"
+        ]
+      },
+      "expected_status": "completed"
+    }
+  ]
+}

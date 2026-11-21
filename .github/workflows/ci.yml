@@ -1,0 +1,72 @@
+name: verify
+on: [push, pull_request]
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.11.16"
+      - run: uv sync --frozen
+      - run: uv run ruff check marketing tests scripts
+      - run: uv run pytest -q
+  postgres-browser:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17.11
+        env:
+          POSTGRES_USER: marketing
+          POSTGRES_PASSWORD: test_password
+          POSTGRES_DB: marketing
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U marketing -d marketing"
+          --health-interval 3s --health-timeout 3s --health-retries 20
+    env:
+      DATABASE_URL: postgresql+psycopg://marketing:test_password@localhost:5432/marketing
+      MODEL_MODE: mock
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.11.16"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: uv sync --frozen
+      - run: npm ci && npm run build && npx playwright install --with-deps chromium
+        working-directory: web
+      - run: uv run python -m marketing.cli init-db && uv run python -m marketing.cli import-data
+      - run: uv run python -m scripts.check_postgres
+      - run: |
+          uv run uvicorn marketing.api:app --host 127.0.0.1 --port 8000 > /tmp/api.log 2>&1 &
+          uv run python -m marketing.worker > /tmp/worker.log 2>&1 &
+          for i in $(seq 1 30); do curl -fs http://localhost:8000/api/health && break || sleep 1; done
+      - run: npm run test:e2e
+        working-directory: web
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-results
+          path: web/test-results/
+  containers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: cp .env.example .env && docker compose up --build -d
+      - run: |
+          for i in $(seq 1 60); do
+            if curl -fs http://localhost:8000/api/health; then exit 0; fi
+            sleep 2
+          done
+          docker compose logs
+          exit 1
+      - run: npm ci && npx playwright install --with-deps chromium && npm run test:e2e
+        working-directory: web
+      - run: docker compose logs && docker compose down -v
+        if: always()
