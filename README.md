@@ -142,6 +142,8 @@ uv run python -m scripts.evaluate --variant both --limit 43 --workers 3 --token-
 
 ## 代码阅读顺序
 
+准备让 DeepSeek 或其他模型带学时，从 **[学习入口与可复制提示词](docs/learning-guide.md)** 开始。它按真实函数组织课程，并列出当前未实现的能力，避免把规划或参考项目当成现有代码。
+
 1. `marketing/analytics.py`、`schemas.py`：数据合同和确定性计算。
 2. `skills/report/`、`marketing/services.py`：Skill、报告状态与版本。
 3. `marketing/tools.py`：模型能调用的能力和后端校验。

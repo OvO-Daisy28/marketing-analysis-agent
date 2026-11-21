@@ -90,6 +90,8 @@ class MockProvider:
         evidence, hypotheses, claims, reports = [
             context[k] for k in ("evidence", "hypotheses", "claims", "reports")
         ]
+        # A continuation must deliver a new draft, even in the deterministic fixture.
+        reports = [r for r in reports if r["created_at"] >= run["created_at"]]
         objective = run["instruction"]
         if any(x in objective.lower() for x in ["roi", "本周", "广告成本", "收入金额"]):
             name, args = (

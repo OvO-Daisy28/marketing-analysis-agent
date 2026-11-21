@@ -42,11 +42,16 @@ def event(db, run, kind, payload):
 
 
 def create_goal(db, workspace, body):
+    criteria = body.criteria or (
+        ["分组比较", "假设检查", "证据引用", "分析限制"]
+        if body.mode == "research"
+        else ["报表草稿", "数据来源"]
+    )
     old = db.scalar(
         select(m.Goal).where(m.Goal.workspace_id == workspace, m.Goal.request_key == body.request_key)
     )
     if old:
-        if old.objective != body.objective or old.mode != body.mode:
+        if old.objective != body.objective or old.mode != body.mode or old.criteria != criteria:
             raise DomainError("幂等键已经用于不同请求")
         return old, db.scalar(select(m.Run).where(m.Run.goal_id == old.id).order_by(m.Run.created_at))
     goal = m.Goal(
@@ -55,12 +60,7 @@ def create_goal(db, workspace, body):
         mode=body.mode,
         request_key=body.request_key,
         dataset_id=latest_dataset(db).id,
-        criteria=body.criteria
-        or (
-            ["分组比较", "假设检查", "证据引用", "分析限制"]
-            if body.mode == "research"
-            else ["报表草稿", "数据来源"]
-        ),
+        criteria=criteria,
     )
     db.add(goal)
     db.flush()

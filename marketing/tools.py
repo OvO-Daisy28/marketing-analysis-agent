@@ -149,6 +149,15 @@ class ToolRegistry:
                 )
             if not db.scalar(select(m.Report).where(m.Report.goal_id == goal.id)):
                 raise DomainError("缺少报表草稿")
+            drafts = db.scalars(
+                select(m.ToolExecution).where(
+                    m.ToolExecution.run_id == run.id, m.ToolExecution.name == "draft_report"
+                )
+            )
+            if not any(t.result.get("ok") for t in drafts):
+                raise DomainError(
+                    "当前轮次尚未交付报表草稿。历史报告可供参考，但不能代替本次补充要求的交付。"
+                )
             if goal.mode == "research":
                 evidence = list(db.scalars(select(m.Evidence).where(m.Evidence.goal_id == goal.id)))
                 hypotheses = list(db.scalars(select(m.Hypothesis).where(m.Hypothesis.goal_id == goal.id)))

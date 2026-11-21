@@ -62,6 +62,10 @@ test("report generation, sandbox rendering, revision and publication", async ({
   await page.getByRole("button", { name: "保存修改为新版本" }).click();
   await expect(frame.locator("canvas")).toBeVisible();
   expect(errors).toEqual([]);
+  await page.getByRole("button", { name: "分析工作台", exact: false }).click();
+  await page.getByLabel("补充分析要求").fill("重新生成原始分析的报表，保留原来的数据范围");
+  await page.getByRole("button", {name: "续接研究", exact: true}).click();
+  await expect(page.getByRole("button", {name: "打开报告草稿"})).toHaveCount(2, {timeout: 75000});
 });
 
 test("mobile login has no horizontal overflow", async ({ page }) => {
