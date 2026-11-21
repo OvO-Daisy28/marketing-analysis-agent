@@ -9,12 +9,15 @@
 | 图表配方 | 浏览器验证柱状图、表格和折线图实际渲染 |
 | TypeScript / Vite | 类型检查和生产构建通过；图表组件按需加载 |
 | npm audit | 0 项已知漏洞（检查当时） |
-| PostgreSQL | 17.11 Windows 临时实例；6 个并发领取者取得不同任务，旧租约被隔离，恢复后 6 个任务完成且生成 6 份报告 |
+| PostgreSQL | 17.11 Windows 临时实例与 Ubuntu 24.04 CI 均通过；6 个并发领取者取得不同任务，旧租约被隔离，恢复后 6 个任务完成且生成 6 份报告 |
 | 数据导入 | 12,330 条；重复导入不重复写入 |
-| Docker Compose | 配置已提供并解析；本机无 Docker 引擎，尚未在本机执行容器构建 |
-| GitHub Actions | 提供 PostgreSQL 与浏览器工作流；实际云端运行状态以仓库 Actions 为准 |
+| Docker Compose | GitHub 干净环境完成镜像构建、迁移、数据导入、API/Worker 启动，并通过 2 项浏览器测试；本机无 Docker 引擎 |
+| GitHub Actions | backend、postgres-browser、containers 三组检查全部通过 |
+| Windows 一键启动 | start.ps1 实际运行通过；已有本地配置保留，API 和 Worker 以 live 模式启动 |
 
 SQLite 用于本地 API 和隔离测试，PostgreSQL 并发检查单独进行，二者结果不混用。
+
+云端记录：[Actions 44883676900](https://github.com/OvO-Daisy28/marketing-analysis-agent/actions/runs/44883676900)，对应代码提交 `2e5ed9e36c1972c03d8e2f3d3179420645a0b693`。第一次云端检查发现浮动的 `ubuntu-latest` 已升级到锁定版 Playwright 不支持的系统，已固定为 Ubuntu 24.04 后重新验证通过。
 
 ## 真实模型试跑
 
