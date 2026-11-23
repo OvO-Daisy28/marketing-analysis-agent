@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="deployment-target" name="Signal · 受控远程试用部署">
+    <mxGraphModel dx="1120" dy="795" grid="1" gridSize="10" page="1" pageWidth="1120" pageHeight="795">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Signal · 受控远程试用部署" style="text;html=0;align=left;fontSize=27;fontColor=#1E3A5F;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="36" y="12" width="1048" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="目标部署 · 尚未配置公网主机、域名、反向代理或备份任务" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="53" width="1048" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="group0" value="" style="rounded=1;fillColor=#FAFBFD;strokeColor=#CBD5E1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="105" width="710" height="445" as="geometry" />
+        </mxCell>
+        <mxCell id="group-label0" value="受控试用主机 · init 初始化后启动 API / Worker" style="text;html=0;align=left;fontSize=15;fontStyle=1;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="408" y="112" width="680" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" value="HTTPS" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node0" target="node1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="276" y="200" as="sourcePoint" />
+            <mxPoint x="420" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge1" value="同源转发" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node1" target="node2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="200" as="sourcePoint" />
+            <mxPoint x="804" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge2" value="业务读写" style="edgeStyle=none;html=0;endArrow=block;startArrow=block;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node2" target="node5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="944" y="250" as="sourcePoint" />
+            <mxPoint x="944" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" value="队列 / 状态" style="edgeStyle=none;html=0;endArrow=block;startArrow=block;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.0;exitY=0.5;exitPerimeter=0;entryX=1.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node5" target="node4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="804" y="430" as="sourcePoint" />
+            <mxPoint x="700" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" value="模型请求" style="edgeStyle=none;html=0;endArrow=block;startArrow=block;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.0;exitY=0.5;exitPerimeter=0;entryX=1.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node4" target="node3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="430" as="sourcePoint" />
+            <mxPoint x="276" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" value="备份" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node5" target="node6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="944" y="490" as="sourcePoint" />
+            <mxPoint x="944" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="node0" value="获准试用用户&#10;浏览器同源入口&#10;受控账号与使用预算" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#F4F6F8;strokeColor=#475569;fontColor=#475569;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="36" y="150" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node1" value="新增 HTTPS 入口&#10;TLS、反向代理&#10;SSE 不缓冲" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#FFF7E8;strokeColor=#B45309;fontColor=#B45309;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="420" y="150" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node2" value="API 容器&#10;React 静态文件 + FastAPI&#10;安全 Cookie、来源校验" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EEF3F9;strokeColor=#1E3A5F;fontColor=#1E3A5F;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="804" y="150" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node3" value="外部模型 API&#10;服务端访问&#10;Worker 获取模型凭据&#10;无需本机 GPU" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#F4F6F8;strokeColor=#475569;fontColor=#475569;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="36" y="370" width="240" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="node4" value="Worker 容器&#10;租约、检查点、预算&#10;同一构建版本&#10;新增健康与累计限额" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#FFF7E8;strokeColor=#B45309;fontColor=#B45309;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="420" y="370" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="node5" value="PostgreSQL&#10;任务状态与持久化卷&#10;不暴露公网端口&#10;新增合同与完整快照" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EAF6F3;strokeColor=#0F766E;fontColor=#0F766E;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="804" y="370" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="node6" value="新增主机外备份&#10;数据库备份与恢复验证" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#FFF7E8;strokeColor=#B45309;fontColor=#B45309;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="804" y="590" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="note0" value="先完成迁移和数据导入，再启动服务。" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="618" width="1048" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="公开固定案例继续通过 GitHub Pages 展示；本图只描述真实模型试用环境。" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="713" width="1048" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" value="单 API / Worker 起测；并发、成本和恢复能力通过试验确认，不预设生产 SLA。" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="746" width="1048" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

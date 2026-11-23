@@ -1,165 +1,83 @@
-# Signal · 营销分析 Agent
+# Signal · 营销分析与报告 Agent
 
-面向营销运营的分析与报告工作台：简单需求直接使用 **报表 Skill**；复杂目标进入 **研究 Loop**，通过工具查询、假设检查和证据关联生成报告草稿，再由用户预览、修改和确认发布。
+把营销数据问题转成**数字可核算、结论有依据、可修改并确认发布的报告**。
 
-这是使用开放数据的独立工程实现，不是任何公司的官方项目或生产源码。项目不执行真实投放，不把分析完成解释为业务增长。
+**[体验在线案例 →](https://ovo-daisy28.github.io/marketing-analysis-agent/)**　·　**[阅读解决方案](docs/solution-analysis.md)**　·　**[本地运行](docs/operations.md)**　·　[文档导航](docs/README.md)
 
-**[打开在线交互案例 →](https://ovo-daisy28.github.io/marketing-analysis-agent/)** · 无需注册、密钥或安装。点击分析步骤查看查询证据，切换“结论与依据”，下载可离线阅读的报告。在线案例是明确标注的固定示例；真实模型分析、修改与发布通过下方启动步骤体验。
+> 独立公开 POC，使用 UCI 电商会话数据。在线案例是无需注册和密钥的固定示例；真实模型分析需启动本地服务。项目不代表为产品对标厂商实施客户项目。
 
-![在线案例与可核查报告](docs/media/showcase.png)
+[![Signal 工作台：分析步骤、报告及证据核对](docs/media/showcase-overview.png)](https://ovo-daisy28.github.io/marketing-analysis-agent/)
 
-## 能做什么
+## 解决什么问题
 
-- 真实模型自主选择工具；另提供明确标识的确定性模拟模式。
-- 固定指标口径和数据合同，支持筛选、单维/双维聚合与空数据处理。
-- 受控 HTML、G2 图表、隔离预览、修改版本与幂等发布。
-- Goal / Hypothesis / Evidence / Claim 持久化，逐轮构建上下文。
-- 独立 Worker、PostgreSQL 租约、检查点、失败重试、预算与无进展停止。
-- 登录会话、CSRF、工作区隔离、只读 SSE 及执行事件回放。
-- 独立 CSV 数值核对、固定案例、真实模型对照和浏览器测试。
-- 免登录公开案例、结论到证据表格的下钻、已发布快照的 HTML / CSV 导出。
+营销运营需要反复筛选数据、比较转化表现并整理报告。Signal 将这条流程拆成两条共用执行基础的路径：
 
-项目没有独立知识库模块；少量分析规则、指标和模板跟随代码版本维护。
+| 用户需求 | 系统怎么处理 | 交付内容 |
+|---|---|---|
+| “生成 11 月各流量类型的转化报告” | 报表 Skill 组织指标合同、模板和图表配方 | 可预览、修改和发布的网页报告 |
+| “低转化表现是否与访客结构有关？” | 研究 Loop 选择工具、检查假设、积累证据 | 带引用、样本量和分析限制的报告草稿 |
+| “这个数字或判断从哪里来？” | 从结论下钻至证据，查看查询条件与聚合结果 | 可核对的分子、分母、范围和数据版本 |
 
-在线截图来自固定案例；真实模型轨迹、对照结果与失败样例见 [验证记录](docs/validation.md)。
+数据中的月份为历史类别，不表示当前月份。观察到的差异不等于因果关系；缺少成本与收入金额，不能计算广告 ROI。
 
-## 启动
+## 两分钟体验
 
-需要 Python 3.12/3.13、[uv](https://docs.astral.sh/uv/)、Node.js 24。正式部署使用 PostgreSQL；本地单 Worker 体验允许 SQLite。
+1. 打开在线案例，点击“再检查访客结构”，查看新访客与回访者的分组数据。
+2. 切换“结论与依据”，核对结论、样本量和证据；下载可离线阅读的 HTML 报告。
+3. 想验证真实工具调用时，在本地创建自己的分析，观察执行步骤、修改草稿并确认发布。
 
-### Docker Compose
+固定案例用于理解业务流程，真实运行记录和失败样例见[验证记录](docs/validation.md)，两者不混作模型能力证据。
+
+## 系统如何工作
+
+![当前实现架构：浏览器、FastAPI、独立 Worker、PostgreSQL 和外部模型 API](docs/diagrams/architecture-current.svg)
+
+模型选择下一步分析与工具；程序负责指标计算、参数校验、权限、持久化和停止条件。浏览器断开后，后台 Worker 继续执行任务。
+
+**技术栈：** Python · FastAPI · Pydantic · SQLAlchemy · PostgreSQL · React / TypeScript · G2 · Docker Compose。Agent 运行时为自建循环，采用 function calling，不依赖 LangGraph 或多 Agent。
+
+## 三项核心设计取舍
+
+| 设计 | 解决的问题与选择 |
+|---|---|
+| **受控报表 Skill** | 用固定模板和图表配方约束输出，指标由程序计算；当前不执行模型生成的任意 SQL、Python 或 JavaScript。[设计说明](docs/architecture.md#report-skill) |
+| **结构化研究 Loop** | 保存 Goal / Hypothesis / Evidence / Claim，逐轮注入上下文；完整证据按 ID 读取，避免无限堆叠历史。[设计说明](docs/architecture.md#research-loop) |
+| **可恢复执行与交付** | 数据库队列、租约、工具幂等和预算限制控制任务；人工发布与研究完成分开。[运行保障](docs/architecture.md#reliability) · [接口](docs/api.md) |
+
+## 已验证什么，还有哪些不足
+
+| 证据 | 结果与范围 |
+|---|---|
+| 2026-11-23 本地工程记录 | 37 项 pytest、前端构建及 2 项接口文档浏览器检查通过；是该日期记录，不是本次文档整理重新测试 |
+| 历史模型对照 | 43 个任务 × 2 个版本，共 86 次运行；未证明结构化状态版本整体优于普通历史版本 |
+| 历史独立数值核对 | 181 个聚合结果与 CSV 独立计算一致；不等于自然语言结论正确率 |
+| 下一步改进（拟议） | 任务范围确认、证据适用性检查、失效结论发布门禁及完整交付快照，尚未实现 |
+
+[查看评测方法](docs/evaluation.md) · [查看完整结果与限制](docs/validation.md) · [查看失败案例](docs/bad-cases.md) · [查看优化设计](docs/solution-analysis.md#target-design)
+
+## 本地快速运行
+
+安装 Docker 与 Compose，在项目根目录执行：
 
 ```sh
 cp .env.example .env
-# 模拟体验保留 MODEL_MODE=mock；真实模型填写 LLM_* 并设 MODEL_MODE=live。
 docker compose up --build -d
 ```
 
-打开 <http://localhost:8000>，先查看案例，点击“创建自己的分析”进入工作区。Compose 先迁移数据库、导入数据，然后启动 API 与 Worker；默认仅绑定本机端口。数据库密码可通过 `POSTGRES_PASSWORD` 修改。
+PowerShell 可用 `Copy-Item .env.example .env`。仅在首次初始化时复制配置，不覆盖已有 `.env`。
 
-### 本地开发
+打开 <http://localhost:8000>。默认 `MODEL_MODE=mock` 为确定性模拟；真实分析需在服务端 `.env` 配置 `LLM_*` 并设置 `MODEL_MODE=live`。使用远端模型 API 不需要本机 GPU。
 
-```sh
-uv sync --frozen
-cp .env.example .env
-# 无 PostgreSQL 时将 DATABASE_URL 改为 sqlite:///./data/local.db
-uv run python -m marketing.cli init-db
-uv run python -m marketing.cli import-data
-cd web
-npm ci
-npm run build
-cd ..
-```
+完整配置、Windows 启动脚本、模型兼容和排障见[运行指南](docs/operations.md)。运行后可打开 <http://localhost:8000/docs> 查看本地接口文档。
 
-分别在两个终端运行：
+## 数据与能力边界
 
-```sh
-uv run uvicorn marketing.api:app --host 127.0.0.1 --port 8000
-uv run python -m marketing.worker
-```
+默认数据为 [UCI Online Shoppers Purchasing Intention](https://archive.ics.uci.edu/dataset/468/online+shoppers+purchasing+intention+dataset)，包含 12,330 个购物会话，以文件 SHA-256 标记版本。购买转化率 = 购买会话数 / 全部会话数；总比率不平均各组百分比，零分母返回 `null`。
 
-Windows 可使用 `./start.ps1` 完成初始化与后台启动，使用 `./stop.ps1` 关闭该脚本启动的进程。脚本不覆盖已有 `.env`。
-
-API 文档：<http://localhost:8000/docs>。前端开发服务使用 `npm run dev`，此时将 `APP_ORIGIN` 设置成实际 Vite 地址，并重启 API。
-
-## 模型配置
-
-```dotenv
-MODEL_MODE=live
-LLM_BASE_URL=https://your-provider.example/v1
-LLM_MODEL=your-model-id
-LLM_API_KEY=your-private-key
-```
-
-支持 OpenAI 风格的非流式 Chat Completions 工具调用。UI 的 SSE 展示执行事件，不宣称提供模型 Token 流。模型字段由你的服务供应商决定。
-
-某些兼容网关返回 `{}{...}` 形式的工具参数。只有确实观察到该行为时，启用 `TOOL_ARGUMENTS_EMPTY_PREFIX_FIX=true`；它仅删除多余的前导空对象，并记录原参数及修正事件，不做一般性的 JSON 猜测修复。默认关闭。
-
-`.env`、运行数据库、完整轨迹和下载文件均在 Git 忽略范围中。请勿提交密钥。
-
-## 试用任务
-
-**直接报表：**“生成 11 月按流量类型分组的购买转化率报表，注明数据限制。”
-
-**多轮研究：**“比较不同流量类型的购买转化表现，进一步检查新访客与回访者差异，检验一个假设并生成有证据的报告。”
-
-**证据不足：**“计算广告成本与 ROI。”系统应说明数据缺口，不能编造金额。
-
-完成后在报表中心修改标题、图表或月份。修改月份会创建新证据与新版本，并移除旧范围下的结论。已发布版本保留结果快照。
-
-点击报告结论下的“核对证据”，查看对应筛选条件、样本量、分组表格与计算口径。发布后可以下载无脚本的 HTML 报告或 CSV；HTML 包含证据表格及锚点，可离线阅读，也可通过浏览器打印为 PDF。
-
-## 两分钟体验路线
-
-1. 在线案例：点击“再检查访客结构”，在证据表中核对新访客与回访者的分子、分母。
-2. 切换“结论与依据”：验证描述性差异与因果结论的边界，下载报告离线打开。
-3. 本地启动：创建工作区，运行一条报表任务，观察步骤与证据自动更新。
-4. 修改月份：确认旧范围的结论被移除，再发布新版本并导出。
-
-固定案例由 `uv run python -m scripts.build_showcase` 从指定 SHA-256 的 UCI 数据生成，不能读取私人工作区。GitHub Pages 仅发布前端和此公开案例；没有模型密钥、账号数据库或在线写入接口。
-
-## 数据和计算
-
-默认数据为 [UCI Online Shoppers Purchasing Intention](https://archive.ics.uci.edu/dataset/468/online+shoppers+purchasing+intention+dataset)，共 12,330 个会话。数据以下载文件的 SHA-256 标记版本。
-
-购买转化率为 `购买会话数 / 全部会话数`，使用相同筛选条件。总体比率由总分子与总分母计算，不能平均各组比率；零分母返回 `null`。
-
-Revenue 是购买布尔标记。流量类型和地区是编码，不映射为虚构广告平台或地名。数据不提供完整日/周时间轴、广告成本和收入金额。观察到的差异不构成因果证据。
-
-```sh
-uv run python -m marketing.cli contract
-```
-
-该命令从实际 Pydantic 模型及指标注册表输出数据合同，避免维护另一份不一致的字段列表。
-
-## 验证和评测
-
-```sh
-uv run pytest -q
-uv run ruff check marketing tests scripts
-cd web
-npm run build
-npx playwright install chromium
-npm run test:e2e
-```
-
-浏览器测试要求 API 和 Worker 已运行，建议使用 `MODEL_MODE=mock`。Windows 可设置 `PLAYWRIGHT_CHANNEL=msedge` 使用已有 Edge。
-
-真实 PostgreSQL 的并发验证：初始化一个独立测试库、导入数据，并设置对应 `DATABASE_URL` 后运行：
-
-```sh
-uv run python -m scripts.check_postgres
-```
-
-模型评测默认有保守预算检查，运行前按案例数量明确设置预算：
-
-```sh
-uv run python -m scripts.evaluate --suite eval/development.json --limit 3 --token-budget 240000
-uv run python -m scripts.evaluate --variant both --limit 43 --workers 3 --token-budget 6880000
-```
-
-固定集共 60 个场景：43 个模型任务和 17 个映射到工程测试的场景；工程断言不计入模型任务完成率。开发集有 30 个不同查询条件的任务。评测产物记录失败、超时、数据哈希、调用量与完整轨迹，见 [评测说明](docs/evaluation.md) 和 [验证结果](docs/validation.md)。
-
-## 代码阅读顺序
-
-准备让 DeepSeek 或其他模型带学时，从 **[学习入口与可复制提示词](docs/learning-guide.md)** 开始。它按真实函数组织课程，并列出当前未实现的能力，避免把规划或参考项目当成现有代码。
-
-1. `marketing/analytics.py`、`schemas.py`：数据合同和确定性计算。
-2. `skills/report/`、`marketing/services.py`：Skill、报告状态与版本。
-3. `marketing/tools.py`：模型能调用的能力和后端校验。
-4. `marketing/context.py`、`worker.py`：上下文、主循环、检查点与预算。
-5. `marketing/api.py`、`web/src/`：登录、工作台、隔离页面与 SSE。
-
-详细说明见 [架构与取舍](docs/architecture.md)、[运行与故障排查](docs/operations.md)。
+Revenue 是购买标记，不是收入；流量类型是编码，不映射为虚构广告平台。当前没有完整日／周时间轴、投放执行接口、企业 SSO、团队权限或生产规模 SLA。工作区隔离用于任务与报告，公开 UCI 数据是共用数据源。
 
 ## 参考与许可
 
-[DeerFlow](https://github.com/bytedance/deer-flow) 用于研究运行时设计，[data-agent-skill](https://github.com/aliyun/data-agent-skill) 用于研究 Skill 组织，[DB-GPT](https://github.com/eosphoros-ai/DB-GPT) 用于检查数据分析到报告的流程。具体参考提交记录于 `docs/references.json`；本仓库没有复制这些项目的源码。
+参考 [DeerFlow](https://github.com/bytedance/deer-flow) 的长任务运行思路、[阿里云 data-agent-skill](https://github.com/aliyun/data-agent-skill) 的 Skill 组织、[DB-GPT](https://github.com/eosphoros-ai/DB-GPT) 的数据分析交付流程，以及 [Evidence](https://github.com/evidence-dev/evidence) 的静态报告交付思路。源码为独立实现；版本及具体取舍见[参考记录](docs/references.json)与[架构说明](docs/architecture.md#references)。
 
-体验完善借鉴 DeerFlow 的免登录只读案例、阿里 `data-agent-arcvis-skill` 的报告与产出关联，以及 [Evidence](https://github.com/evidence-dev/evidence) 的代码化报告和静态交付思路。实现与取舍见 [架构说明](docs/architecture.md#体验与交付的设计取舍)。
-
-独立代码使用 MIT 许可。UCI 数据采用 CC BY 4.0，引用：Sakar, C. & Kastro, Y. (2018), DOI: [10.24432/C5F88Q](https://doi.org/10.24432/C5F88Q)。第三方运行依赖保留各自许可证。
-
-## 已知边界
-
-本项目是可复现工程作品，不声称已经服务真实企业客户。完成校验检查产物与证据引用的结构，不自动证明所有自然语言结论正确。业务结论需要复核。首版使用个人工作区，未实现企业 SSO、组织邀请、分布式限流、容灾及真实营销执行接口。
+代码采用 MIT；UCI 数据采用 CC BY 4.0，Sakar & Kastro (2018)，DOI：[10.24432/C5F88Q](https://doi.org/10.24432/C5F88Q)。第三方依赖保留各自许可。

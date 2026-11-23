@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="research-loop-current" name="Signal · 研究 Loop 与上下文">
+    <mxGraphModel dx="1120" dy="700" grid="1" gridSize="10" page="1" pageWidth="1120" pageHeight="700">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Signal · 研究 Loop 与上下文" style="text;html=0;align=left;fontSize=27;fontColor=#1E3A5F;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="36" y="12" width="1048" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="当前实现 · 决策、执行、观察与停止检查 · 单 Agent 自建循环" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="53" width="1048" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" value="研究快照" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node0" target="node1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="316" y="185" as="sourcePoint" />
+            <mxPoint x="420" y="185" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge1" value="上下文" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node1" target="node2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="185" as="sourcePoint" />
+            <mxPoint x="804" y="185" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge2" value="工具调用" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node2" target="node3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="944" y="235" as="sourcePoint" />
+            <mxPoint x="944" y="345" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" value="执行结果" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.0;exitY=0.5;exitPerimeter=0;entryX=1.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node3" target="node4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="804" y="395" as="sourcePoint" />
+            <mxPoint x="700" y="395" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" value="当前进展" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.0;exitY=0.5;exitPerimeter=0;entryX=1.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node4" target="node5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="395" as="sourcePoint" />
+            <mxPoint x="316" y="395" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" value="继续" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0.0;exitPerimeter=0;entryX=0.5;entryY=1.0;entryPerimeter=0;" edge="1" parent="1" source="node5" target="node0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="176" y="345" as="sourcePoint" />
+            <mxPoint x="176" y="235" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge6" value="退出本轮" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.13358778625954199;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node5" target="node6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="176" y="445" as="sourcePoint" />
+            <mxPoint x="176" y="545" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="node0" value="01 研究状态&#10;目标 / 假设 / 证据 / 结论&#10;读取持久化状态" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EAF6F3;strokeColor=#0F766E;fontColor=#0F766E;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="36" y="135" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node1" value="02 ContextBuilder&#10;状态摘要 + 最近完整消息对&#10;完整证据按 ID 分页读取" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EEF3F9;strokeColor=#1E3A5F;fontColor=#1E3A5F;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="420" y="135" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node2" value="03 模型决策&#10;选择工具与下一步分析&#10;function calling" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#F4F6F8;strokeColor=#475569;fontColor=#475569;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="804" y="135" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node3" value="04 工具执行&#10;Schema、身份与引用校验&#10;指标计算与报表业务服务" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EEF3F9;strokeColor=#1E3A5F;fontColor=#1E3A5F;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="804" y="345" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node4" value="05 状态写入&#10;证据、结论与报告草稿&#10;检查点、事件、工具结果" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EAF6F3;strokeColor=#0F766E;fontColor=#0F766E;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="420" y="345" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node5" value="06 运行检查&#10;产物门禁、预算、无进展&#10;决定继续或退出本次 Run" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EEF3F9;strokeColor=#1E3A5F;fontColor=#1E3A5F;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="36" y="345" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node6" value="完成 / 等待 / 停止 / 失败&#10;保存已有结果与停止原因；完成检查不等于自然语言结论正确。" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#F4F6F8;strokeColor=#475569;fontColor=#475569;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="36" y="545" width="1048" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="note0" value="任务记忆用于本次分析，不等同于跨任务用户长期记忆；当前没有多 Agent 或独立审查模型。" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="652" width="1048" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

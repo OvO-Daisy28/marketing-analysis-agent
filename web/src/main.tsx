@@ -863,7 +863,7 @@ function App() {
         )}
         <footer className="page-footer">
           SIGNAL / MARKETING ANALYSIS AGENT{" "}
-          <span>公开复现项目 · 分析结果不代表因果效果</span>
+          <span>营销分析与报告工作台 · 分析结果不代表因果效果</span>
         </footer>
       </main>
     </div>

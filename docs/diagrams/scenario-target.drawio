@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="scenario-target" name="Signal · 从营销问题到报告交付">
+    <mxGraphModel dx="1120" dy="750" grid="1" gridSize="10" page="1" pageWidth="1120" pageHeight="750">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Signal · 从营销问题到报告交付" style="text;html=0;align=left;fontSize=27;fontColor=#1E3A5F;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="36" y="12" width="1048" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="目标业务流程 · 期望行为，不代表全部实现 · 模式当前由用户指定" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="53" width="1048" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" value="需求" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node0" target="node1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="276" y="175" as="sourcePoint" />
+            <mxPoint x="360" y="175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge1" value="范围明确" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node1" target="node2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="175" as="sourcePoint" />
+            <mxPoint x="804" y="175" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge2" value="澄清 / 补充" style="edgeStyle=none;html=0;endArrow=block;startArrow=block;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.0;exitY=1.0;exitPerimeter=0;entryX=1.0;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node1" target="node3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="220" as="sourcePoint" />
+            <mxPoint x="296" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" value="研究任务" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node2" target="node5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="944" y="220" as="sourcePoint" />
+            <mxPoint x="944" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" value="直接报表" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.0;exitY=1.0;exitPerimeter=0;entryX=1.0;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node2" target="node4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="804" y="220" as="sourcePoint" />
+            <mxPoint x="700" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" value="分析结果" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.0;exitY=0.5;exitPerimeter=0;entryX=1.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node5" target="node4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="804" y="380" as="sourcePoint" />
+            <mxPoint x="700" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge6" value="草稿" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node4" target="node6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="430" as="sourcePoint" />
+            <mxPoint x="560" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge7" value="反馈 / 新版" style="edgeStyle=none;html=0;endArrow=block;startArrow=block;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.0;exitY=0.5;exitPerimeter=0;entryX=1.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node6" target="node7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="590" as="sourcePoint" />
+            <mxPoint x="296" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge8" value="确认" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node6" target="node8">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="590" as="sourcePoint" />
+            <mxPoint x="804" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="node0" value="提出需求&#10;说明目标与数据范围" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#F4F6F8;strokeColor=#475569;fontColor=#475569;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="36" y="130" width="240" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="node1" value="确认分析范围&#10;指标、维度与数据可用性" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EEF3F9;strokeColor=#1E3A5F;fontColor=#1E3A5F;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="360" y="130" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="node2" value="选择任务路径&#10;直接报表 / 多轮研究" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EEF3F9;strokeColor=#1E3A5F;fontColor=#1E3A5F;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="804" y="130" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="node3" value="澄清与补充&#10;说明缺失字段&#10;替代分析需用户确认" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#FFF7E8;strokeColor=#B45309;fontColor=#B45309;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="36" y="330" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node4" value="生成报告草稿&#10;固定指标、模板与配方&#10;引用有效证据" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EEF3F9;strokeColor=#1E3A5F;fontColor=#1E3A5F;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="420" y="330" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node5" value="多轮研究&#10;查询、比较、检查假设&#10;积累证据与限制" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EEF3F9;strokeColor=#1E3A5F;fontColor=#1E3A5F;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="804" y="330" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node6" value="用户审阅&#10;核对数字、范围与结论&#10;明确限制与缺口" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EAF6F3;strokeColor=#0F766E;fontColor=#0F766E;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="420" y="540" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node7" value="修改形成新版本&#10;展示修改复用证据&#10;范围变化需重新分析" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#FFF7E8;strokeColor=#B45309;fontColor=#B45309;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="36" y="540" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node8" value="确认发布&#10;指定版本、报告快照&#10;可回看与导出" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EAF6F3;strokeColor=#0F766E;fontColor=#0F766E;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="804" y="540" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="note0" value="修改分析范围时回到范围确认，重新查询或续接研究；修改标题与图表可沿用兼容证据。" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="668" width="1048" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="数据不足、持续失败或预算耗尽时保留结果并明确停止，不将停止标作完成。" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="701" width="1048" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

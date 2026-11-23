@@ -5,6 +5,7 @@ import time
 from collections import defaultdict, deque
 
 from fastapi import Depends, FastAPI, HTTPException, Request, Response
+from fastapi.openapi.docs import get_swagger_ui_html, get_swagger_ui_oauth2_redirect_html
 from fastapi.responses import StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from sqlalchemy import delete, select
@@ -19,7 +20,28 @@ from marketing.db import Session, get_db
 from marketing.delivery import export_csv, export_html, report_payload
 from marketing.schemas import ContinueRun, Credentials, NewGoal, Query, Revision
 
-app = FastAPI(title="Marketing Analysis Agent", version="0.1.0")
+app = FastAPI(title="Marketing Analysis Agent", version="0.1.0", docs_url=None, redoc_url=None)
+app.mount("/docs-assets", StaticFiles(directory=ROOT / "marketing/static/swagger"), name="docs-assets")
+
+
+@app.get("/docs", include_in_schema=False)
+def api_docs():
+    return get_swagger_ui_html(
+        openapi_url=app.openapi_url,
+        title="Signal · API 文档",
+        swagger_js_url="/docs-assets/swagger-ui-bundle.js",
+        swagger_css_url="/docs-assets/swagger-ui.css",
+        swagger_favicon_url="/docs-assets/favicon-32x32.png",
+        oauth2_redirect_url="/docs/oauth2-redirect",
+        swagger_ui_parameters={"validatorUrl": None},
+    )
+
+
+@app.get("/docs/oauth2-redirect", include_in_schema=False)
+def docs_redirect():
+    return get_swagger_ui_oauth2_redirect_html()
+
+
 attempts = defaultdict(deque)
 
 

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="715" viewBox="0 0 1120 715" role="img" aria-labelledby="title desc">
+<title id="title">Signal · 澄清确认与续接</title><desc id="desc">目标状态设计 · 原 Run 与续接 Run 分开记录；确认与取消竞争由事务处理</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748B"/></marker></defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="36" y="44" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="27" fill="#1E3A5F" font-weight="600">Signal · 澄清确认与续接</text>
+<text x="36" y="76" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">目标状态设计 · 原 Run 与续接 Run 分开记录；确认与取消竞争由事务处理</text>
+<line x1="316" y1="200" x2="420" y2="200" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="325" y="166" width="70" height="23" rx="3" fill="#FFFFFF"/>
+<text x="329" y="184" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">提出澄清</text>
+<line x1="700" y1="200" x2="804" y2="200" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="705" y="166" width="94" height="23" rx="3" fill="#FFFFFF"/>
+<text x="709" y="184" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">拒绝 / 取消</text>
+<line x1="560" y1="250" x2="560" y2="360" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="571" y="289" width="70" height="23" rx="3" fill="#FFFFFF"/>
+<text x="575" y="307" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">用户接受</text>
+<line x1="420" y1="415" x2="316" y2="415" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="319" y="381" width="85" height="23" rx="3" fill="#FFFFFF"/>
+<text x="323" y="399" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">结束旧等待</text>
+<line x1="700" y1="415" x2="804" y2="415" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="709" y="381" width="70" height="23" rx="3" fill="#FFFFFF"/>
+<text x="713" y="399" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">创建续接</text>
+<line x1="944" y1="470" x2="944" y2="560" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="954" y="501" width="96" height="23" rx="3" fill="#FFFFFF"/>
+<text x="958" y="519" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">Worker 领取</text>
+<rect x="36" y="150" width="280" height="100" rx="10" fill="#EEF3F9" stroke="#1E3A5F" stroke-width="1.7"/>
+<text x="54" y="182" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#1E3A5F" font-weight="600">原 Run：running</text>
+<text x="54" y="211" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">缺信息或需要替代分析</text>
+<text x="54" y="236" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">生成结构化提案</text>
+<rect x="420" y="150" width="280" height="100" rx="10" fill="#FFF7E8" stroke="#B45309" stroke-width="1.7"/>
+<text x="438" y="182" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#B45309" font-weight="600">原 Run：waiting_input</text>
+<text x="438" y="211" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">展示缺口与提案</text>
+<text x="438" y="236" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">等待用户决定</text>
+<rect x="804" y="150" width="280" height="100" rx="10" fill="#F4F6F8" stroke="#475569" stroke-width="1.7"/>
+<text x="822" y="182" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#475569" font-weight="600">原 Run：cancelled</text>
+<text x="822" y="211" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">用户拒绝或取消</text>
+<text x="822" y="236" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">不创建替代分析任务</text>
+<rect x="420" y="360" width="280" height="110" rx="10" fill="#FFF7E8" stroke="#B45309" stroke-width="1.7"/>
+<text x="438" y="392" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#B45309" font-weight="600">确认事务</text>
+<text x="438" y="421" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">锁定 Goal 与提案</text>
+<text x="438" y="446" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">检查版本、身份与幂等键</text>
+<rect x="36" y="360" width="280" height="110" rx="10" fill="#F4F6F8" stroke="#475569" stroke-width="1.7"/>
+<text x="54" y="392" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#475569" font-weight="600">原 Run：stopped</text>
+<text x="54" y="421" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">记录续接原因</text>
+<text x="54" y="446" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">原预算使用记录保留</text>
+<rect x="804" y="360" width="280" height="110" rx="10" fill="#EEF3F9" stroke="#1E3A5F" stroke-width="1.7"/>
+<text x="822" y="392" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#1E3A5F" font-weight="600">新 Run：queued</text>
+<text x="822" y="421" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">绑定生效合同</text>
+<text x="822" y="446" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">关联 parent_run_id</text>
+<rect x="804" y="560" width="280" height="90" rx="10" fill="#EEF3F9" stroke="#1E3A5F" stroke-width="1.7"/>
+<text x="822" y="592" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#1E3A5F" font-weight="600">新 Run：running</text>
+<text x="822" y="621" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">仍受目标累计预算约束</text>
+<text x="36" y="595" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">左侧原 Run 只记录续接终止；新 Run 在右侧独立排队和执行。</text>
+<text x="36" y="690" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">同一确认重复提交返回同一续接 Run；过期提案或同键不同内容返回冲突。</text>
+</svg>

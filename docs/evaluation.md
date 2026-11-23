@@ -1,5 +1,7 @@
 # 评测协议
 
+[项目首页](../README.md) · [文档导航](README.md) · [历史验证记录](validation.md)
+
 ## 假设与对照
 
 H1：受控模板、固定计算与校验能够拦截字段、计算和渲染问题。使用错误注入和浏览器测试验证，不把它包装成模型能力提升。
@@ -37,3 +39,32 @@ development.json 为 30 条开发任务。frozen.json 为 60 个固定场景：2
 ## 工程测试命令
 
 pytest 验证权限、CSRF、错误字段、HTML 约束、证据范围、版本、幂等、恢复、重试和预算。Playwright 验证页面生成、iframe 沙箱、实际 G2 canvas、修改和发布。PostgreSQL 专用脚本验证 6 个并发领取者及旧租约隔离。
+
+## 复现命令与环境
+
+
+```sh
+uv run pytest -q
+uv run ruff check marketing tests scripts
+cd web
+npm run build
+npx playwright install chromium
+npm run test:e2e
+```
+
+浏览器测试要求 API 和 Worker 已运行，建议使用 `MODEL_MODE=mock`。Windows 可设置 `PLAYWRIGHT_CHANNEL=msedge` 使用已有 Edge。
+
+真实 PostgreSQL 的并发验证：初始化一个独立测试库、导入数据，并设置对应 `DATABASE_URL` 后运行：
+
+```sh
+uv run python -m scripts.check_postgres
+```
+
+模型评测默认有保守预算检查，运行前按案例数量明确设置预算：
+
+```sh
+uv run python -m scripts.evaluate --suite eval/development.json --limit 3 --token-budget 240000
+uv run python -m scripts.evaluate --variant both --limit 43 --workers 3 --token-budget 6880000
+```
+
+固定集共 60 个场景：43 个模型任务和 17 个映射到工程测试的场景；工程断言不计入模型任务完成率。开发集有 30 个不同查询条件的任务。评测产物记录失败、超时、数据哈希、调用量与完整轨迹，实测结果见[验证记录](validation.md)。

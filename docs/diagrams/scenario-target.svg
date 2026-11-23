@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="750" viewBox="0 0 1120 750" role="img" aria-labelledby="title desc">
+<title id="title">Signal · 从营销问题到报告交付</title><desc id="desc">目标业务流程 · 期望行为，不代表全部实现 · 模式当前由用户指定</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748B"/></marker></defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="36" y="44" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="27" fill="#1E3A5F" font-weight="600">Signal · 从营销问题到报告交付</text>
+<text x="36" y="76" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">目标业务流程 · 期望行为，不代表全部实现 · 模式当前由用户指定</text>
+<line x1="276" y1="175" x2="360" y2="175" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="295" y="141" width="40" height="23" rx="3" fill="#FFFFFF"/>
+<text x="299" y="159" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">需求</text>
+<line x1="660" y1="175" x2="804" y2="175" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="692" y="141" width="70" height="23" rx="3" fill="#FFFFFF"/>
+<text x="696" y="159" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">范围明确</text>
+<line x1="360" y1="220" x2="296" y2="330" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<rect x="288" y="257" width="94" height="23" rx="3" fill="#FFFFFF"/>
+<text x="292" y="275" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">澄清 / 补充</text>
+<line x1="944" y1="220" x2="944" y2="330" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="954" y="261" width="70" height="23" rx="3" fill="#FFFFFF"/>
+<text x="958" y="279" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">研究任务</text>
+<line x1="804" y1="220" x2="700" y2="330" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="701" y="254" width="70" height="23" rx="3" fill="#FFFFFF"/>
+<text x="705" y="272" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">直接报表</text>
+<line x1="804" y1="380" x2="700" y2="380" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="709" y="346" width="70" height="23" rx="3" fill="#FFFFFF"/>
+<text x="713" y="364" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">分析结果</text>
+<line x1="560" y1="430" x2="560" y2="540" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="571" y="471" width="40" height="23" rx="3" fill="#FFFFFF"/>
+<text x="575" y="489" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">草稿</text>
+<line x1="420" y1="590" x2="296" y2="590" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)" marker-start="url(#arrow)"/>
+<rect x="309" y="556" width="94" height="23" rx="3" fill="#FFFFFF"/>
+<text x="313" y="574" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">反馈 / 新版</text>
+<line x1="700" y1="590" x2="804" y2="590" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="729" y="556" width="40" height="23" rx="3" fill="#FFFFFF"/>
+<text x="733" y="574" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">确认</text>
+<rect x="36" y="130" width="240" height="90" rx="10" fill="#F4F6F8" stroke="#475569" stroke-width="1.7"/>
+<text x="54" y="162" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#475569" font-weight="600">提出需求</text>
+<text x="54" y="191" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">说明目标与数据范围</text>
+<rect x="360" y="130" width="300" height="90" rx="10" fill="#EEF3F9" stroke="#1E3A5F" stroke-width="1.7"/>
+<text x="378" y="162" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#1E3A5F" font-weight="600">确认分析范围</text>
+<text x="378" y="191" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">指标、维度与数据可用性</text>
+<rect x="804" y="130" width="280" height="90" rx="10" fill="#EEF3F9" stroke="#1E3A5F" stroke-width="1.7"/>
+<text x="822" y="162" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#1E3A5F" font-weight="600">选择任务路径</text>
+<text x="822" y="191" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">直接报表 / 多轮研究</text>
+<rect x="36" y="330" width="260" height="100" rx="10" fill="#FFF7E8" stroke="#B45309" stroke-width="1.7"/>
+<text x="54" y="362" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#B45309" font-weight="600">澄清与补充</text>
+<text x="54" y="391" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">说明缺失字段</text>
+<text x="54" y="416" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">替代分析需用户确认</text>
+<rect x="420" y="330" width="280" height="100" rx="10" fill="#EEF3F9" stroke="#1E3A5F" stroke-width="1.7"/>
+<text x="438" y="362" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#1E3A5F" font-weight="600">生成报告草稿</text>
+<text x="438" y="391" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">固定指标、模板与配方</text>
+<text x="438" y="416" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">引用有效证据</text>
+<rect x="804" y="330" width="280" height="100" rx="10" fill="#EEF3F9" stroke="#1E3A5F" stroke-width="1.7"/>
+<text x="822" y="362" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#1E3A5F" font-weight="600">多轮研究</text>
+<text x="822" y="391" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">查询、比较、检查假设</text>
+<text x="822" y="416" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">积累证据与限制</text>
+<rect x="420" y="540" width="280" height="100" rx="10" fill="#EAF6F3" stroke="#0F766E" stroke-width="1.7"/>
+<text x="438" y="572" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#0F766E" font-weight="600">用户审阅</text>
+<text x="438" y="601" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">核对数字、范围与结论</text>
+<text x="438" y="626" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">明确限制与缺口</text>
+<rect x="36" y="540" width="260" height="100" rx="10" fill="#FFF7E8" stroke="#B45309" stroke-width="1.7"/>
+<text x="54" y="572" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#B45309" font-weight="600">修改形成新版本</text>
+<text x="54" y="601" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">展示修改复用证据</text>
+<text x="54" y="626" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">范围变化需重新分析</text>
+<rect x="804" y="540" width="280" height="100" rx="10" fill="#EAF6F3" stroke="#0F766E" stroke-width="1.7"/>
+<text x="822" y="572" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#0F766E" font-weight="600">确认发布</text>
+<text x="822" y="601" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">指定版本、报告快照</text>
+<text x="822" y="626" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">可回看与导出</text>
+<text x="36" y="690" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">修改分析范围时回到范围确认，重新查询或续接研究；修改标题与图表可沿用兼容证据。</text>
+<text x="36" y="723" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">数据不足、持续失败或预算耗尽时保留结果并明确停止，不将停止标作完成。</text>
+</svg>

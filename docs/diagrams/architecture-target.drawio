@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="architecture-target" name="Signal · 优化后的逻辑架构">
+    <mxGraphModel dx="1120" dy="680" grid="1" gridSize="10" page="1" pageWidth="1120" pageHeight="680">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Signal · 优化后的逻辑架构" style="text;html=0;align=left;fontSize=27;fontColor=#1E3A5F;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="36" y="12" width="1048" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="目标设计 · 琥珀色模块表示拟议增强；保留单 Agent、API / Worker 与数据库队列" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="53" width="1048" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="group0" value="" style="rounded=1;fillColor=#FAFBFD;strokeColor=#CBD5E1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="105" width="798" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="group-label0" value="逻辑模块仍部署在现有 API 或 Worker 内，不增加独立微服务" style="text;html=0;align=left;fontSize=15;fontStyle=1;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="318" y="112" width="768" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" value="请求" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node0" target="node1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="251" y="225" as="sourcePoint" />
+            <mxPoint x="330" y="225" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge1" value="确认 / 变更" style="edgeStyle=none;html=0;endArrow=block;startArrow=block;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node1" target="node2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="225" as="sourcePoint" />
+            <mxPoint x="760" y="225" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge2" value="合同版本" style="edgeStyle=none;html=0;endArrow=block;startArrow=block;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node2" target="node5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="920" y="280" as="sourcePoint" />
+            <mxPoint x="920" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" value="任务 / 发布" style="edgeStyle=none;html=0;endArrow=block;startArrow=block;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=1.0;exitY=1.0;exitPerimeter=0;entryX=0.0;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node1" target="node5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="280" as="sourcePoint" />
+            <mxPoint x="760" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" value="领取 / 保存" style="edgeStyle=none;html=0;endArrow=block;startArrow=block;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node4" target="node5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="460" as="sourcePoint" />
+            <mxPoint x="760" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" value="模型调用" style="edgeStyle=none;html=0;endArrow=block;startArrow=block;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.0;exitY=0.5;exitPerimeter=0;entryX=1.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node4" target="node3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="330" y="460" as="sourcePoint" />
+            <mxPoint x="251" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="node0" value="营销运营人员&#10;确认分析范围&#10;核对证据、确认发布" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#F4F6F8;strokeColor=#475569;fontColor=#475569;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="36" y="170" width="215" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="node1" value="工作台与 FastAPI&#10;身份 / 版本 / SSE 事件&#10;增强：发布审查与完整快照" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#FFF7E8;strokeColor=#B45309;fontColor=#B45309;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="330" y="170" width="300" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="node2" value="新增 TaskContract 服务&#10;原始需求与生效范围分离&#10;提案版本、确认与兼容检查" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#FFF7E8;strokeColor=#B45309;fontColor=#B45309;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="760" y="170" width="320" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="node3" value="外部模型 API&#10;理解问题、选择工具&#10;不确认业务发布&#10;不决定服务端身份" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#F4F6F8;strokeColor=#475569;fontColor=#475569;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="36" y="390" width="215" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="node4" value="增强 Worker 运行时&#10;ContextBuilder 注入合同&#10;ToolRegistry 校验任务范围&#10;研究 Loop 与报表 Skill" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#FFF7E8;strokeColor=#B45309;fontColor=#B45309;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="330" y="390" width="300" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="node5" value="PostgreSQL&#10;目标、Run、证据、结论&#10;新增：合同、审阅信息&#10;扩展：完整交付快照" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EAF6F3;strokeColor=#0F766E;fontColor=#0F766E;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="760" y="390" width="320" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="note0" value="API 将任务写入数据库，Worker 领取执行；图中双向直线表示请求与返回或读写关系。" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="595" width="1048" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="新增范围治理、证据适用性检查及完整发布快照尚未实现，需按验收场景验证。" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="629" width="1048" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

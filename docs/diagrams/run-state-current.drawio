@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="run-state-current" name="Signal · Run 状态与停止条件">
+    <mxGraphModel dx="1120" dy="720" grid="1" gridSize="10" page="1" pageWidth="1120" pageHeight="720">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Signal · Run 状态与停止条件" style="text;html=0;align=left;fontSize=27;fontColor=#1E3A5F;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="36" y="12" width="1048" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="当前实现 · 展示主要执行路径；补充信息会创建新 Run" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="53" width="1048" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" value="领取" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node0" target="node1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="205" as="sourcePoint" />
+            <mxPoint x="560" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge1" value="缺信息" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.0;exitY=0.5;exitPerimeter=0;entryX=1.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node1" target="node2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="340" as="sourcePoint" />
+            <mxPoint x="316" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge2" value="完成" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node1" target="node3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="700" y="340" as="sourcePoint" />
+            <mxPoint x="804" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" value="运行限制" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.07142857142857142;exitY=1.0;exitPerimeter=0;entryX=0.8;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node1" target="node4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="390" as="sourcePoint" />
+            <mxPoint x="260" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" value="错误" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1.0;exitPerimeter=0;entryX=0.5;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node1" target="node5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="390" as="sourcePoint" />
+            <mxPoint x="560" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" value="取消" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.9285714285714286;exitY=1.0;exitPerimeter=0;entryX=0.2;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node1" target="node6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="390" as="sourcePoint" />
+            <mxPoint x="860" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="node0" value="queued&#10;等待 Worker 领取" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#F4F6F8;strokeColor=#475569;fontColor=#475569;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="420" y="115" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="node1" value="running&#10;模型决策与工具执行&#10;租约 / 检查点 / 预算" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EEF3F9;strokeColor=#1E3A5F;fontColor=#1E3A5F;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="420" y="290" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node2" value="waiting_input&#10;ask_user 等待补充&#10;当前 Run 暂停分析" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#FFF7E8;strokeColor=#B45309;fontColor=#B45309;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="36" y="290" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node3" value="completed&#10;finish 门禁通过&#10;交付草稿，不自动发布" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EAF6F3;strokeColor=#0F766E;fontColor=#0F766E;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="804" y="290" width="280" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="node4" value="stopped&#10;预算耗尽或无进展" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#F4F6F8;strokeColor=#475569;fontColor=#475569;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="36" y="520" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="node5" value="failed&#10;不可恢复错误" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#F4F6F8;strokeColor=#475569;fontColor=#475569;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="420" y="520" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="node6" value="cancelled&#10;用户取消后续执行" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#F4F6F8;strokeColor=#475569;fontColor=#475569;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="804" y="520" width="280" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="note0" value="queued 与 waiting_input 也支持取消。正常恢复继续原 Run；用户补充通过 continue 创建新 Run。" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="638" width="1048" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="completed 表示分析草稿满足结构门禁；报告发布仍是独立的用户操作。" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="671" width="1048" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

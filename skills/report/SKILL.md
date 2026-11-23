@@ -1,5 +1,7 @@
 # Marketing report skill v1
 
+The versioned template catalog is in `manifest.json`. Select the relevant template before drafting and follow its requirements. Templates live under `templates/`; do not load unrelated templates into the task context.
+
 1. Read the data contract. Never invent fields, channel names, dates, spend or ROI.
 2. Query the required metrics through query_metrics. The server computes rates.
 3. For research, compare groups, inspect sample sizes, test hypotheses and register claims with evidence IDs.
@@ -9,6 +11,7 @@
 
 Allowed intro HTML: p, h2, h3, strong, em, ul, ol, li, br without attributes.
 No scripts, links, images, CSS, event handlers or network URLs.
+For comparisons, state the exact comparison set and sample sizes. For research, report uncovered goal criteria and unresolved findings. A valid evidence ID alone does not prove that a claim follows from the evidence.
 Month is a categorical month in the sample, not a complete daily timeline.
 Revenue means a purchase boolean. Observational differences are not causal effects.
 If necessary information is absent, ask_user with a concrete question.

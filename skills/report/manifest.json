@@ -1,0 +1,9 @@
+{
+  "id": "marketing-report",
+  "version": "1.0.0",
+  "templates": [
+    {"id": "metric-overview", "title": "指标概览", "when": "用户需要查看一个或多个指标的总体表现"},
+    {"id": "group-comparison", "title": "分组比较", "when": "用户需要比较渠道、访客类型等分组"},
+    {"id": "research-findings", "title": "研究结论", "when": "多轮研究完成，需要呈现结论、证据和限制"}
+  ]
+}

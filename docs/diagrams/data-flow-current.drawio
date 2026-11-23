@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="data-flow-current" name="Signal · 从原始数据到可核查报告">
+    <mxGraphModel dx="1120" dy="655" grid="1" gridSize="10" page="1" pageWidth="1120" pageHeight="655">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Signal · 从原始数据到可核查报告" style="text;html=0;align=left;fontSize=27;fontColor=#1E3A5F;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="36" y="12" width="1048" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="当前实现 · 数据血缘视图 · 箭头标注传递的数据，不表示任务执行先后" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="53" width="1048" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" value="会话记录" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node0" target="node1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="326" y="190" as="sourcePoint" />
+            <mxPoint x="415" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge1" value="聚合结果" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=1.0;exitY=0.5;exitPerimeter=0;entryX=0.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node1" target="node2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="705" y="190" as="sourcePoint" />
+            <mxPoint x="794" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge2" value="模型读取结果并引用证据" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.503448275862069;exitY=1.0;exitPerimeter=0;entryX=0.503448275862069;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node2" target="node3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="940" y="245" as="sourcePoint" />
+            <mxPoint x="940" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" value="结论 ID" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.0;exitY=0.5;exitPerimeter=0;entryX=1.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node3" target="node4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="794" y="405" as="sourcePoint" />
+            <mxPoint x="705" y="405" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" value="版本内容" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.0;exitY=0.5;exitPerimeter=0;entryX=1.0;entryY=0.5;entryPerimeter=0;" edge="1" parent="1" source="node4" target="node5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415" y="405" as="sourcePoint" />
+            <mxPoint x="326" y="405" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge5" value="主证据引用" style="edgeStyle=none;html=0;endArrow=block;startArrow=none;strokeColor=#64748B;fontColor=#475569;fontSize=15;labelBackgroundColor=#FFFFFF;exitX=0.0;exitY=1.0;exitPerimeter=0;entryX=1.0;entryY=0.0;entryPerimeter=0;" edge="1" parent="1" source="node2" target="node4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="794" y="245" as="sourcePoint" />
+            <mxPoint x="705" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="node0" value="01 公开会话数据&#10;UCI CSV → Dataset / 会话表&#10;文件哈希固定数据版本" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#F4F6F8;strokeColor=#475569;fontColor=#475569;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="36" y="135" width="290" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="node1" value="02 确定性聚合&#10;Query：筛选 + 分组&#10;程序计算分子、分母与比率" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EEF3F9;strokeColor=#1E3A5F;fontColor=#1E3A5F;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="415" y="135" width="290" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="node2" value="03 Evidence&#10;查询条件 + 结果快照&#10;数据版本 + 指标版本" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EAF6F3;strokeColor=#0F766E;fontColor=#0F766E;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="794" y="135" width="290" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="node3" value="04 Claim / Hypothesis&#10;结论、限制及证据 ID&#10;研究假设与验证状态" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EAF6F3;strokeColor=#0F766E;fontColor=#0F766E;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="794" y="350" width="290" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="node4" value="05 ReportVersion&#10;受控说明、图表配置&#10;主证据 ID + 结论引用" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EEF3F9;strokeColor=#1E3A5F;fontColor=#1E3A5F;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="415" y="350" width="290" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="node5" value="06 发布与导出&#10;人工确认指定版本&#10;HTML 报告 / CSV 数据" style="rounded=1;whiteSpace=wrap;html=0;align=left;spacing=16;fillColor=#EEF3F9;strokeColor=#1E3A5F;fontColor=#1E3A5F;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="36" y="350" width="290" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="note0" value="查询条件、数据版本和指标版本共同参与证据去重；数字来自服务端计算。" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="503" width="1048" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note1" value="结论引用存在 ≠ 结论获得语义支持；比较范围、因果表述和样本限制仍需复核。" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="538" width="1048" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" value="发布当前冻结主查询结果；结论和关联证据在交付时读取。完整交付快照为拟议增强。" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="573" width="1048" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="note3" value="直接报表可不登记假设或结论，直接使用主证据生成草稿。" style="text;html=0;align=left;fontSize=16;fontColor=#475569;" vertex="1" parent="1">
+          <mxGeometry x="36" y="608" width="1048" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="720" viewBox="0 0 1120 720" role="img" aria-labelledby="title desc">
+<title id="title">Signal · Run 状态与停止条件</title><desc id="desc">当前实现 · 展示主要执行路径；补充信息会创建新 Run</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748B"/></marker></defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="36" y="44" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="27" fill="#1E3A5F" font-weight="600">Signal · Run 状态与停止条件</text>
+<text x="36" y="76" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">当前实现 · 展示主要执行路径；补充信息会创建新 Run</text>
+<line x1="560" y1="205" x2="560" y2="290" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="571" y="235" width="40" height="23" rx="3" fill="#FFFFFF"/>
+<text x="575" y="253" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">领取</text>
+<line x1="420" y1="340" x2="316" y2="340" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="329" y="305" width="55" height="23" rx="3" fill="#FFFFFF"/>
+<text x="333" y="323" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">缺信息</text>
+<line x1="700" y1="340" x2="804" y2="340" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="729" y="305" width="40" height="23" rx="3" fill="#FFFFFF"/>
+<text x="733" y="323" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">完成</text>
+<line x1="440" y1="390" x2="260" y2="520" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="303" y="437" width="70" height="23" rx="3" fill="#FFFFFF"/>
+<text x="307" y="455" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">运行限制</text>
+<line x1="560" y1="390" x2="560" y2="520" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="571" y="439" width="40" height="23" rx="3" fill="#FFFFFF"/>
+<text x="575" y="457" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">错误</text>
+<line x1="680" y1="390" x2="860" y2="520" fill="none" stroke="#64748B" stroke-width="1.8" marker-end="url(#arrow)"/>
+<rect x="747" y="437" width="40" height="23" rx="3" fill="#FFFFFF"/>
+<text x="751" y="455" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="15" fill="#475569" font-weight="400">取消</text>
+<rect x="420" y="115" width="280" height="90" rx="10" fill="#F4F6F8" stroke="#475569" stroke-width="1.7"/>
+<text x="438" y="147" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#475569" font-weight="600">queued</text>
+<text x="438" y="176" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">等待 Worker 领取</text>
+<rect x="420" y="290" width="280" height="100" rx="10" fill="#EEF3F9" stroke="#1E3A5F" stroke-width="1.7"/>
+<text x="438" y="322" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#1E3A5F" font-weight="600">running</text>
+<text x="438" y="351" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">模型决策与工具执行</text>
+<text x="438" y="376" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">租约 / 检查点 / 预算</text>
+<rect x="36" y="290" width="280" height="100" rx="10" fill="#FFF7E8" stroke="#B45309" stroke-width="1.7"/>
+<text x="54" y="322" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#B45309" font-weight="600">waiting_input</text>
+<text x="54" y="351" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">ask_user 等待补充</text>
+<text x="54" y="376" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">当前 Run 暂停分析</text>
+<rect x="804" y="290" width="280" height="100" rx="10" fill="#EAF6F3" stroke="#0F766E" stroke-width="1.7"/>
+<text x="822" y="322" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#0F766E" font-weight="600">completed</text>
+<text x="822" y="351" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">finish 门禁通过</text>
+<text x="822" y="376" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">交付草稿，不自动发布</text>
+<rect x="36" y="520" width="280" height="90" rx="10" fill="#F4F6F8" stroke="#475569" stroke-width="1.7"/>
+<text x="54" y="552" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#475569" font-weight="600">stopped</text>
+<text x="54" y="581" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">预算耗尽或无进展</text>
+<rect x="420" y="520" width="280" height="90" rx="10" fill="#F4F6F8" stroke="#475569" stroke-width="1.7"/>
+<text x="438" y="552" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#475569" font-weight="600">failed</text>
+<text x="438" y="581" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">不可恢复错误</text>
+<rect x="804" y="520" width="280" height="90" rx="10" fill="#F4F6F8" stroke="#475569" stroke-width="1.7"/>
+<text x="822" y="552" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="20" fill="#475569" font-weight="600">cancelled</text>
+<text x="822" y="581" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">用户取消后续执行</text>
+<text x="36" y="660" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">queued 与 waiting_input 也支持取消。正常恢复继续原 Run；用户补充通过 continue 创建新 Run。</text>
+<text x="36" y="693" font-family="Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16" fill="#475569" font-weight="400">completed 表示分析草稿满足结构门禁；报告发布仍是独立的用户操作。</text>
+</svg>
