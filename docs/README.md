@@ -10,6 +10,7 @@
 | 评审解决方案 | [方案报告](solution-analysis.md) | 场景需求 → 官方产品对标 → 设计取舍 → 优化架构与验收要求 |
 | 评审开发能力 | [当前架构](architecture.md) → [接口说明](api.md) | 工具调用、上下文、数据血缘、状态和恢复 |
 | 复现与验证 | [运行指南](operations.md) → [评测协议](evaluation.md) → [验证记录](validation.md) | 启动方法、评测条件、历史结果和失败限制 |
+| 评审企业接入 | [POC 验证](validation.md) → [交付与推广分析](delivery-analysis.md) | 接入条件、成本假设、风险、实施门槛及试点价值核算 |
 
 ## 当前实现与目标设计
 
@@ -42,4 +43,4 @@
 4. [context.py](../marketing/context.py)、[worker.py](../marketing/worker.py)：研究上下文、主循环、租约和预算。
 5. [api.py](../marketing/api.py)、[前端源码](../web/src)：会话、工作台、隔离预览和 SSE。
 
-文档整理日期：2026-11-24。本次只调整展示与说明，没有重新运行模型评测。
+文档更新日期：2026-11-24。本轮复核 POC 口径并补充发布接口回归及交付分析，未重新运行真实模型评测。

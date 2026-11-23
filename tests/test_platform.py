@@ -166,6 +166,41 @@ def test_api_csrf_isolation_and_no_implicit_publish(logged, factory):
     assert logged.get("/api/report-versions/" + report["versions"][0]["id"]).status_code == 400
 
 
+def test_api_blocks_stale_publication_after_style_revision(logged, factory):
+    created = logged.post(
+        "/api/goals",
+        json={"objective": "生成转化率报告", "mode": "report", "request_key": "stale-api"},
+    ).json()
+    work_once(factory)
+    with factory.begin() as db:
+        goal = db.get(m.Goal, created["goal"]["id"])
+        report = db.scalar(select(m.Report).where(m.Report.goal_id == goal.id))
+        changed = revise_report(
+            db,
+            report,
+            goal,
+            Revision(
+                spec=ReportSpec(title="改月份"),
+                query=Query(filters={"month": ["Dec"]}),
+                request_key="range-api",
+            ),
+        )
+        styled = revise_report(
+            db,
+            report,
+            goal,
+            Revision(base_version_id=changed.id, spec=ReportSpec(title="再改标题"), request_key="style-api"),
+        )
+        ids = [changed.id, styled.id]
+    for vid in ids:
+        response = logged.post(f"/api/report-versions/{vid}/publish", json={})
+        assert response.status_code == 400
+        assert "旧结论已失效" in response.text
+        with factory() as db:
+            version = db.get(m.ReportVersion, vid)
+            assert version.status == "draft" and version.published_at is None
+
+
 def test_sse_replay_and_cancel(logged, factory):
     r = logged.post("/api/goals", json={"objective": "生成转化率报告", "request_key": "events-test-1"}).json()
     rid = r["run"]["id"]
