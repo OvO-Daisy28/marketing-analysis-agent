@@ -167,6 +167,8 @@ def publish(db, version):
     db.refresh(version, with_for_update=True)
     if version.status == "published":
         return version
+    if version.stale_claims:
+        raise DomainError("此版本的数据范围已变化，旧结论已失效；请续接研究更新结论后再发布")
     evidence = db.get(m.Evidence, version.evidence_id)
     # The immutable evidence snapshot is the exact dataset/query/metric version reviewed by the user.
     version.snapshot = evidence.result

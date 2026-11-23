@@ -85,6 +85,8 @@ def test_report_revision_snapshot_and_publish_idempotent(factory):
         )
         assert filtered.stale_claims and filtered.spec["claim_ids"] == []
         assert db.get(m.Evidence, filtered.evidence_id).result["totals"]["sessions"] == 4
+        with pytest.raises(DomainError, match="旧结论已失效"):
+            publish(db, filtered)
         assert first.snapshot["totals"]["sessions"] == 12
         again = revise_report(
             db,
